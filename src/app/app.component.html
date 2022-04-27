@@ -1,9 +1,11 @@
 
 
 <app-nav-menu></app-nav-menu>
-<div class="container">
+<div [ngClass]="isShown==true?'container':'container  d-none'" >
 <!--<router-outlet></router-outlet>-->
 <app-loanofficer></app-loanofficer>
+</div>
+<div [ngClass]="isShown==true?'container   d-none':'container'" >
 <app-customer></app-customer>
 <app-amort-sched-one></app-amort-sched-one>
 <app-amort-sched-two></app-amort-sched-two>

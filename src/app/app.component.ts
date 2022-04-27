@@ -7,4 +7,9 @@ import { Component, VERSION } from '@angular/core';
 })
 export class AppComponent  {
   name = 'Angular ' + VERSION.major;
-}
+  public isShown = true;
+
+  public toggleisShown()
+{
+  this.isShown = !this.isShown;
+}}

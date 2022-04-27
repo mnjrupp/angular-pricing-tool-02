@@ -20,5 +20,8 @@ export class NavMenuComponent implements OnInit {
   }
   ngOnInit() {
   }
+  toggleShow(){
+    
+  }
 
 }
