@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {GlobalDataService} from '../shared/global-data.service'
 
 @Component({
   selector: 'app-nav-menu',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavMenuComponent implements OnInit {
 
-  constructor() { }
+  constructor(private globaldata:GlobalDataService) { }
 
   isExpanded:boolean = false;
 
@@ -19,9 +20,10 @@ export class NavMenuComponent implements OnInit {
     this.isExpanded = !this.isExpanded;
   }
   ngOnInit() {
+    this.globaldata.currentToggleMessage.subscribe();
   }
   toggleShow(){
-    
+    this.globaldata.toggleisShown(true)
   }
 
 }
