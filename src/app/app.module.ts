@@ -16,7 +16,7 @@ import {AmortSchedTwoComponent} from './amort-sched-two/amort-sched-two.componen
 import {AmortSchedThreeComponent} from './amort-sched-three/amort-sched-three.component';
 import {PaymentCompareComponent} from './charts/payment-compare/payment-compare.component';
 import {InterestCompareComponent} from './charts/interest-compare/interest-compare.component';
-import {RateCalculatorComponent } from './rate-calculator/rate-calculator.component';
+import {RateCalculatorComponent} from './rate-calculator/rate-calculator.component';
 import {LoanDataService } from './shared/loan-data.service';
 
 @NgModule({
@@ -42,7 +42,13 @@ import {LoanDataService } from './shared/loan-data.service';
     AppComponent ,
     NavMenuComponent,
     LoanOfficerComponent,
-    CustomerComponent],
+    CustomerComponent,
+    AmortSchedOneComponent,
+    AmortSchedTwoComponent,
+    AmortSchedThreeComponent,
+    PaymentCompareComponent,
+    InterestCompareComponent,
+    RateCalculatorComponent],
    providers:[LoanDataService ],
   bootstrap:[ AppComponent ]
 })
