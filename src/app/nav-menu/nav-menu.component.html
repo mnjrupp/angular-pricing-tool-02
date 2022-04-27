@@ -1,0 +1,57 @@
+<header>
+<nav
+  class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3"
+>
+  <div class="container">
+  <!--  <a class="navbar-brand" [routerLink]="['/']">LSAC Pricing Tool 1.0</a>-->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target=".navbar-collapse"
+      aria-label="Toggle navigation"
+      [attr.aria-expanded]="isExpanded"
+      (click)="toggle()"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div
+      class="navbar-collapse collapse d-sm-inline-flex justify-content-end"
+      [ngClass]="{ show: isExpanded }"
+    >
+      <ul class="nav nav-pill flex-grow">
+        <li
+          class="nav-item"
+          [routerLinkActive]="['link-active']"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <a class="nav-link text-dark " [routerLink]="['/loanofficer']">Loan Officer</a>
+        </li>
+        <li class="nav-item" [routerLinkActive]="['link-active']">
+          <a class="nav-link text-dark" [routerLink]="['/customer']"
+            >Customer</a
+          >
+        </li>
+        <li class="nav-item" [routerLinkActive]="['link-active']">
+          <a class="nav-link text-dark " [routerLink]="['/AmortSchedOne']">Amortization Schedule One</a>
+        </li>
+        <li class="nav-item" [routerLinkActive]="['link-active']">
+        <a class="nav-link text-dark " [routerLink]="['/AmortSchedTwo']">Amortization Schedule Two</a>
+        </li>
+        <li class="nav-item" [routerLinkActive]="['link-active']">
+        <a class="nav-link text-dark " [routerLink]="['/AmortSchedThree']">Amortization Schedule Three</a>
+      </li>
+      <li class="nav-item" [routerLinkActive]="['link-active']">
+      <a class="nav-link text-dark " [routerLink]="['/InterestCompare']">Interest Compare Chart</a>
+    </li>
+    <li class="nav-item" [routerLinkActive]="['link-active']">
+    <a class="nav-link text-dark " [routerLink]="['/PaymentsCompare']">Payments Compare Chart</a>
+  </li>
+  <li class="nav-item" [routerLinkActive]="['link-active']">
+  <a class="nav-link text-dark " [routerLink]="['/RateCalc']">Rate Conversion Calc</a>
+</li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</header>
