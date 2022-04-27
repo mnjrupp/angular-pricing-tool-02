@@ -9,13 +9,12 @@ import {GlobalDataService} from './shared/global-data.service';
 export class AppComponent implements OnInit {
   name = 'Angular ' + VERSION.major;
   isShown;
+
   constructor(private globaldata:GlobalDataService) { }
+
  ngOnInit(){
    this.globaldata.currentToggleMessage.subscribe(msg => this.isShown=msg)
  }
   
 
-  public toggleisShown()
-{
-  //this.isShown = !this.isShown;
-}}
+}
