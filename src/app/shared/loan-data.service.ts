@@ -12,7 +12,7 @@ export class LoanDataService {
 
     strtoday = this.mm + '/' + this.dd + '/' + this.yyyy;
   pricingmodel:PricingModel ={
-    applicationName: '',
+    applicationName: 'Joe Brown',
     phoneNumber: '',
     address: '',
     loanDate:'',
