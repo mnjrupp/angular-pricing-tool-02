@@ -87,7 +87,27 @@ export class LoanDataService {
      {pd:'4B',value:0.0235},
      {pd:'4E',value:0.0245},
      {pd:'4F',value:0.0255},
-     {pd:'5D',value:0.0250}
+     {pd:'5D',value:0.0250},
+     {pd:'5B',value:0.0245},
+     {pd:'5E',value:0.0255},
+     {pd:'5F',value:0.0265},
+     {pd:'6D',value:0.0260},
+     {pd:'6B',value:0.0255},
+     {pd:'6E',value:0.0265},
+     {pd:'6F',value:0.0275},
+     {pd:'7D',value:0.0265},
+     {pd:'7B',value:0.0260},
+     {pd:'7E',value:0.0270},
+     {pd:'7F',value:0.0280},
+     {pd:'8D',value:0.0285},
+     {pd:'8B',value:0.0275},
+     {pd:'8E',value:0.0295},
+     {pd:'8F',value:0.0305},
+     {pd:'9D',value:0.0305},
+     {pd:'9B',value:0.0290},
+     {pd:'9E',value:0.0320},
+     {pd:'9F',value:0.0335},
+
     ]
 
   private cofRes = new BehaviorSubject<PricingModel>(this.pricingmodel);
