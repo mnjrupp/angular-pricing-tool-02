@@ -22,6 +22,7 @@ export class LoanOfficerComponent implements OnInit {
   costoffundsreqObj: CostOfFundsRequest[];
   costoffundsresObj:CostOfFundsResponse[];
   pricing:PricingModel;
+  recommendedRate:number = 0.0;
 
   constructor(private formbuilder:FormBuilder,
     private apiservice:ApiService,

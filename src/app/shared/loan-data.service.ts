@@ -75,6 +75,21 @@ export class LoanDataService {
     PostPatSave3:''
 
   }
+  loanProductArray = [
+    {Product:15,value:0.001},
+    {Product:10,value:0.0005},
+    {Product:20,value:0.0015},
+    {Product:25,value:0.002},
+    {Product:30,value:0.002}]
+
+   loanpdlgdArray = [
+     {pd:'4D',value:0.0240},
+     {pd:'4B',value:0.0235},
+     {pd:'4E',value:0.0245},
+     {pd:'4F',value:0.0255},
+     {pd:'5D',value:0.0250}
+    ]
+
   private cofRes = new BehaviorSubject<PricingModel>(this.pricingmodel);
   cast = this.cofRes.asObservable();
   constructor() {
