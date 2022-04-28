@@ -393,12 +393,16 @@ export class LoanOfficerComponent implements OnInit {
     {
       var uy = new Intl.NumberFormat('en-US',{style: 'currency', currency:'USD'}).format(event.target.value);
       this.formValue.patchValue({loanAmnt:uy});
+      this.pricing.loanAmnt=uy;
+      this.loanservice.editModel(this.pricing);
      
     }
     formatCurrency_FeeAmnt(event)
     {
       var uy = new Intl.NumberFormat('en-US',{style: 'currency', currency:'USD'}).format(event.target.value);
       this.formValue.patchValue({feeAmnt:uy});
+      this.pricing.feeAmnt=uy;
+      
      
     }
     formatCurrency(value){

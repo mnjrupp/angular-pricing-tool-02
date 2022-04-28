@@ -5,6 +5,7 @@ import {PricingModel} from '../pricing-model';
 @Injectable()
 export class LoanDataService {
   LoanMoney = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(150000);
+  feeMoney = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(0);
   today = new Date();
   dd = String(this.today.getDate()).padStart(2, '0');
   mm = String(this.today.getMonth() + 1).padStart(2, '0'); //January is 0!
@@ -29,7 +30,7 @@ export class LoanDataService {
     pd: 4,
     ballonyrs: 1,
     locateral: 1,
-    feeAmnt: 0,
+    feeAmnt: this.feeMoney,
     stockAmnt:this.formatCurrency(0),
     lgd: 1,
     ballon: null,

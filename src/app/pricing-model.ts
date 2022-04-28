@@ -16,7 +16,7 @@ export interface PricingModel{
   pd: number;
   ballonyrs:number;
   locateral: number;
-  feeAmnt: number;
+  feeAmnt: string;
   stockAmnt:string;
   lgd: number;
   ballon: number;
