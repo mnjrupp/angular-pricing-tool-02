@@ -359,6 +359,46 @@ export class LoanOfficerComponent implements OnInit {
 
     });
   }
+  buildRecomRate(spread:number,loanAmnt:number,loanProd:number,pd:number,lg:string,payfreq:number){
+   spread+0;
+   var loanfloat=0;
+   var loanProduct = this.loanservice.loanProductArray.filter(x=>x.Product===loanProd);
+   var paymentfrequency=0;
+   if(loanAmnt>=2000000){
+     loanfloat=-0.002;
+   }else if(loanAmnt>=1000000){
+     loanfloat=-0.003;
+   }else if(loanAmnt>=500000){
+     loanfloat=-0.0015;
+   }
+
+   if(payfreq<=2){
+     paymentfrequency=0.001;
+   }
+   return spread+loanfloat+loanProduct[0].value+paymentfrequency;
+  }
+
+  buildPDLGDStr(pd:number,lgd:number){
+    var lgdStr;
+    if(pd===null){pd=5}
+    switch(lgd){
+      case 1:
+        lgdStr='B'
+        break;
+      case 2:
+        lgdStr='D'
+        break;
+      case 3:
+        lgdStr='E'
+        break;
+      case 4:
+        lgdStr='F'
+      break;
+      default:
+       lgdStr='B'
+    }
+    return pd.toString().concat(lgdStr);
+  }
   updateOfficerData(value){
     //console.log(event.value);
     var foundOfficer:LoanOfficer = this.officers.filter(x=> x.name===value);
