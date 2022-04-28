@@ -354,10 +354,13 @@ export class LoanOfficerComponent implements OnInit {
   }
 
   buildPricingModel(value:CostOfFundsResponse[]){
-    this.formValue.patchValue({COF1:this.formatPercent(value[0].Data[0].Spread),
+    this.formValue.patchValue(
+      {COF1:this.formatPercent(value[0].Data[0].Spread),
       COF2:this.formatPercent(value[0].Data[1].Spread),
       COF3:this.formatPercent(value[0].Data[2].Spread),
-
+      RecomRate1:this.buildRecomRate(value[0].Data[0].Spread,
+        this.unformatNumber(this.pricing.loanAmnt),
+        this.pricing.loanProd1,this.pricing.pd,this.pricing.lgd,this.pricing.paymentfreq)
     });
   }
   buildRecomRate(spread:number,loanAmnt:number,loanProd:number,pd:number,lgd:number,payfreq:number){
