@@ -53,4 +53,7 @@ export interface PricingModel{
   COF1:string;
   COF2:string;
   COF3:string;
+  PostPat1:string;
+  PostPat2:string;
+  PostPat3:string;
 }

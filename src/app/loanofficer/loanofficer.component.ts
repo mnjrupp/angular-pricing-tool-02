@@ -389,6 +389,12 @@ export class LoanOfficerComponent implements OnInit {
       this.loanservice.editModel(this.pricing);
 
     }
+    updateApplicantDataAmortTypeOne(event){
+      console.log(event.target.value);
+      this.pricing.AmorType1=event.target.value;
+      this.loanservice.editModel(this.pricing);
+
+    }
     formatCurrency_LoanAmnt(event)
     {
       var uy = new Intl.NumberFormat('en-US',{style: 'currency', currency:'USD'}).format(event.target.value);
@@ -402,7 +408,7 @@ export class LoanOfficerComponent implements OnInit {
       var uy = new Intl.NumberFormat('en-US',{style: 'currency', currency:'USD'}).format(event.target.value);
       this.formValue.patchValue({feeAmnt:uy});
       this.pricing.feeAmnt=uy;
-      
+      this.loanservice.editModel(this.pricing);
      
     }
     formatCurrency(value){

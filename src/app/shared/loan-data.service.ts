@@ -66,7 +66,10 @@ export class LoanDataService {
     finalSpread3: this.formatPercent(0.0265),
     COF1:'NA',
     COF2:'NA',
-    COF3:'NA'
+    COF3:'NA',
+    PostPat1:'',
+    PostPat2:'',
+    PostPat3:''
 
   }
   private cofRes = new BehaviorSubject<PricingModel>(this.pricingmodel);
