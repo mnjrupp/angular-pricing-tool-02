@@ -370,6 +370,12 @@ export class LoanOfficerComponent implements OnInit {
         this.pricing.branchaddress=foundOfficer[0].Address;
         this.loanservice.editModel(this.pricing);
     }
+    updateApplicantDataName(event){
+      console.log(event.target.value);
+      this.pricing.applicationName=event.target.value;
+      this.loanservice.editModel(this.pricing);
+
+    }
     formatCurrency_LoanAmnt(event)
     {
       var uy = new Intl.NumberFormat('en-US',{style: 'currency', currency:'USD'}).format(event.target.value);
