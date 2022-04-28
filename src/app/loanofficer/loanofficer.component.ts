@@ -365,6 +365,10 @@ export class LoanOfficerComponent implements OnInit {
       console.log(foundOfficer[0].location);
       this.formValue.patchValue({branchOffice:foundOfficer[0].location,
         branchaddress:foundOfficer[0].Address});
+        this.pricing.loanOfficer=foundOfficer[0].name;
+        this.pricing.branchOffice=foundOfficer[0].location;
+        this.pricing.branchaddress=foundOfficer[0].Address;
+        this.loanservice.editModel(this.pricing);
     }
     formatCurrency_LoanAmnt(event)
     {
