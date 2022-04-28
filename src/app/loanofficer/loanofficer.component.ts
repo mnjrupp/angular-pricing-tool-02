@@ -395,7 +395,7 @@ export class LoanOfficerComponent implements OnInit {
    if(payfreq<=2){
      paymentfrequency=0.001;
    }
-   return spread+loanfloat+loanProduct[0].value+pdlgdfloat[0].value+paymentfrequency;
+   return spread+loanfloat+(loanProduct[0].value)+(pdlgdfloat[0].value)+paymentfrequency;
   }
 
   buildPDLGDStr(pd:number,lgd:number){
