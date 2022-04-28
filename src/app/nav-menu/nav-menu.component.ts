@@ -22,8 +22,13 @@ export class NavMenuComponent implements OnInit {
   ngOnInit() {
     this.globaldata.currentToggleMessage.subscribe();
   }
-  toggleShow(){
+  // The following functions are used to toggle the visability of the 
+  // components
+  toggleShowTrue(){
     this.globaldata.toggleisShown(true)
+  }
+  toggleShowFalse(){
+    this.globaldata.toggleisShown(false)
   }
 
 }
