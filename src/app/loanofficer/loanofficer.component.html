@@ -388,6 +388,7 @@
               aria-label=".form-select-sm example"
               formControlName="TransferOption1"
               id="TransferOption1"
+              (change)="updateApplicantDataTransOptOne($event)"
             >
               <option selected value="OPO">Open Prepayment</option>
               <option value="OLO">1-Yr Lock-Out</option>
@@ -479,6 +480,7 @@
               aria-label=".form-select-sm example"
               formControlName="TransferOption2"
               id="TransferOption2"
+              (change)="updateApplicantDataTransOptTwo($event)"
             >
             <option selected value="OPO">Open Prepayment</option>
             <option value="OLO">1-Yr Lock-Out</option>
@@ -569,6 +571,7 @@
               class="form-select form-select-sm"
               aria-label=".form-select-sm example"
               id="TransferOption3"
+              (change)="updateApplicantDataTransOptThree($event)"
             >
               <option selected value="OPO">Open Prepayment</option>
               <option value="OLO">1-Yr Lock-Out</option>
