@@ -354,13 +354,24 @@ export class LoanOfficerComponent implements OnInit {
   }
 
   buildPricingModel(value:CostOfFundsResponse[]){
+    var recomrate1 = this.formatPercent(this.buildRecomRate(value[0].Data[0].Spread,
+      this.unformatNumber(this.pricing.loanAmnt),
+      this.pricing.loanProd1,this.pricing.pd,this.pricing.lgd,this.pricing.paymentfreq));
+    var recomrate2 = this.formatPercent(this.buildRecomRate(value[0].Data[1].Spread,
+        this.unformatNumber(this.pricing.loanAmnt),
+        this.pricing.loanProd1,this.pricing.pd,this.pricing.lgd,this.pricing.paymentfreq)); 
+    var recomrate3 = this.formatPercent(this.buildRecomRate(value[0].Data[2].Spread,
+          this.unformatNumber(this.pricing.loanAmnt),
+          this.pricing.loanProd1,this.pricing.pd,this.pricing.lgd,this.pricing.paymentfreq));
+
     this.formValue.patchValue(
       {COF1:this.formatPercent(value[0].Data[0].Spread),
       COF2:this.formatPercent(value[0].Data[1].Spread),
       COF3:this.formatPercent(value[0].Data[2].Spread),
-      RecomRate1:this.formatPercent(this.buildRecomRate(value[0].Data[0].Spread,
-        this.unformatNumber(this.pricing.loanAmnt),
-        this.pricing.loanProd1,this.pricing.pd,this.pricing.lgd,this.pricing.paymentfreq))
+      RecomRate1:recomrate1,
+      RecomRate2:recomrate2,
+      RecomRate3:recomrate3
+       
     });
   }
   buildRecomRate(spread:number,loanAmnt:number,loanProd:number,pd:number,lgd:number,payfreq:number){
