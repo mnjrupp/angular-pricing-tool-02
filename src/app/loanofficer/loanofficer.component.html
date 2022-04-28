@@ -39,7 +39,8 @@
             class="form-control form-control-sm"
             formControlName="phoneNumber"
             id="phoneNumber"
-            placeholder="(817)-123-3456"
+            placeholder=""
+            (change)="updateApplicantDataPhone($event)"
           />
         </div>
         <div class="mb-1">
