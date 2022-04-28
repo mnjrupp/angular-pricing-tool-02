@@ -8,6 +8,7 @@ import {CostOfFundsResponse} from '../costoffunds-response-model';
 import {LoanOfficer} from '../loanofficer-model';
 import  dbOfficers from '../../assets/Officers.json';
 import {PricingModel} from '../pricing-model';
+import { LocationUpgradeModule } from '@angular/common/upgrade';
 
 
 @Component({
@@ -359,11 +360,13 @@ export class LoanOfficerComponent implements OnInit {
 
     });
   }
-  buildRecomRate(spread:number,loanAmnt:number,loanProd:number,pd:number,lg:string,payfreq:number){
+  buildRecomRate(spread:number,loanAmnt:number,loanProd:number,pd:number,lgd:number,payfreq:number){
    spread+0;
    var loanfloat=0;
    var loanProduct = this.loanservice.loanProductArray.filter(x=>x.Product===loanProd);
    var paymentfrequency=0;
+   var pdlgdStr = this.buildPDLGDStr(pd,lgd);
+   var pdlgdfloat = this.loanservice.loanpdlgdArray.filter(x=>x.pd===pdlgdStr)
    if(loanAmnt>=2000000){
      loanfloat=-0.002;
    }else if(loanAmnt>=1000000){
@@ -375,7 +378,7 @@ export class LoanOfficerComponent implements OnInit {
    if(payfreq<=2){
      paymentfrequency=0.001;
    }
-   return spread+loanfloat+loanProduct[0].value+paymentfrequency;
+   return spread+loanfloat+loanProduct[0].value+pdlgdfloat[0].value+paymentfrequency;
   }
 
   buildPDLGDStr(pd:number,lgd:number){
