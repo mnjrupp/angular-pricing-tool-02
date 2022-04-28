@@ -443,6 +443,24 @@ export class LoanOfficerComponent implements OnInit {
       this.loanservice.editModel(this.pricing);
 
     }
+    updateApplicantDataTransOptOne(event){
+      console.log(event.target.value);
+      this.pricing.TransferOption1=event.target.value;
+      this.loanservice.editModel(this.pricing);
+
+    }
+    updateApplicantDataTransOptTwo(event){
+      console.log(event.target.value);
+      this.pricing.TransferOption2=event.target.value;
+      this.loanservice.editModel(this.pricing);
+
+    }
+    updateApplicantDataTransOptThree(event){
+      console.log(event.target.value);
+      this.pricing.TransferOption3=event.target.value;
+      this.loanservice.editModel(this.pricing);
+
+    }
     formatCurrency_LoanAmnt(event)
     {
       var uy = new Intl.NumberFormat('en-US',{style: 'currency', currency:'USD'}).format(event.target.value);
