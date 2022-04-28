@@ -67,9 +67,12 @@ export class LoanDataService {
     COF1:'NA',
     COF2:'NA',
     COF3:'NA',
-    PostPat1:'',
-    PostPat2:'',
-    PostPat3:''
+    PostPatRate1:'',
+    PostPatRate2:'',
+    PostPatRate3:'',
+    PostPatSave1:'',
+    PostPatSave2:'',
+    PostPatSave3:''
 
   }
   private cofRes = new BehaviorSubject<PricingModel>(this.pricingmodel);
