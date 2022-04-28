@@ -19,6 +19,7 @@ export class LoanDataService {
     loanOfficer: '',
     branchOffice: '',
     branchaddress: '',
+    branchPhone:'',
     calcDate:  this.strtoday,
     fsaguarantee: 1,
     loantype: 2,

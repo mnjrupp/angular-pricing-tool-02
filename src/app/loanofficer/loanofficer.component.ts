@@ -368,6 +368,7 @@ export class LoanOfficerComponent implements OnInit {
         this.pricing.loanOfficer=foundOfficer[0].name;
         this.pricing.branchOffice=foundOfficer[0].location;
         this.pricing.branchaddress=foundOfficer[0].Address;
+        this.pricing.branchPhone=foundOfficer[0].phone;
         this.loanservice.editModel(this.pricing);
     }
     updateApplicantDataName(event){
@@ -379,6 +380,12 @@ export class LoanOfficerComponent implements OnInit {
     updateApplicantDataPhone(event){
       console.log(event.target.value);
       this.pricing.phoneNumber=event.target.value;
+      this.loanservice.editModel(this.pricing);
+
+    }
+    updateApplicantDataAddress(event){
+      console.log(event.target.value);
+      this.pricing.address=event.target.value;
       this.loanservice.editModel(this.pricing);
 
     }

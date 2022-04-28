@@ -6,6 +6,7 @@ export interface PricingModel{
   loanOfficer:string ;
   branchOffice:string ;
   branchaddress:string ;
+  branchPhone:string;
   calcDate: string;
   fsaguarantee: number;
   loantype: number;
