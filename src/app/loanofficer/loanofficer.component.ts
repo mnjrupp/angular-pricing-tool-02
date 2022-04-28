@@ -395,6 +395,54 @@ export class LoanOfficerComponent implements OnInit {
       this.loanservice.editModel(this.pricing);
 
     }
+    updateApplicantDataAmortTypeTwo(event){
+      console.log(event.target.value);
+      this.pricing.AmorType2=event.target.value;
+      this.loanservice.editModel(this.pricing);
+
+    }
+    updateApplicantDataAmortTypeThree(event){
+      console.log(event.target.value);
+      this.pricing.AmorType3=event.target.value;
+      this.loanservice.editModel(this.pricing);
+
+    }
+    updateApplicantDataAmortTermOne(event){
+      console.log(event.target.value);
+      this.pricing.AmorTerm1=event.target.value;
+      this.loanservice.editModel(this.pricing);
+
+    }
+    updateApplicantDataAmortTermTwo(event){
+      console.log(event.target.value);
+      this.pricing.AmorTerm2=event.target.value;
+      this.loanservice.editModel(this.pricing);
+
+    }
+    updateApplicantDataAmortTermThree(event){
+      console.log(event.target.value);
+      this.pricing.AmorTerm3=event.target.value;
+      this.loanservice.editModel(this.pricing);
+
+    }
+    updateApplicantDataLoanProdOne(event){
+      console.log(event.target.value);
+      this.pricing.loanProd1=event.target.value;
+      this.loanservice.editModel(this.pricing);
+
+    }
+    updateApplicantDataLoanProdTwo(event){
+      console.log(event.target.value);
+      this.pricing.loanProd2=event.target.value;
+      this.loanservice.editModel(this.pricing);
+
+    }
+    updateApplicantDataLoanProdThree(event){
+      console.log(event.target.value);
+      this.pricing.loanProd3=event.target.value;
+      this.loanservice.editModel(this.pricing);
+
+    }
     formatCurrency_LoanAmnt(event)
     {
       var uy = new Intl.NumberFormat('en-US',{style: 'currency', currency:'USD'}).format(event.target.value);

@@ -346,6 +346,7 @@
               aria-label=".form-select-sm example"
               formControlName="AmorTerm1"
               id="AmorTerm1"
+              (change)="updateApplicantDataAmortTermOne($event)"
             >
               <option value=20 selected>20YRS</option>
               <option value=1>1YR</option>
@@ -366,6 +367,7 @@
               aria-label=".form-select-sm example"
               formControlName="loanProd1"
               id="loanProd1"
+              (change)="updateApplicantDataLoanProdOne($event)"
             >
               <option value=20 selected>20YRS FIXED</option>
               <option value=1>1YR FIXED</option>
@@ -423,6 +425,7 @@
               aria-label=".form-select-sm example"
               formControlName="AmorType2"
               id="AmorType2"
+              (change)="updateApplicantDataAmortTypeTwo($event)"
             >
               <option selected>P&I</option>
               <option>P+I</option>
@@ -434,6 +437,7 @@
               aria-label=".form-select-sm example"
               formControlName="AmorTerm2"
               id="AmorTerm2"
+              (change)="updateApplicantDataAmortTermTwo($event)"
             >
               <option value=20 selected>20YRS</option>
               <option value=1>1YR</option>
@@ -454,6 +458,7 @@
               aria-label=".form-select-sm example"
               formControlName="loanProd2"
               id="loanProd2"
+              (change)="updateApplicantDataLoanProdTwo($event)"
             >
               <option value=20 selected>20YRS FIXED</option>
               <option value=1>1YR FIXED</option>
@@ -511,6 +516,7 @@
               aria-label=".form-select-sm example"
               formControlName="AmorType3"
               id="AmorType3"
+              (click)="updateApplicantDataAmortTypeThree($event)"
             >
               <option selected>P&I</option>
               <option>P+I</option>
@@ -522,6 +528,7 @@
               aria-label=".form-select-sm example"
               formControlName="AmorTerm3"
               id="AmorTerm3"
+              (click)="updateApplicantDataAmortTermThree($event)"
             >
               <option value=20 selected>20YRS</option>
               <option value=1>1YR</option>
@@ -542,6 +549,7 @@
               aria-label=".form-select-sm example"
               formControlName="loanProd3"
               id="loanProd3"
+              (change)="updateApplicantDataLoanProdThree($event)"
             >
               <option value=20 selected>20YRS FIXED</option>
               <option value=1>1YR FIXED</option>
