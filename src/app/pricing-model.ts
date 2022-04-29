@@ -40,7 +40,7 @@ export interface PricingModel{
   PayAmnt3: string;
   RecomRate1: string;
   RecomSpread1: string;
-  Variance1: number;
+  Variance1: string;
   finalSpread1: string;
   RecomRate2: string;
   RecomSpread2: string;

@@ -54,7 +54,7 @@ export class LoanDataService {
     PayAmnt3: this.formatCurrency(863.74),
     RecomRate1: this.formatPercent(0.0464),
     RecomSpread1: this.formatPercent(0.0265),
-    Variance1: 0,
+    Variance1: '',
     finalSpread1: this.formatPercent(0.0265),
     RecomRate2: this.formatPercent(0.0464),
     RecomSpread2: this.formatPercent(0.0265),
