@@ -385,9 +385,10 @@ export class LoanOfficerComponent implements OnInit {
       this.pricing.lgd,
       this.pricing.paymentfreq
     );
-    var recomspread1 = (recomrate1 - value[0].Data[0].Spread)+(parseFloat(this.pricing.Variance1));
-    var recomspread2 = (recomrate2 - value[0].Data[1].Spread)+(parseFloat(this.pricing.Variance2));
-    var recomspread3 = (recomrate3 - value[0].Data[2].Spread)+(parseFloat(this.pricing.Variance3));
+    var recomspread1 = (recomrate1 - value[0].Data[0].Spread);
+    var recomspread2 = (recomrate2 - value[0].Data[1].Spread);
+    var recomspread3 = (recomrate3 - value[0].Data[2].Spread);
+     
     console.log('Loan Officer Variance 1 ',this.pricing.Variance1)
     console.log('Recommended Spread 1 ',recomspread1);
     this.formValue.patchValue({
@@ -397,12 +398,12 @@ export class LoanOfficerComponent implements OnInit {
       RecomRate1: this.formatPercent(recomrate1),
       RecomRate2: this.formatPercent(recomrate2),
       RecomRate3: this.formatPercent(recomrate3),
-      RecomSpread1: this.formatPercent(recomrate1 - value[0].Data[0].Spread),
-      RecomSpread2: this.formatPercent(recomrate2 - value[0].Data[1].Spread),
-      RecomSpread3: this.formatPercent(recomrate3 - value[0].Data[2].Spread),
-      finalSpread1:this.formatPercent(recomspread1),
-      finalSpread2:this.formatPercent(recomspread2),
-      finalSpread3:this.formatPercent(recomspread3)
+      RecomSpread1: this.formatPercent(recomspread1),
+      RecomSpread2: this.formatPercent(recomspread2),
+      RecomSpread3: this.formatPercent(recomspread3),
+      finalSpread1:this.formatPercent(recomspread1+(parseFloat(this.pricing.Variance1))),
+      finalSpread2:this.formatPercent(recomspread2+(parseFloat(this.pricing.Variance2))),
+      finalSpread3:this.formatPercent(recomspread3+(parseFloat(this.pricing.Variance3)))
     });
   }
   buildRecomRate(
@@ -621,5 +622,32 @@ export class LoanOfficerComponent implements OnInit {
   unformatNumber(value) {
     //console.log(value.replace(/\$|,/g, ''));
     return value.replace(/\$|,|\%/g, '');
+  }
+  buildPMT(ir:number,np:number,pv:number,fv:number,type:number){
+    /*
+     * ir   - interest rate per month
+     * np   - number of periods (months)
+     * pv   - present value
+     * fv   - future value
+     * type - when the payments are due:
+     *        0: end of the period, e.g. end of month (default)
+     *        1: beginning of period
+     */
+    var pmt, pvif;
+
+    fv || (fv = 0);
+    type || (type = 0);
+
+    if (ir === 0)
+        return -(pv + fv)/np;
+
+    pvif = Math.pow(1 + ir, np);
+    pmt = - ir * (pv * pvif + fv) / (pvif - 1);
+
+    if (type === 1)
+        pmt /= (1 + ir);
+
+    return pmt;
+
   }
 }
