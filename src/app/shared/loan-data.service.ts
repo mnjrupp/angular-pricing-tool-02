@@ -4,7 +4,7 @@ import {PricingModel} from '../pricing-model';
 
 @Injectable()
 export class LoanDataService {
-  LoanMoney = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(150000);
+  LoanMoney = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(0);
   feeMoney = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(0);
   today = new Date();
   dd = String(this.today.getDate()).padStart(2, '0');
@@ -25,7 +25,7 @@ export class LoanDataService {
     fsaguarantee: 1,
     loantype: 2,
     lienpos: 1,
-    loanAmnt: this.LoanMoney,
+    loanAmnt: '',
     paymentfreq: 12,
     pd: 4,
     ballonyrs: 1,

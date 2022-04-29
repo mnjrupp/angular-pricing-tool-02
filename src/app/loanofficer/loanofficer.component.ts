@@ -9,6 +9,7 @@ import { LoanOfficer } from '../loanofficer-model';
 import dbOfficers from '../../assets/Officers.json';
 import { PricingModel } from '../pricing-model';
 import { LocationUpgradeModule } from '@angular/common/upgrade';
+import { NumberFormatStyle } from '@angular/common';
 
 @Component({
   selector: 'app-loanofficer',
@@ -392,7 +393,9 @@ export class LoanOfficerComponent implements OnInit {
     var estIntRate1 = (recomrate1+(parseFloat(this.pricing.Variance1) || 0))
     var estIntRate2 = (recomrate2+(parseFloat(this.pricing.Variance2) || 0))
     var estIntRate3 = (recomrate3+(parseFloat(this.pricing.Variance3) || 0))
-    var payment1 
+    var payment1 = this.buildPMT()
+    var payment2
+    var payment3
      
     //console.log('Loan Officer Variance 1 ',this.pricing.Variance1)
     //console.log('Recommended Spread 1 ',recomspread1);
@@ -631,7 +634,7 @@ export class LoanOfficerComponent implements OnInit {
     //console.log(value.replace(/\$|,/g, ''));
     return value.replace(/\$|,|\%/g, '');
   }
-  buildPMT(ir:number,np:number,pv:number,fv:number,type:number){
+  buildPMT(ir:number, np:number, pv:number,fv:number,type:number){
     /*
      * ir   - interest rate per month
      * np   - number of periods (months)
