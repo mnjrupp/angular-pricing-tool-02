@@ -388,6 +388,11 @@ export class LoanOfficerComponent implements OnInit {
     var recomspread1 = (recomrate1 - value[0].Data[0].Spread);
     var recomspread2 = (recomrate2 - value[0].Data[1].Spread);
     var recomspread3 = (recomrate3 - value[0].Data[2].Spread);
+    
+    var estIntRate1 = (recomrate1+(parseFloat(this.pricing.Variance1)))
+    var estIntRate2 = (recomrate2+(parseFloat(this.pricing.Variance2)))
+    var estIntRate3 = (recomrate3+(parseFloat(this.pricing.Variance3)))
+    var payment1 
      
     console.log('Loan Officer Variance 1 ',this.pricing.Variance1)
     console.log('Recommended Spread 1 ',recomspread1);
