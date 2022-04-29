@@ -386,6 +386,8 @@ export class LoanOfficerComponent implements OnInit {
       this.pricing.paymentfreq
     );
     var recomspread1 = (recomrate1 - value[0].Data[0].Spread)+(parseFloat(this.pricing.Variance1));
+    var recomspread2 = (recomrate2 - value[0].Data[1].Spread)+(parseFloat(this.pricing.Variance2));
+    var recomspread3 = (recomrate3 - value[0].Data[2].Spread)+(parseFloat(this.pricing.Variance3));
     console.log('Loan Officer Variance 1 ',this.pricing.Variance1)
     console.log('Recommended Spread 1 ',recomspread1);
     this.formValue.patchValue({
@@ -398,7 +400,9 @@ export class LoanOfficerComponent implements OnInit {
       RecomSpread1: this.formatPercent(recomrate1 - value[0].Data[0].Spread),
       RecomSpread2: this.formatPercent(recomrate2 - value[0].Data[1].Spread),
       RecomSpread3: this.formatPercent(recomrate3 - value[0].Data[2].Spread),
-      finalSpread1:this.formatPercent(recomspread1)
+      finalSpread1:this.formatPercent(recomspread1),
+      finalSpread2:this.formatPercent(recomspread2),
+      finalSpread3:this.formatPercent(recomspread3)
     });
   }
   buildRecomRate(
