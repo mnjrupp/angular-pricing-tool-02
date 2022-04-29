@@ -1,0 +1,48 @@
+
+Recommended rate:																PD  LGD
+			 { Loan >= 1m : -0.002}		  { Loan Product= 15YRS : 0.001  }	  { 4	D	: 0.0240 }
+    Spread + { Loan >= 2m : -0.003}		+ { Loan Product= 10YRS : 0.0005 }	+ {	4	B   : 0.0235 }			+ { Payment Freq = Annual | Semi-Annual : 0.001 }
+			 { Loan >= 500k: -0.0015}	  { Loan Product= 20YRS : 0.0015 }	  { 4	E	: 0.0245 }
+										  { Loan Product= 25YRS : 0.002	 }	  { 4	F	: 0.0255 }
+										  { Loan Product= 30YRS : 0.002  }	  { 5	D	: 0.0250 }
+										                                      {	5	B   : 0.0245 }
+										                                      { 5	E	: 0.0255 }
+										                                      { 5	F	: 0.0265 }
+																			  { 6	D	: 0.0260 }
+										                                      {	6	B   : 0.0255 }
+										                                      { 6	E	: 0.0265 }
+										                                      { 6	F	: 0.0275 }
+																			  { 7	D	: 0.0265 }
+										                                      {	7	B   : 0.0260 }
+										                                      { 7	E	: 0.0270 }
+										                                      { 7	F	: 0.0280 }
+																			  { 8	D	: 0.0285 }
+										                                      {	8	B   : 0.0275 }
+										                                      { 8	E	: 0.0295 }
+										                                      { 8	F	: 0.0305 }
+																			  { 9	D	: 0.0305 }
+										                                      {	9	B   : 0.0290 }
+										                                      { 9	E	: 0.0320 }
+										                                      { 9	F	: 0.0335 }
+										  
+ COF:
+   Spread
+  
+ Recommended Spread:
+    Recommended rate - Spread
+	
+ Loan Officer Variance: 
+       Manual entry
+	   
+ Final Spread:
+       Recommended Spread + Loan Officer Variance
+	   
+ Estimated Interest Rate:
+	Recommended rate + Loan Officer Variance
+	
+ Approximate Payment Amount:
+	PMT(Estimated Interest Rate/Payments per year,(Loan Years * Payments per year),Loan Amount)
+	+ (Loan Amount * ( Estimated Interest Rate/Payments per year))
+	   
+	   
+  
