@@ -393,7 +393,7 @@ export class LoanOfficerComponent implements OnInit {
     var estIntRate1 = (recomrate1+(parseFloat(this.pricing.Variance1) || 0))
     var estIntRate2 = (recomrate2+(parseFloat(this.pricing.Variance2) || 0))
     var estIntRate3 = (recomrate3+(parseFloat(this.pricing.Variance3) || 0))
-    var payment1 = this.buildPMT()
+    var payment1 = this.build1stPaymnt(estIntRate1,(this.pricing.AmorTerm1*this.pricing.paymentfreq),parseFloat(this.pricing.loanAmnt))
     var payment2
     var payment3
      
@@ -634,7 +634,7 @@ export class LoanOfficerComponent implements OnInit {
     //console.log(value.replace(/\$|,/g, ''));
     return value.replace(/\$|,|\%/g, '');
   }
-  buildPMT(ir:number, np:number, pv:number,fv:number,type:number){
+  buildPMT(ir:number, np:number, pv:number,fv?:number,type?:number){
     /*
      * ir   - interest rate per month
      * np   - number of periods (months)
@@ -659,6 +659,13 @@ export class LoanOfficerComponent implements OnInit {
         pmt /= (1 + ir);
 
     return pmt;
+
+  }
+
+  build1stPaymnt(ir:number,np:number,pv:number){
+    /* PMT(Estimated Interest Rate/Payments per year,(Loan Years * Payments per year),Loan Amount)
+	      + (Loan Amount * ( Estimated Interest Rate/Payments per year)) */
+    return this.buildPMT(ir/this.pricing.paymentfreq,np,pv) + (pv*(ir/np));
 
   }
 }
