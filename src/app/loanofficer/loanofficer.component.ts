@@ -394,8 +394,8 @@ export class LoanOfficerComponent implements OnInit {
     var estIntRate2 = (recomrate2+(parseFloat(this.pricing.Variance2) || 0))
     var estIntRate3 = (recomrate3+(parseFloat(this.pricing.Variance3) || 0))
     var payment1 = this.build1stPaymnt(estIntRate1,(this.pricing.AmorTerm1*this.pricing.paymentfreq),parseFloat(this.pricing.loanAmnt))
-    var payment2
-    var payment3
+    var payment2 = this.build1stPaymnt(estIntRate2,(this.pricing.AmorTerm2*this.pricing.paymentfreq),parseFloat(this.pricing.loanAmnt))
+    var payment3 = this.build1stPaymnt(estIntRate3,(this.pricing.AmorTerm3*this.pricing.paymentfreq),parseFloat(this.pricing.loanAmnt))
      
     //console.log('Loan Officer Variance 1 ',this.pricing.Variance1)
     //console.log('Recommended Spread 1 ',recomspread1);
@@ -414,7 +414,10 @@ export class LoanOfficerComponent implements OnInit {
       finalSpread3:this.formatPercent(recomspread3+(parseFloat(this.pricing.Variance3) || 0)),
       IntRate1:this.formatPercent(estIntRate1),
       IntRate2:this.formatPercent(estIntRate2),
-      IntRate3:this.formatPercent(estIntRate3)
+      IntRate3:this.formatPercent(estIntRate3),
+      PayAmnt1:payment1,
+      PayAmnt2:payment2,
+      PayAmnt3:payment3
     });
   }
   buildRecomRate(
@@ -665,6 +668,10 @@ export class LoanOfficerComponent implements OnInit {
   build1stPaymnt(ir:number,np:number,pv:number){
     /* PMT(Estimated Interest Rate/Payments per year,(Loan Years * Payments per year),Loan Amount)
 	      + (Loan Amount * ( Estimated Interest Rate/Payments per year)) */
+        console.log('Interest Rate buid1stPaymnt ',ir)
+        console.log('payments per year buid1stPaymnt ',this.pricing.paymentfreq)
+        console.log('Loan Amount buid1stPaymnt ',pv)
+        console.log('# payments buid1stPaymnt ',np)
     return this.buildPMT(ir/this.pricing.paymentfreq,np,pv) + (pv*(ir/np));
 
   }
