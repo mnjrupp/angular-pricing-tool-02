@@ -389,13 +389,13 @@ export class LoanOfficerComponent implements OnInit {
     var recomspread2 = (recomrate2 - value[0].Data[1].Spread);
     var recomspread3 = (recomrate3 - value[0].Data[2].Spread);
     
-    var estIntRate1 = (recomrate1+(parseFloat(this.pricing.Variance1)))
-    var estIntRate2 = (recomrate2+(parseFloat(this.pricing.Variance2)))
-    var estIntRate3 = (recomrate3+(parseFloat(this.pricing.Variance3)))
+    var estIntRate1 = (recomrate1+(parseFloat(this.pricing.Variance1) || 0))
+    var estIntRate2 = (recomrate2+(parseFloat(this.pricing.Variance2) || 0))
+    var estIntRate3 = (recomrate3+(parseFloat(this.pricing.Variance3) || 0))
     var payment1 
      
-    console.log('Loan Officer Variance 1 ',this.pricing.Variance1)
-    console.log('Recommended Spread 1 ',recomspread1);
+    //console.log('Loan Officer Variance 1 ',this.pricing.Variance1)
+    //console.log('Recommended Spread 1 ',recomspread1);
     this.formValue.patchValue({
       COF1: this.formatPercent(value[0].Data[0].Spread),
       COF2: this.formatPercent(value[0].Data[1].Spread),
@@ -406,9 +406,12 @@ export class LoanOfficerComponent implements OnInit {
       RecomSpread1: this.formatPercent(recomspread1),
       RecomSpread2: this.formatPercent(recomspread2),
       RecomSpread3: this.formatPercent(recomspread3),
-      finalSpread1:this.formatPercent(recomspread1+(parseFloat(this.pricing.Variance1))),
-      finalSpread2:this.formatPercent(recomspread2+(parseFloat(this.pricing.Variance2))),
-      finalSpread3:this.formatPercent(recomspread3+(parseFloat(this.pricing.Variance3)))
+      finalSpread1:this.formatPercent(recomspread1+(parseFloat(this.pricing.Variance1) || 0)),
+      finalSpread2:this.formatPercent(recomspread2+(parseFloat(this.pricing.Variance2) || 0)),
+      finalSpread3:this.formatPercent(recomspread3+(parseFloat(this.pricing.Variance3) || 0)),
+      IntRate1:this.formatPercent(estIntRate1),
+      IntRate2:this.formatPercent(estIntRate2),
+      IntRate3:this.formatPercent(estIntRate3)
     });
   }
   buildRecomRate(
