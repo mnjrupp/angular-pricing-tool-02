@@ -44,11 +44,11 @@ export interface PricingModel{
   finalSpread1: string;
   RecomRate2: string;
   RecomSpread2: string;
-  Variance2:number;
+  Variance2:string;
   finalSpread2: string;
   RecomRate3: string;
   RecomSpread3: string;
-  Variance3: number;
+  Variance3: string;
   finalSpread3: string;
   COF1:string;
   COF2:string;
