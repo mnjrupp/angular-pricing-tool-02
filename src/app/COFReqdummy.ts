@@ -65,4 +65,4 @@ export const COFs:CostOfFundsRequest[] = [
       BasisPoint: 0,
     },
   },
-]
+];
