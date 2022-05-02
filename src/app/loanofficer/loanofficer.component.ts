@@ -11,7 +11,8 @@ import { PricingModel } from '../pricing-model';
 import { LocationUpgradeModule } from '@angular/common/upgrade';
 import { NumberFormatStyle } from '@angular/common';
 
-import {COFs} from '../COFREQdummy';
+import {COFs} from '../COFReqdummy';
+import {COFResponse} from '../COFRespdummy';
 
 @Component({
   selector: 'app-loanofficer',
@@ -33,72 +34,8 @@ export class LoanOfficerComponent implements OnInit {
     private loanservice: LoanDataService
   ) {
     this.officers = dbOfficers;
-    this.costoffundsreqObj = COFs /*[
-      {
-        correlationId: '',
-        loanNumber: '',
-        loanAmount: 145000,
-        amortizationType: 'P+I',
-        amortizationTypeId: 0,
-        amortizationTermMonths: 28,
-        loanTermMonths: 28,
-        paymentsPerYear: 12,
-        interestOnlyPayments: 0,
-        rateProduct: 'Fixed',
-        optionCategory: 'FYM',
-        optionCategoryId: 0,
-        lockCategory: '30DL',
-        lockCategoryId: 0,
-        RoundingRule: {
-          Type: 'Actual',
-          Precision: 0,
-          BasisPoint: 0,
-        },
-      },
-      {
-        correlationId: '',
-        loanNumber: '',
-        loanAmount: 145000,
-        amortizationType: 'P+I',
-        amortizationTypeId: 0,
-        amortizationTermMonths: 28,
-        loanTermMonths: 28,
-        paymentsPerYear: 12,
-        interestOnlyPayments: 0,
-        rateProduct: 'Fixed',
-        optionCategory: 'FYM',
-        optionCategoryId: 0,
-        lockCategory: '30DL',
-        lockCategoryId: 0,
-        RoundingRule: {
-          Type: 'Actual',
-          Precision: 0,
-          BasisPoint: 0,
-        },
-      },
-      {
-        correlationId: '',
-        loanNumber: '',
-        loanAmount: 145000,
-        amortizationType: 'P+I',
-        amortizationTypeId: 0,
-        amortizationTermMonths: 28,
-        loanTermMonths: 28,
-        paymentsPerYear: 12,
-        interestOnlyPayments: 0,
-        rateProduct: 'Fixed',
-        optionCategory: 'FYM',
-        optionCategoryId: 0,
-        lockCategory: '30DL',
-        lockCategoryId: 0,
-        RoundingRule: {
-          Type: 'Actual',
-          Precision: 0,
-          BasisPoint: 0,
-        },
-      },
-    ];*/
-    this.costoffundsresObj = [
+    this.costoffundsreqObj = COFs;
+    this.costoffundsresObj = COFResponse; /*[
       {
         Success: true,
         Data: [
@@ -222,7 +159,7 @@ export class LoanOfficerComponent implements OnInit {
         ],
         Error: null,
       },
-    ];
+    ];*/
   }
 
   getCOF() {
