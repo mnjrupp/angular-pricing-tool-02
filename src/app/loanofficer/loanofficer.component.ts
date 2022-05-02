@@ -11,7 +11,7 @@ import { PricingModel } from '../pricing-model';
 import { LocationUpgradeModule } from '@angular/common/upgrade';
 import { NumberFormatStyle } from '@angular/common';
 
-//import COFReqs from '../COFREQdummy.js';
+import {COFs} from '../COFREQdummy';
 
 @Component({
   selector: 'app-loanofficer',
@@ -33,7 +33,7 @@ export class LoanOfficerComponent implements OnInit {
     private loanservice: LoanDataService
   ) {
     this.officers = dbOfficers;
-    this.costoffundsreqObj = [
+    this.costoffundsreqObj = COFs /*[
       {
         correlationId: '',
         loanNumber: '',
@@ -97,7 +97,7 @@ export class LoanOfficerComponent implements OnInit {
           BasisPoint: 0,
         },
       },
-    ];
+    ];*/
     this.costoffundsresObj = [
       {
         Success: true,

@@ -1,7 +1,7 @@
 import { CostOfFundsRequest } from './costoffunds-request-model';
 
 
-export CostOfFundsRequest[] COFs = [
+export const COFs:CostOfFundsRequest[] = [
   {
     correlationId: '',
     loanNumber: '',
