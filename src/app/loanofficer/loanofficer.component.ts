@@ -11,6 +11,8 @@ import { PricingModel } from '../pricing-model';
 import { LocationUpgradeModule } from '@angular/common/upgrade';
 import { NumberFormatStyle } from '@angular/common';
 
+//import COFReqs from '../COFREQdummy.js';
+
 @Component({
   selector: 'app-loanofficer',
   templateUrl: './loanofficer.component.html',
