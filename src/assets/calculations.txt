@@ -43,6 +43,16 @@ Recommended rate:																PD  LGD
  Approximate Payment Amount:
 	PMT(Estimated Interest Rate/Payments per year,(Loan Years * Payments per year),Loan Amount)
 	+ (Loan Amount * ( Estimated Interest Rate/Payments per year))
+
+Post-Patronage Rate:
+	if Location = "Agribusiness" Then Estimated Interest Rate - 0.0085
+	else if Final Spread = 0.0247 then Estimated Interest Rate - 0.01
+	else Estimated Interest Rate - (Final Spread / 0.0247) *0.01
+	
+ Post Patronage Savings:
+    if Location = "Agribusiness" Then Loan Amnt * 0.0085
+	Else if Final Spread = 0.0247 then LOan Amnt * 0.01 
+	else Loan Amnt * ((Final Spread/0.0247) * 0.01)
 	   
 	   
   
