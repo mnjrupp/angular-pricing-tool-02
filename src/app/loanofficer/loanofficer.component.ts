@@ -208,9 +208,9 @@ export class LoanOfficerComponent implements OnInit {
     var estIntRate1 = (recomrate1+(parseFloat(this.pricing.Variance1) || 0))
     var estIntRate2 = (recomrate2+(parseFloat(this.pricing.Variance2) || 0))
     var estIntRate3 = (recomrate3+(parseFloat(this.pricing.Variance3) || 0))
-    var payment1 = -1*this.build1stPaymnt(estIntRate1,(this.pricing.AmorTerm1*this.pricing.paymentfreq),this.unformatNumber(this.pricing.loanAmnt))
-    var payment2 = -1*this.build1stPaymnt(estIntRate2,(this.pricing.AmorTerm2*this.pricing.paymentfreq),this.unformatNumber(this.pricing.loanAmnt))
-    var payment3 = -1*this.build1stPaymnt(estIntRate3,(this.pricing.AmorTerm3*this.pricing.paymentfreq),this.unformatNumber(this.pricing.loanAmnt))
+    var payment1 = this.formatCurrency(-1*this.build1stPaymnt(estIntRate1,(this.pricing.AmorTerm1*this.pricing.paymentfreq),this.unformatNumber(this.pricing.loanAmnt)))
+    var payment2 = this.formatCurrency(-1*this.build1stPaymnt(estIntRate2,(this.pricing.AmorTerm2*this.pricing.paymentfreq),this.unformatNumber(this.pricing.loanAmnt)))
+    var payment3 = this.formatCurrency(-1*this.build1stPaymnt(estIntRate3,(this.pricing.AmorTerm3*this.pricing.paymentfreq),this.unformatNumber(this.pricing.loanAmnt)))
      
     //console.log('Loan Officer Variance 1 ',this.pricing.Variance1)
     //console.log('Recommended Spread 1 ',recomspread1);
@@ -230,10 +230,20 @@ export class LoanOfficerComponent implements OnInit {
       IntRate1:this.formatPercent(estIntRate1),
       IntRate2:this.formatPercent(estIntRate2),
       IntRate3:this.formatPercent(estIntRate3),
-      PayAmnt1:this.formatCurrency(payment1),
-      PayAmnt2:this.formatCurrency(payment2),
-      PayAmnt3:this.formatCurrency(payment3)
+      PayAmnt1:payment1,
+      PayAmnt2:payment2,
+      PayAmnt3:payment3
     });
+
+    this.pricing.PayAmnt1 = payment1;
+    this.pricing.PayAmnt2 = payment2;
+    this.pricing.PayAmnt3 = payment3;
+    this.pricing.IntRate1 = this.formatPercent(estIntRate1);
+    this.pricing.IntRate2 = this.formatPercent(estIntRate2);
+    this.pricing.IntRate3 = this.formatPercent(estIntRate3);
+
+    this.loanservice.editModel(this.pricing);
+   
   }
   buildRecomRate(
     spread: number,
