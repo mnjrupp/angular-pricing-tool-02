@@ -242,6 +242,21 @@ export class LoanOfficerComponent implements OnInit {
     this.pricing.IntRate2 = this.formatPercent(estIntRate2);
     this.pricing.IntRate3 = this.formatPercent(estIntRate3);
 
+    this.pricing.PostPatRate1 = this.formatPercent(
+      this.buildPatrRate(
+        this.pricing.branchOffice, estIntRate1,
+      (recomspread1+(parseFloat(this.pricing.Variance1) || 0)) ));
+
+    this.pricing.PostPatRate2 = this.formatPercent(
+        this.buildPatrRate(
+          this.pricing.branchOffice, estIntRate2,
+        (recomspread2+(parseFloat(this.pricing.Variance2) || 0)) ));
+
+    this.pricing.PostPatRate3 = this.formatPercent(
+          this.buildPatrRate(
+            this.pricing.branchOffice, estIntRate3,
+          (recomspread3+(parseFloat(this.pricing.Variance3) || 0)) ))
+
     this.loanservice.editModel(this.pricing);
    
   }
