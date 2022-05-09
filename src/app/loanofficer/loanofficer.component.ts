@@ -467,6 +467,33 @@ export class LoanOfficerComponent implements OnInit {
     //console.log(value.replace(/\$|,/g, ''));
     return value.replace(/\$|,|\%/g, '');
   }
+  buildPatrRate(location:string,ir:number,fs:number){
+   /*
+     location - Branch 
+     ir       - Est Interest Rate
+     fs       - Final Spread
+      */
+     var ppRate = ir;
+      if(location =="Agribusiness"){
+        ppRate = ir - 0.0085;
+      } else if(fs == 0.0247){
+         ppRate = ir - 0.01
+      }else{
+        ppRate = ir - ((fs/0.0247) *0.01)
+      }
+      return ppRate;
+  }
+
+  buildPatrSavings(location:string,ir:number,fs:number){
+
+    /*
+     location - Branch 
+     ir       - Est Interest Rate
+     fs       - Final Spread
+      */
+
+
+  }
   buildPMT(ir:number, np:number, pv:number,fv?:number,type?:number){
     /*
      * ir   - interest rate per month
