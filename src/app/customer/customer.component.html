@@ -235,6 +235,32 @@
 <div class="row align-items-start">
   <h5 class="d-flex justify-content-left">Historical Patronage</h5>
 <hr>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">FISCAL YEAR</th>
+      <th scope="col">PATRONAGE DECLARATION</th>
+      <th scope="col">RETURN AS A % OF TOTAL EARNINGS</th>
+      <th scope="col">CUSTOMER-OWNER AVERAGE RATE REDUCED</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let patrons of patronage">
+      <td>
+        {{patrons.year}}
+      </td>
+      <td>
+        {{patrons.amount}}
+      </td>
+      <td>
+        {{patrons.percent}}
+      </td>
+      <td>
+        {{patrons.avgRate}}
+      </td>
+    </tr>
+  </tbody>
+</table>
 </div>
 <br><br>
 
