@@ -484,14 +484,24 @@ export class LoanOfficerComponent implements OnInit {
       return ppRate;
   }
 
-  buildPatrSavings(location:string,ir:number,fs:number){
+  buildPatrSavings(location:string,loanAmnt:number,fs:number){
 
     /*
      location - Branch 
-     ir       - Est Interest Rate
+     loanAmnt - Loan Amount
      fs       - Final Spread
       */
 
+     var ppSavings = 0;
+     if(location =="Agribusiness"){
+        ppSavings = loanAmnt * 0.0085;
+
+     } else if(fs==0.0247){
+        ppSavings = loanAmnt * 0.01
+     }else{
+       ppSavings = loanAmnt * ((fs/0.0247) * 0.01)
+     }
+     return ppSavings;
 
   }
   buildPMT(ir:number, np:number, pv:number,fv?:number,type?:number){
