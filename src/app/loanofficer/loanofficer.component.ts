@@ -208,7 +208,7 @@ export class LoanOfficerComponent implements OnInit {
     var estIntRate1 = (recomrate1+(parseFloat(this.pricing.Variance1) || 0))
     var estIntRate2 = (recomrate2+(parseFloat(this.pricing.Variance2) || 0))
     var estIntRate3 = (recomrate3+(parseFloat(this.pricing.Variance3) || 0))
-    var payment1 = this.build1stPaymnt(estIntRate1,(this.pricing.AmorTerm1*this.pricing.paymentfreq),this.unformatNumber(this.pricing.loanAmnt))
+    var payment1 = -1*this.build1stPaymnt(estIntRate1,(this.pricing.AmorTerm1*this.pricing.paymentfreq),this.unformatNumber(this.pricing.loanAmnt))
     var payment2 = this.build1stPaymnt(estIntRate2,(this.pricing.AmorTerm2*this.pricing.paymentfreq),this.unformatNumber(this.pricing.loanAmnt))
     var payment3 = this.build1stPaymnt(estIntRate3,(this.pricing.AmorTerm3*this.pricing.paymentfreq),this.unformatNumber(this.pricing.loanAmnt))
      
@@ -230,9 +230,9 @@ export class LoanOfficerComponent implements OnInit {
       IntRate1:this.formatPercent(estIntRate1),
       IntRate2:this.formatPercent(estIntRate2),
       IntRate3:this.formatPercent(estIntRate3),
-      PayAmnt1:payment1,
-      PayAmnt2:payment2,
-      PayAmnt3:payment3
+      PayAmnt1:this.formatCurrency(payment1),
+      PayAmnt2:this.formatCurrency(payment2),
+      PayAmnt3:this.formatCurrency(payment3)
     });
   }
   buildRecomRate(
@@ -386,6 +386,11 @@ export class LoanOfficerComponent implements OnInit {
   updateApplicantDataTransOptThree(event) {
     console.log(event.target.value);
     this.pricing.TransferOption3 = event.target.value;
+    this.loanservice.editModel(this.pricing);
+  }
+  updatePayFreq(event){
+    console.log(event.target.value);
+    this.pricing.paymentfreq = event.target.value;
     this.loanservice.editModel(this.pricing);
   }
   formatCurrency_LoanAmnt(event) {

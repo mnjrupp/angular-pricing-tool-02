@@ -202,6 +202,7 @@
             aria-label=".form-select-sm example"
             formControlName="paymentfreq"
             id="paymentfreq"
+            (change)="updatePayFreq($event)"
           >
             <option value=12 selected>Monthly</option>
             <option value=4>Quarterly</option>
