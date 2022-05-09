@@ -257,6 +257,23 @@ export class LoanOfficerComponent implements OnInit {
             this.pricing.branchOffice, estIntRate3,
           (recomspread3+(parseFloat(this.pricing.Variance3) || 0)) ))
 
+    this.pricing.PostPatSave1 = this.formatCurrency(
+      this.buildPatrSavings(this.pricing.branchOffice,
+        this.unformatNumber(this.pricing.loanAmnt),
+        (recomspread1+(parseFloat(this.pricing.Variance1) || 0)) ));
+
+    this.loanservice.editModel(this.pricing);
+
+    this.pricing.PostPatSave2 = this.formatCurrency(
+      this.buildPatrSavings(this.pricing.branchOffice,
+        this.unformatNumber(this.pricing.loanAmnt),
+        (recomspread2+(parseFloat(this.pricing.Variance2) || 0)) ));
+
+    this.pricing.PostPatSave3 = this.formatCurrency(
+          this.buildPatrSavings(this.pricing.branchOffice,
+            this.unformatNumber(this.pricing.loanAmnt),
+            (recomspread3+(parseFloat(this.pricing.Variance3) || 0)) ));
+    
     this.loanservice.editModel(this.pricing);
    
   }
