@@ -238,6 +238,9 @@ export class LoanOfficerComponent implements OnInit {
     this.pricing.PayAmnt1 = payment1;
     this.pricing.PayAmnt2 = payment2;
     this.pricing.PayAmnt3 = payment3;
+    this.pricing.RecomSpread1 = this.formatPercent(recomspread1);
+    this.pricing.RecomSpread2 = this.formatPercent(recomspread2);
+    this.pricing.RecomSpread3 = this.formatPercent(recomspread3);
     this.pricing.IntRate1 = this.formatPercent(estIntRate1);
     this.pricing.IntRate2 = this.formatPercent(estIntRate2);
     this.pricing.IntRate3 = this.formatPercent(estIntRate3);
