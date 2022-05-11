@@ -298,7 +298,9 @@ export class LoanOfficerComponent implements OnInit {
       (x) => x.Product === loanProd
     );
     var paymentfrequency = 0;
-    var premium = 0;
+    var premium = this.loanservice.loanPremiumArray.filter(
+      (x)=> x.prodamort===(loanProd+amort)
+    );
     var pdlgdStr = this.buildPDLGDStr(pd, lgd);
     var pdlgdfloat = this.loanservice.loanpdlgdArray.filter(
       (x) => x.pd === pdlgdStr
@@ -319,6 +321,7 @@ export class LoanOfficerComponent implements OnInit {
       loanfloat +
       loanProduct[0].value +
       pdlgdfloat[0].value +
+      premium[0].value +
       paymentfrequency
     );
   }
