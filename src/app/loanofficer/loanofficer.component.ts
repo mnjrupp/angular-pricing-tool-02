@@ -292,12 +292,13 @@ export class LoanOfficerComponent implements OnInit {
     payfreq: number,
     amort:number
   ) {
-    spread + 0;
+         spread + 0;
     var loanfloat = 0;
     var loanProduct = this.loanservice.loanProductArray.filter(
       (x) => x.Product === loanProd
     );
     var paymentfrequency = 0;
+    var premium = 0;
     var pdlgdStr = this.buildPDLGDStr(pd, lgd);
     var pdlgdfloat = this.loanservice.loanpdlgdArray.filter(
       (x) => x.pd === pdlgdStr

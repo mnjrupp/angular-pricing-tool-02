@@ -110,6 +110,20 @@ export class LoanDataService {
 
     ]
 
+    loanPremiumArray = [
+      {prodamort:2,value:0.0},
+      {prodamort:4,value:0.0},
+      {prodamort:6,value:0.0},
+      {prodamort:8,value:0.0},
+      {prodamort:10,value:0.0},
+      {prodamort:14,value:0.0},
+      {prodamort:20,value:0.0005},
+      {prodamort:30,value:0.0010},
+      {prodamort:40,value:0.0015},
+      {prodamort:50,value:0.0020},
+      {prodamort:60,value:0.0020}
+    ]
+
   private cofRes = new BehaviorSubject<PricingModel>(this.pricingmodel);
   cast = this.cofRes.asObservable();
   constructor() {
