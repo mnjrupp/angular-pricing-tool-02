@@ -481,8 +481,12 @@ export class LoanOfficerComponent implements OnInit {
   }
   formatPercent_var1(event) {
     this.pricing.Variance1=event.target.value;
+    this.pricing.finalSpread1 = this.formatPercent((this.unformatNumber(this.pricing.RecomSpread1)/100)+(parseFloat(this.pricing.Variance1)));
+    console.log('Final Spread 1 ',this.pricing.finalSpread1);
     this.formValue.patchValue({
       Variance1: this.formatPercent(event.target.value),
+      finalSpread1:this.pricing.finalSpread1
+      
      
     });
     
@@ -490,18 +494,20 @@ export class LoanOfficerComponent implements OnInit {
   }
   formatPercent_var2(event) {
     this.pricing.Variance2=event.target.value;
+    this.pricing.finalSpread2 = this.formatPercent((this.unformatNumber(this.pricing.RecomSpread2)/100)+(parseFloat(this.pricing.Variance2)));
     this.formValue.patchValue({
       Variance2: this.formatPercent(event.target.value),
-     
+      finalSpread2:this.pricing.finalSpread2
     });
     
     this.loanservice.editModel(this.pricing);
   }
   formatPercent_var3(event) {
     this.pricing.Variance3=event.target.value;
+    this.pricing.finalSpread3 = this.formatPercent((this.unformatNumber(this.pricing.RecomSpread3)/100)+(parseFloat(this.pricing.Variance3)));
     this.formValue.patchValue({
       Variance3: this.formatPercent(event.target.value),
-     
+      finalSpread3:this.pricing.finalSpread3
     });
     
     this.loanservice.editModel(this.pricing);
