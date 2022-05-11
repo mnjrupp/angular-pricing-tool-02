@@ -482,7 +482,7 @@ export class LoanOfficerComponent implements OnInit {
   formatPercent_var1(event) {
     this.pricing.Variance1=event.target.value;
     this.pricing.finalSpread1 = this.formatPercent((this.unformatNumber(this.pricing.RecomSpread1)/100)+(parseFloat(this.pricing.Variance1)));
-    console.log('Final Spread 1 ',this.pricing.finalSpread1);
+    //console.log('Final Spread 1 ',this.pricing.finalSpread1);
     this.formValue.patchValue({
       Variance1: this.formatPercent(event.target.value),
       finalSpread1:this.pricing.finalSpread1
