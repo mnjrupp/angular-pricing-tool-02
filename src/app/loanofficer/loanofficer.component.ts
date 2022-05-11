@@ -183,7 +183,8 @@ export class LoanOfficerComponent implements OnInit {
       this.pricing.loanProd1,
       this.pricing.pd,
       this.pricing.lgd,
-      this.pricing.paymentfreq
+      this.pricing.paymentfreq,
+      this.pricing.AmorTerm1
     );
     var recomrate2 = this.buildRecomRate(
       value[0].Data[1].Spread,
@@ -191,7 +192,8 @@ export class LoanOfficerComponent implements OnInit {
       this.pricing.loanProd1,
       this.pricing.pd,
       this.pricing.lgd,
-      this.pricing.paymentfreq
+      this.pricing.paymentfreq,
+      this.pricing.AmorTerm2
     );
     var recomrate3 = this.buildRecomRate(
       value[0].Data[2].Spread,
@@ -199,7 +201,8 @@ export class LoanOfficerComponent implements OnInit {
       this.pricing.loanProd1,
       this.pricing.pd,
       this.pricing.lgd,
-      this.pricing.paymentfreq
+      this.pricing.paymentfreq,
+      this.pricing.AmorTerm3
     );
     var recomspread1 = (recomrate1 - value[0].Data[0].Spread);
     var recomspread2 = (recomrate2 - value[0].Data[1].Spread);
@@ -286,7 +289,8 @@ export class LoanOfficerComponent implements OnInit {
     loanProd: number,
     pd: number,
     lgd: number,
-    payfreq: number
+    payfreq: number,
+    amort:number
   ) {
     spread + 0;
     var loanfloat = 0;
