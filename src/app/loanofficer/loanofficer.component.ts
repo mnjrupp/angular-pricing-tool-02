@@ -42,10 +42,10 @@ export class LoanOfficerComponent implements OnInit {
     // TODO: implemet the CostOfFunds from FCBT
     var copyformValue: PricingModel;
     copyformValue = this.formValue.value;
-    console.log(copyformValue);
-    console.log(this.unformatNumber(copyformValue.IntRate1));
+   // console.log(copyformValue);
+   // console.log(this.unformatNumber(copyformValue.IntRate1));
     //console.log(this.costoffundsreqObj[2].amortizationTermMonths);
-    console.log(this.buildCOF(copyformValue));
+   // console.log(this.buildCOF(copyformValue));
     this.apiservice.postCostofFunds(this.buildCOF(copyformValue)).subscribe(
       (data) => {
         console.log('data returned ', data);
