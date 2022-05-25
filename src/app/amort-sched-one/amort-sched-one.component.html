@@ -84,12 +84,12 @@
   </div>
   <div class="row justify-content-md-center border">
     <div class="col-4 border p-1">
-      <div class="border p-1 bg-secondary bg-gradient text-white">
+      <div class="p-1 bg-secondary bg-gradient text-white">
         <h6 class="text-center">Loan Details</h6>
       </div>
-      <div class="row border">
+      <div class="row">
         <div class="col-sm-6">
-          <div class="justify-content-right">
+          <div class="justify-content-right p-1">
             <small class="text-muted">Loan Amount:</small>
           </div>
         </div>
@@ -99,96 +99,98 @@
           </div>
         </div>
       </div>
-      <div class="row border">
-      <div class="col-sm-6">
-        <div class="justify-content-right">
-          <small class="text-muted">Annual Interest Rate:</small>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="justify-content-right">
+            <small class="text-muted">Annual Interest Rate:</small>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="mb-1 p-1 border bd-grey-400" style="height:35px">
+            <small class="text-muted">{{ pricing.IntRate1 }}</small>
+          </div>
         </div>
       </div>
-      <div class="col-sm-6">
-        <div class="mb-1 p-1 border bd-grey-400" style="height:35px">
-          <small class="text-muted">{{ pricing.IntRate1}}</small>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="justify-content-right">
+            <small class="text-muted">Loan Period in Years</small>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="mb-1 p-1 border bd-grey-400" style="height:35px">
+            <small class="text-muted">{{ pricing.loanProd1 }}</small>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="row border">
-    <div class="col-sm-6">
-      <div class="justify-content-right">
-        <small class="text-muted">Loan Period in Years</small>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="justify-content-right">
+            <small class="text-muted">Number of Payments/Year</small>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="p-1 border bd-grey-400" style="height:35px">
+            <small class="text-muted">{{ pricing.paymentfreq }}</small>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="col-sm-6">
-      <div class="mb-1 p-1 border bd-grey-400" style="height:35px">
-        <small class="text-muted">{{ pricing.loanProd1}}</small>
-      </div>
-    </div>
-  </div>
-  <div class="row border">
-  <div class="col-sm-6">
-    <div class="justify-content-right">
-      <small class="text-muted">Number of Payments/Year</small>
-    </div>
-  </div>
-  <div class="col-sm-6">
-    <div class="mb-1 p-1 border bd-grey-400" style="height:35px">
-      <small class="text-muted">{{ pricing.paymentfreq}}</small>
-    </div>
-  </div>
-</div>
     </div>
     <div class="col-1"></div>
     <div class="col-4 border p-1">
       <div class="border p-1 bg-secondary bg-gradient text-white">
         <h6 class="text-center">Loan Summary</h6>
       </div>
-      <div class="row border">
-      <div class="col-sm-6">
-        <div class="justify-content-right">
-          <small class="text-muted">Scheduled Payment:</small>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="justify-content-right">
+            <small class="text-muted">Scheduled Payment:</small>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="mb-1 p-1 border bd-grey-400" style="height:35px">
+            <small class="text-muted">{{ pricing.PayAmnt1 }}</small>
+          </div>
         </div>
       </div>
-      <div class="col-sm-6">
-        <div class="mb-1 p-1 border bd-grey-400" style="height:35px">
-          <small class="text-muted">{{ pricing.PayAmnt1 }}</small>
+      <div class="row ">
+        <div class="col-sm-6">
+          <div class="justify-content-right">
+            <small class="text-muted">Scheduled # of Payments</small>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="mb-1 p-1 border bd-grey-400" style="height:35px">
+            <small class="text-muted">{{
+              pricing.loanProd1 * pricing.paymentfreq
+            }}</small>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="row border">
-    <div class="col-sm-6">
-      <div class="justify-content-right">
-        <small class="text-muted">Scheduled # of Payments</small>
+      <div class="row ">
+        <div class="col-sm-6">
+          <div class="justify-content-right">
+            <small class="text-muted">Total Interest</small>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="mb-1 p-1 border bd-grey-400" style="height:35px">
+            <small class="text-muted">{{ pricing.loanProd1 }}</small>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="col-sm-6">
-      <div class="mb-1 p-1 border bd-grey-400" style="height:35px">
-        <small class="text-muted">{{ pricing.loanProd1 * pricing.paymentfreq}}</small>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="justify-content-right">
+            <small class="text-muted">Estimated Start Date of Loan</small>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="mb-1 p-1 border bd-grey-400" style="height:35px">
+            <small class="text-muted">{{ pricing.loanDate }}</small>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-  <div class="row border">
-  <div class="col-sm-6">
-    <div class="justify-content-right">
-      <small class="text-muted">Total Interest</small>
-    </div>
-  </div>
-  <div class="col-sm-6">
-    <div class="mb-1 p-1 border bd-grey-400" style="height:35px">
-      <small class="text-muted">{{ pricing.loanProd1}}</small>
-    </div>
-  </div>
-</div>
-<div class="row border">
-<div class="col-sm-6">
-  <div class="justify-content-right">
-    <small class="text-muted">Estimated Start Date of Loan</small>
-  </div>
-</div>
-<div class="col-sm-6">
-  <div class="mb-1 p-1 border bd-grey-400" style="height:35px">
-    <small class="text-muted">{{ pricing.loanDate}}</small>
-  </div>
-</div>
-</div>
     </div>
   </div>
 
