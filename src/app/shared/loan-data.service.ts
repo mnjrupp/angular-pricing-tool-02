@@ -1,6 +1,8 @@
+import { visitValue } from '@angular/compiler/src/util';
 import { Injectable } from '@angular/core';
 import {BehaviorSubject} from 'rxjs';
 import {PricingModel} from '../pricing-model';
+import moment from 'moment';
 
 @Injectable()
 export class LoanDataService {
@@ -16,7 +18,7 @@ export class LoanDataService {
     applicationName: 'Joe Brown',
     phoneNumber: '',
     address: '',
-    loanDate:'',
+    loanDate:this.getLoanStartDate(this.strtoday).toString(),
     loanOfficer: '',
     branchOffice: '',
     branchaddress: '',
@@ -141,6 +143,13 @@ export class LoanDataService {
   formatPercent(value){
     var uy = new Intl.NumberFormat('en-US',{style: 'percent', maximumFractionDigits: 2}).format(value);
     return uy;
+  }
+  getLoanStartDate(value){
+    var dString = moment(value);
+
+    //console.log('getLoanStartDate ', value)
+    console.log('getLoanStartDate ', moment(dString).add(30,'days') )
+    return moment(dString).add(30,'days').format("MM/DD/yyyy");
   }
 
 }
