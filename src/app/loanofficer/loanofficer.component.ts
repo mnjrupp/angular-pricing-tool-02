@@ -442,10 +442,10 @@ export class LoanOfficerComponent implements OnInit {
   updateApplicantDataLoanProdOne(event) {
     console.log(event.target.value);
     this.pricing.loanProd1 = event.target.value;
-    this.pricing.TotalInt1 = this.updateTotalInterest(this.unformatNumber(this.pricing.loanAmnt),
+    /*this.pricing.TotalInt1 = this.updateTotalInterest(this.unformatNumber(this.pricing.loanAmnt),
                                                       this.unformatNumber(this.pricing.IntRate1),
                                                       this.pricing.loanProd1,
-                                                      this.pricing.loanDate);
+                                                      this.pricing.loanDate);*/
     this.loanservice.editModel(this.pricing);
   }
   updateApplicantDataLoanProdTwo(event) {
