@@ -14,7 +14,7 @@ export class AmortSchedOneComponent implements OnInit {
     {
       paymentnum: '',
       payDate: '',
-      balance: 0,
+      balance: '',
       payment: '',
       principal: '',
       interest: '',
@@ -48,7 +48,7 @@ export class AmortSchedOneComponent implements OnInit {
       {
         paymentnum: '',
         payDate: '',
-        balance: 0,
+        balance: '',
         payment: '',
         principal: '',
         interest: '',
@@ -72,7 +72,7 @@ export class AmortSchedOneComponent implements OnInit {
         mPayments.push({
           paymentnum: (i + 1).toString(),
           payDate: PayDate,
-          balance: Balance,
+          balance: this.loanservice.formatCurrency(Balance),
           payment: displayPay,
           principal: Principal,
           interest: Interest,
