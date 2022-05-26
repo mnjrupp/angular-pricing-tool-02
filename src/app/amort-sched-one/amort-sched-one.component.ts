@@ -83,7 +83,7 @@ export class AmortSchedOneComponent implements OnInit {
         console.log('RecomRate ',RecomRate)
 
         Balance =
-          Balance - (schedPay - Balance * (RecomRate / data.paymentfreq));
+          Balance - ((Balance * (RecomRate / data.paymentfreq))-schedPay );
       }
     }
 
