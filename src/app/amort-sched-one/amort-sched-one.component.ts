@@ -1,46 +1,92 @@
 import { Component, OnInit } from '@angular/core';
-import {LoanDataService} from '../shared/loan-data.service';
-import {PricingModel} from '../pricing-model';
+import { LoanDataService } from '../shared/loan-data.service';
+import { PricingModel } from '../pricing-model';
+import moment from 'moment';
 
 @Component({
   selector: 'app-amort-sched-one',
   templateUrl: './amort-sched-one.component.html',
-  styleUrls: ['./amort-sched-one.component.css']
+  styleUrls: ['./amort-sched-one.component.css'],
 })
 export class AmortSchedOneComponent implements OnInit {
-  pricing:PricingModel;
+  pricing: PricingModel;
   payments = [
-    {paymentnum:0,payDate:new Date(),balance:0,payment:0.0,principal:0.0,interest:0.0,endbalance:0.0,cumulativeint:0.0}
-  ]
+    {
+      paymentnum: '',
+      payDate: '',
+      balance: 0,
+      payment: '',
+      principal: '',
+      interest: '',
+      endbalance: '',
+      cumulativeint: '',
+    },
+  ];
 
-  constructor(private loanservice:LoanDataService) {
-
-   }
+  constructor(private loanservice: LoanDataService) {}
 
   ngOnInit() {
-    this.loanservice.cast.subscribe(data=> this.pricing = data);
+    this.loanservice.cast.subscribe((data) => {
+      this.pricing = data;
+      this.payments = this.buildpayments(this.pricing);
+    });
   }
 
-  buildpayments(data:PricingModel){
-    var TotalPayments  = data.loanProd1*data.paymentfreq;
-    var Balance        = Number(data.loanAmnt);
-    var schedPay       = data.PayAmnt1;
-    var RecomRate      = data.RecomRate1;
-    var PayDate        =  new Date(data.loanDate);
-    var Principal      = 0.0;
-    var Interest       = 0.0;
-    var EndBalance     = 0.0;
-    var CumInterest    = 0.0;
+  buildpayments(data: PricingModel) {
+    var TotalPayments = data.loanProd1 * data.paymentfreq;
+    var Balance = Number(this.loanservice.unformatNumber(data.loanAmnt));
+    var schedPay = Number(this.loanservice.unformatNumber(data.PayAmnt1));
+    var displayPay = this.loanservice.formatCurrency(schedPay);
+    var RecomRate = Number(this.loanservice.unformatNumber(data.RecomRate1));
+    var PayDate = moment(data.loanDate).format('MM/DD/YYYY');
+    var Principal = '';
+    var Interest = '';
+    var EndBalance = '';
+    var CumInterest = 0.0;
+    var displayCum = '';
+    var mPayments = [
+      {
+        paymentnum: '',
+        payDate: '',
+        balance: 0,
+        payment: '',
+        principal: '',
+        interest: '',
+        endbalance: '',
+        cumulativeint: '',
+      },
+    ];
+    if (TotalPayments > 0) {
+      for (var i = 0; i < TotalPayments; i++) {
+        Interest = this.loanservice.formatPercent(
+          Balance * (RecomRate / data.paymentfreq)
+        );
+        Principal = this.loanservice.formatCurrency(
+          schedPay - Balance * (RecomRate / data.paymentfreq)
+        );
+        EndBalance = this.loanservice.formatCurrency(
+          Balance - (schedPay - Balance * (RecomRate / data.paymentfreq))
+        );
+        CumInterest += Balance * (RecomRate / data.paymentfreq);
+        displayCum = this.loanservice.formatCurrency(CumInterest);
+        mPayments.push({
+          paymentnum: (i + 1).toString(),
+          payDate: PayDate,
+          balance: Balance,
+          payment: displayPay,
+          principal: Principal,
+          interest: Interest,
+          endbalance: EndBalance,
+          cumulativeint: displayCum,
+        });
+        console.log("Balance ",Balance)
+        console.log('RecomRate ',RecomRate)
 
-    if(TotalPayments>0){
-      for(var i=0;i<TotalPayments;i++){
-          
-        this.payments.push({paymentnum:0,payDate:PayDate,balance:Balance,payment:0.0,principal:0.0,interest:0.0,endbalance:0.0,cumulativeint:0.0})
+        Balance =
+          Balance - (schedPay - Balance * (RecomRate / data.paymentfreq));
       }
     }
 
-
-
-
+    return mPayments;
   }
 }

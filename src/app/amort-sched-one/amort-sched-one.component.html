@@ -209,20 +209,32 @@
     </tr>
   </thead>
   <tbody>
-    <!--<tr *ngFor="let patrons of patronage">
+    <tr *ngFor="let ppay of payments">
       <td>
-        {{patrons.year}}
+        {{ppay.paymentnum}}
       </td>
       <td>
-        {{patrons.amount}}
+        {{ppay.payDate}}
       </td>
       <td>
-        {{patrons.percent}}
+        {{ppay.balance}}
       </td>
       <td>
-        {{patrons.avgRate}}
+        {{ppay.payment}}
       </td>
-    </tr>-->
+      <td>
+        {{ppay.principal}}
+      </td>
+      <td>
+        {{ppay.interest}}
+      </td>
+      <td>
+        {{ppay.endbalance}}
+      </td>
+      <td>
+        {{ppay.cumulativeint}}
+      </td>
+    </tr>
   </tbody>
 </table>
   </div>
