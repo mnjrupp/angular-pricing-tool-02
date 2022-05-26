@@ -56,7 +56,7 @@ export class AmortSchedOneComponent implements OnInit {
         cumulativeint: '',
       },
     ];
-    if (TotalPayments > 0) {
+    if (TotalPayments > 0 && Balance>0) {
       for (var i = 0; i < TotalPayments; i++) {
         Interest = this.loanservice.formatPercent(
           Balance * (RecomRate / data.paymentfreq)
