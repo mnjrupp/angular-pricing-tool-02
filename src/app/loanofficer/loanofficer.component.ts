@@ -13,6 +13,7 @@ import { NumberFormatStyle } from '@angular/common';
 
 import {COFs} from '../COFReqdummy';
 import {COFResponse} from '../COFRespdummy';
+import moment from 'moment';
 
 @Component({
   selector: 'app-loanofficer',
@@ -366,6 +367,33 @@ export class LoanOfficerComponent implements OnInit {
     this.pricing.branchPhone = foundOfficer[0].phone;
     this.loanservice.editModel(this.pricing);
   }
+
+  updateTotalInterest(l,i,p,d){
+    /*  l = loanAmnt
+        i = interest
+        p = loan Prod years
+        d = Loan Start Date */
+        var loanAmnt = 0;
+        var interest = 0.0;
+        var yrs = 0;
+        var dDate:Date;
+        var ttlInt:number;
+
+        loanAmnt = Number(l);
+        interest = Number(i);
+        yrs = Number(p);
+        dDate = moment(d,'mm/dd/yyyy').toDate();
+        
+        console.log('updateTotalInterest loanAmnt ',loanAmnt)
+        console.log('updateTotalInterest interest ',interest)
+        console.log('updateTotalInterest years ',yrs)
+        console.log('updateTotalInterest loan date  ',Number(dDate))
+
+        ttlInt = loanAmnt*interest*yrs* Number(dDate)
+        return ttlInt;
+
+
+  }
   updateApplicantDataName(event) {
     console.log(event.target.value);
     this.pricing.applicationName = event.target.value;
@@ -414,10 +442,10 @@ export class LoanOfficerComponent implements OnInit {
   updateApplicantDataLoanProdOne(event) {
     console.log(event.target.value);
     this.pricing.loanProd1 = event.target.value;
-    this.pricing.TotalInt1 = (Number(this.pricing.loanAmnt)
-    *Number(this.pricing.IntRate1)
-    *Number(this.pricing.loanProd1)
-    *Number(this.pricing.loanDate));
+    this.pricing.TotalInt1 = this.updateTotalInterest(this.unformatNumber(this.pricing.loanAmnt),
+                                                      this.unformatNumber(this.pricing.IntRate1),
+                                                      this.pricing.loanProd1,
+                                                      this.pricing.loanDate);
     this.loanservice.editModel(this.pricing);
   }
   updateApplicantDataLoanProdTwo(event) {
