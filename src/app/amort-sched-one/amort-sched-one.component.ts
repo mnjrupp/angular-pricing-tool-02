@@ -37,7 +37,7 @@ export class AmortSchedOneComponent implements OnInit {
     var Balance = Number(this.loanservice.unformatNumber(data.loanAmnt));
     var schedPay = Number(this.loanservice.unformatNumber(data.PayAmnt1));
     var displayPay = this.loanservice.formatCurrency(schedPay);
-    var RecomRate = Number(this.loanservice.unformatNumber(data.RecomRate1));
+    var RecomRate = Number(this.loanservice.unformatNumber(data.RecomRate1))/100;
     var PayDate = moment(data.loanDate).format('MM/DD/YYYY');
     var Principal = '';
     var Interest = '';
@@ -58,7 +58,7 @@ export class AmortSchedOneComponent implements OnInit {
     ];
     if (TotalPayments > 0 && Balance>0 && schedPay>0) {
       for (var i = 0; i < TotalPayments; i++) {
-        Interest = this.loanservice.formatPercent(
+        Interest = this.loanservice.formatCurrency(
           Balance * (RecomRate / data.paymentfreq)
         );
         Principal = this.loanservice.formatCurrency(
@@ -67,7 +67,7 @@ export class AmortSchedOneComponent implements OnInit {
         EndBalance = this.loanservice.formatCurrency(
           Balance - (schedPay - Balance * (RecomRate / data.paymentfreq))
         );
-        CumInterest += Balance * (RecomRate / data.paymentfreq);
+        CumInterest +=Number(this.loanservice.unformatNumber(Interest));
         displayCum = this.loanservice.formatCurrency(CumInterest);
         mPayments.push({
           paymentnum: (i + 1).toString(),
@@ -81,7 +81,7 @@ export class AmortSchedOneComponent implements OnInit {
         });
         console.log("Balance ",Balance)
         console.log('RecomRate ',RecomRate)
-
+        console.log('Principal ',Principal)
         Balance =
           Number(this.loanservice.unformatNumber(EndBalance));
       }
