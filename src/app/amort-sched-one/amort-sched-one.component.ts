@@ -38,7 +38,7 @@ export class AmortSchedOneComponent implements OnInit {
     var schedPay = Number(this.loanservice.unformatNumber(data.PayAmnt1));
     var displayPay = this.loanservice.formatCurrency(schedPay);
     var RecomRate = Number(this.loanservice.unformatNumber(data.RecomRate1))/100;
-    var PayDate = moment(data.loanDate).format('MM/DD/YYYY');
+    var PayDate = moment(data.loanDate).format('l');
     var Principal = '';
     var Interest = '';
     var EndBalance = '';
@@ -82,8 +82,31 @@ export class AmortSchedOneComponent implements OnInit {
         /*console.log("Balance ",Balance)
         console.log('RecomRate ',RecomRate)
         console.log('Principal ',Principal)*/
+        console.log('Payment Frequency ',data.paymentfreq)
         Balance =
           Number(this.loanservice.unformatNumber(EndBalance));
+          // Compute the next payment date
+          switch(Number(data.paymentfreq)){
+            case 12:{
+              PayDate = moment(PayDate).add(1,'month').format('l');
+              break;
+            }
+            case 4:{
+              console.log('Payment Date',PayDate)
+              PayDate = moment(PayDate).add(3,'month').format('l');
+              break;
+            }
+            case 1:{
+              console.log('Payment Date',PayDate)
+              PayDate = moment(PayDate).add(1,'y').format('l');
+             break;
+            }
+            case 2:{
+              console.log('Payment Date',PayDate)
+              PayDate = moment(PayDate).add(6,'month').format('l');
+             break;
+            }
+          }
       }
     }
 
