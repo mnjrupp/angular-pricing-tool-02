@@ -395,47 +395,47 @@ export class LoanOfficerComponent implements OnInit {
 
   }
   updateApplicantDataName(event) {
-    console.log(event.target.value);
+    //console.log(event.target.value);
     this.pricing.applicationName = event.target.value;
     this.loanservice.editModel(this.pricing);
   }
   updateApplicantDataPhone(event) {
-    console.log(event.target.value);
+    //console.log(event.target.value);
     this.pricing.phoneNumber = event.target.value;
     this.loanservice.editModel(this.pricing);
   }
   updateApplicantDataAddress(event) {
-    console.log(event.target.value);
+    //console.log(event.target.value);
     this.pricing.address = event.target.value;
     this.loanservice.editModel(this.pricing);
   }
   updateApplicantDataAmortTypeOne(event) {
-    console.log(event.target.value);
+    //console.log(event.target.value);
     this.pricing.AmorType1 = event.target.value;
     this.loanservice.editModel(this.pricing);
   }
   updateApplicantDataAmortTypeTwo(event) {
-    console.log(event.target.value);
+   // console.log(event.target.value);
     this.pricing.AmorType2 = event.target.value;
     this.loanservice.editModel(this.pricing);
   }
   updateApplicantDataAmortTypeThree(event) {
-    console.log(event.target.value);
+    //console.log(event.target.value);
     this.pricing.AmorType3 = event.target.value;
     this.loanservice.editModel(this.pricing);
   }
   updateApplicantDataAmortTermOne(event) {
-    console.log(event.target.value);
+   // console.log(event.target.value);
     this.pricing.AmorTerm1 = event.target.value;
     this.loanservice.editModel(this.pricing);
   }
   updateApplicantDataAmortTermTwo(event) {
-    console.log(event.target.value);
+    //console.log(event.target.value);
     this.pricing.AmorTerm2 = event.target.value;
     this.loanservice.editModel(this.pricing);
   }
   updateApplicantDataAmortTermThree(event) {
-    console.log(event.target.value);
+   // console.log(event.target.value);
     this.pricing.AmorTerm3 = event.target.value;
     this.loanservice.editModel(this.pricing);
   }
@@ -449,32 +449,32 @@ export class LoanOfficerComponent implements OnInit {
     this.loanservice.editModel(this.pricing);
   }
   updateApplicantDataLoanProdTwo(event) {
-    console.log(event.target.value);
+   // console.log(event.target.value);
     this.pricing.loanProd2 = event.target.value;
     this.loanservice.editModel(this.pricing);
   }
   updateApplicantDataLoanProdThree(event) {
-    console.log(event.target.value);
+   // console.log(event.target.value);
     this.pricing.loanProd3 = event.target.value;
     this.loanservice.editModel(this.pricing);
   }
   updateApplicantDataTransOptOne(event) {
-    console.log(event.target.value);
+   // console.log(event.target.value);
     this.pricing.TransferOption1 = event.target.value;
     this.loanservice.editModel(this.pricing);
   }
   updateApplicantDataTransOptTwo(event) {
-    console.log(event.target.value);
+   // console.log(event.target.value);
     this.pricing.TransferOption2 = event.target.value;
     this.loanservice.editModel(this.pricing);
   }
   updateApplicantDataTransOptThree(event) {
-    console.log(event.target.value);
+   // console.log(event.target.value);
     this.pricing.TransferOption3 = event.target.value;
     this.loanservice.editModel(this.pricing);
   }
   updatePayFreq(event){
-    console.log(event.target.value);
+   // console.log(event.target.value);
     this.pricing.paymentfreq = event.target.value;
     this.loanservice.editModel(this.pricing);
   }
@@ -616,10 +616,10 @@ export class LoanOfficerComponent implements OnInit {
   build1stPaymnt(ir:number,np:number,pv:number){
     /* PMT(Estimated Interest Rate/Payments per year,(Loan Years * Payments per year),Loan Amount)
 	      + (Loan Amount * ( Estimated Interest Rate/Payments per year)) */
-        console.log('Interest Rate buid1stPaymnt ',ir)
-        console.log('payments per year buid1stPaymnt ',this.pricing.paymentfreq)
-        console.log('Loan Amount buid1stPaymnt ',pv)
-        console.log('# payments buid1stPaymnt ',np)
+       // console.log('Interest Rate buid1stPaymnt ',ir)
+       // console.log('payments per year buid1stPaymnt ',this.pricing.paymentfreq)
+       // console.log('Loan Amount buid1stPaymnt ',pv)
+       // console.log('# payments buid1stPaymnt ',np)
     return this.buildPMT(ir/this.pricing.paymentfreq,np,pv) + (pv*(ir/np));
 
   }
