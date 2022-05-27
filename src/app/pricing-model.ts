@@ -26,7 +26,7 @@ export interface PricingModel{
   TransferOption1:string;
   IntRate1: string;
   PayAmnt1: string;
-  TotalInt1:number;
+  TotalInt1:string;
   AmorType2: string;
   AmorTerm2: number;
   loanProd2: number;

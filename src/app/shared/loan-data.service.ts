@@ -42,7 +42,7 @@ export class LoanDataService {
     TransferOption1: 'OPO',
     IntRate1: this.formatPercent(0.0256),
     PayAmnt1: this.formatCurrency(0),
-    TotalInt1:0,
+    TotalInt1:'',
     AmorType2:'P&I',
     AmorTerm2: 20,
     loanProd2: 20,

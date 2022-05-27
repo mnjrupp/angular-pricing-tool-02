@@ -82,7 +82,7 @@ export class AmortSchedOneComponent implements OnInit {
         /*console.log("Balance ",Balance)
         console.log('RecomRate ',RecomRate)
         console.log('Principal ',Principal)*/
-        console.log('Payment Frequency ',data.paymentfreq)
+        //console.log('Payment Frequency ',data.paymentfreq)
         Balance =
           Number(this.loanservice.unformatNumber(EndBalance));
           // Compute the next payment date
@@ -109,7 +109,8 @@ export class AmortSchedOneComponent implements OnInit {
           }
       }
     }
-
+    this.pricing.TotalInt1 = displayCum;
+    this.loanservice.editModel(this.pricing);
     return mPayments;
   }
 }
