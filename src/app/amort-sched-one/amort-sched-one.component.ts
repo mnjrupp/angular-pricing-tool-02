@@ -79,9 +79,9 @@ export class AmortSchedOneComponent implements OnInit {
           endbalance: EndBalance,
           cumulativeint: displayCum,
         });
-        console.log("Balance ",Balance)
+        /*console.log("Balance ",Balance)
         console.log('RecomRate ',RecomRate)
-        console.log('Principal ',Principal)
+        console.log('Principal ',Principal)*/
         Balance =
           Number(this.loanservice.unformatNumber(EndBalance));
       }
