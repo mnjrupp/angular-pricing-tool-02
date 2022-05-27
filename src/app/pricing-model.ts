@@ -33,14 +33,14 @@ export interface PricingModel{
   TransferOption2: string;
   IntRate2: string;
   PayAmnt2: string;
-  TotalInt2:number;
+  TotalInt2:string;
   AmorType3: string
   AmorTerm3: number;
   loanProd3: number;
   TransferOption3: string;
   IntRate3: string;
   PayAmnt3: string;
-  TotalInt3:number;
+  TotalInt3:string;
   RecomRate1: string;
   RecomSpread1: string;
   Variance1: string;

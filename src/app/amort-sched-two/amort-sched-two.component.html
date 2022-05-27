@@ -1,2 +1,241 @@
-<div class="container"><img src="https://raw.githubusercontent.com/mnjrupp/angular-ivy-ylwyj7/master/src/assets/AmortSched1.PNG" alt=" Amort Schedule">
+<div class="container-sm">
+  <!--<img src="https://raw.githubusercontent.com/mnjrupp/angular-ivy-ylwyj7/master/src/assets/AmortSched1.PNG" alt=" Amort Schedule">-->
+  <hr style="height:2.5px;background-color:blue;" />
+  <h5 class="d-flex justify-content-left">Amortization Schedule One</h5>
+  <div class="row align-items-start">
+    <div class="col">
+      <div class="mb-1 p-1 border-bottom border-top bg-light">
+        <small class="text-muted">Amoritization Type:</small>
+      </div>
+    </div>
+    <div class="col">
+      <div class="mb-1 p-1 border" style="height:35px">
+        <small class="text-muted">{{ pricing.AmorType1 }}</small>
+      </div>
+    </div>
+    <div class="col"></div>
+    <div class="col"></div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="mb-1 p-1 border-bottom border-top bg-light">
+        <small class="text-muted">Borrower Name:</small>
+      </div>
+    </div>
+    <div class="col">
+      <div class="mb-1 p-1 border" style="height:35px">
+        <small class="text-muted">{{ pricing.applicationName }}</small>
+      </div>
+    </div>
+    <div class="col">
+      <div class="mb-1 p-1 border-bottom border-top bg-light">
+        <small class="text-muted">Loan Officer:</small>
+      </div>
+    </div>
+    <div class="col">
+      <div class="mb-1 p-1 border" style="height:35px">
+        <small class="text-muted">{{ pricing.loanOfficer }}</small>
+      </div>
+    </div>
+  </div>
+  <div class="row align-items-start">
+    <div class="col">
+      <div class="mb-1 p-1 border-bottom border-top bg-light">
+        <small class="text-muted">Phone Number:</small>
+      </div>
+    </div>
+    <div class="col">
+      <div class="mb-1 p-1 border" style="height:35px">
+        <small class="text-muted">{{ pricing.phoneNumber }}</small>
+      </div>
+    </div>
+    <div class="col">
+      <div class="mb-1 p-1 border-bottom border-top bg-light">
+        <small class="text-muted">Phone Number:</small>
+      </div>
+    </div>
+    <div class="col">
+      <div class="mb-1 p-1 border" style="height:35px">
+        <small class="text-muted">{{ pricing.branchPhone }}</small>
+      </div>
+    </div>
+  </div>
+  <div class="row align-items-start">
+    <div class="col">
+      <div class="mb-1 p-1 border-bottom border-top bg-light">
+        <small class="text-muted">Customer Address:</small>
+      </div>
+    </div>
+    <div class="col">
+      <div class="mb-1 p-1 border" style="height:35px">
+        <small class="text-muted">{{ pricing.address }}</small>
+      </div>
+    </div>
+    <div class="col">
+      <div class="mb-1 p-1 border-bottom border-top bg-light">
+        <small class="text-muted">Credit Office Location:</small>
+      </div>
+    </div>
+    <div class="col">
+      <div class="mb-1 p-1 border" style="height:35px">
+        <small class="text-muted">{{ pricing.branchaddress }}</small>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-md-center">
+    <div class="col-4 border p-1">
+      <div class="p-1 bg-secondary bg-gradient text-white">
+        <h6 class="text-center">Loan Details</h6>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="text-end mb-1 p-1" >
+            <small class="text-muted">Loan Amount</small>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="mb-1 p-1 border list-group-item-secondary text-end" style="height:35px">
+            <small class="text-muted">{{ pricing.loanAmnt }}</small>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="text-end mb-1 p-1 text-truncate">
+            <small class="text-muted">Annual Interest Rate</small>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="mb-1 p-1 border list-group-item-secondary text-end" style="height:35px">
+            <small class="text-muted">{{ pricing.IntRate2 }}</small>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="text-end mb-1 p-1 text-truncate">
+            <small class="text-muted">Loan Period in Years</small>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="mb-1 p-1 border list-group-item-secondary text-end" style="height:35px">
+            <small class="text-muted">{{ pricing.loanProd2 }}</small>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="text-end text-truncate mb-1 p-1">
+            <small class="text-muted">Number of Payments/Year</small>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="mb-1 p-1 border list-group-item-secondary text-end" style="height:35px">
+            <small class="text-muted">{{ pricing.paymentfreq }}</small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-1"></div>
+    <div class="col-4 border p-1">
+      <div class="border p-1 bg-secondary bg-gradient text-white">
+        <h6 class="text-center">Loan Summary</h6>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="text-end text-truncate">
+            <small class="text-muted">Scheduled Payment:</small>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="mb-1 p-1 border list-group-item-secondary text-end" style="height:35px">
+            <small class="text-muted">{{ pricing.PayAmnt2 }}</small>
+          </div>
+        </div>
+      </div>
+      <div class="row ">
+        <div class="col-sm-6">
+          <div class="text-end text-truncate">
+            <small class="text-muted">Scheduled # of Payments</small>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="mb-1 p-1 border list-group-item-secondary text-end" style="height:35px">
+            <small class="text-muted">{{
+              pricing.loanProd2 * pricing.paymentfreq
+            }}</small>
+          </div>
+        </div>
+      </div>
+      <div class="row ">
+        <div class="col-sm-6">
+          <div class="text-end">
+            <small class="text-end">Total Interest</small>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="mb-1 p-1 border list-group-item-secondary text-end" style="height:35px;">
+            <small class="text-muted ">{{ (pricing.TotalInt2) }}</small>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="text-end text-truncate">
+            <small class="text-muted">Estimated Start Date of Loan</small>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="mb-1 p-1 border list-group-item-secondary text-end" style="height:35px">
+            <small class="text-muted">{{ pricing.loanDate }}</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+  <table class="table table-striped table-hover">
+  <thead>
+    <tr style="color:#f9fafb;background-color:#08377a;">
+      <th scope="col" >PmtNo</th>
+      <th scope="col">Payment Date</th>
+      <th scope="col">Beginning Balance</th>
+      <th scope="col">Scheduled Payment</th>
+      <th scope="col">Principal</th>
+      <th scope="col">Interest</th>
+      <th scope="col">Ending Balance</th>
+      <th scope="col">Cumulative Interest</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let ppay of payments">
+      <td>
+        {{ppay.paymentnum}}
+      </td>
+      <td>
+        {{ppay.payDate}}
+      </td>
+      <td>
+        {{ppay.balance}}
+      </td>
+      <td>
+        {{ppay.payment}}
+      </td>
+      <td>
+        {{ppay.principal}}
+      </td>
+      <td>
+        {{ppay.interest}}
+      </td>
+      <td>
+        {{ppay.endbalance}}
+      </td>
+      <td>
+        {{ppay.cumulativeint}}
+      </td>
+    </tr>
+  </tbody>
+</table>
+  </div>
 </div>

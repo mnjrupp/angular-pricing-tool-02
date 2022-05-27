@@ -20,6 +20,7 @@ export class AmortSchedOneComponent implements OnInit {
       interest: '',
       endbalance: '',
       cumulativeint: '',
+      TotalInt:0
     },
   ];
 
@@ -29,6 +30,9 @@ export class AmortSchedOneComponent implements OnInit {
     this.loanservice.cast.subscribe((data) => {
       this.pricing = data;
       this.payments = this.buildpayments(this.pricing);
+      this.pricing.TotalInt1 = this.loanservice.formatCurrency(Math.max.apply(Math,this.payments.map(function(o)
+      {return o.TotalInt;
+      })))
     });
   }
 
@@ -54,6 +58,7 @@ export class AmortSchedOneComponent implements OnInit {
         interest: '',
         endbalance: '',
         cumulativeint: '',
+        TotalInt:0,
       },
     ];
     if (TotalPayments > 0 && Balance>0 && schedPay>0) {
@@ -78,6 +83,7 @@ export class AmortSchedOneComponent implements OnInit {
           interest: Interest,
           endbalance: EndBalance,
           cumulativeint: displayCum,
+          TotalInt:CumInterest
         });
         /*console.log("Balance ",Balance)
         console.log('RecomRate ',RecomRate)
@@ -109,8 +115,7 @@ export class AmortSchedOneComponent implements OnInit {
           }
       }
     }
-    this.pricing.TotalInt1 = displayCum;
-    this.loanservice.editModel(this.pricing);
+   
     return mPayments;
   }
 }
