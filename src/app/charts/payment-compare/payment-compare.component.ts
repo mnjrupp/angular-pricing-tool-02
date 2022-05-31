@@ -40,7 +40,7 @@ export class PaymentCompareComponent implements OnInit {
           borderColor: 'rgb(40,100,200)',
           fill: false,
           lineTension: 0,
-          radius: 5,
+          radius: 2,
         },
         {
           label: 'Scenario 2',
@@ -49,7 +49,7 @@ export class PaymentCompareComponent implements OnInit {
           borderColor: 'rgb(138,11,26)',
           fill: false,
           lineTension: 0.2,
-          radius: 5,
+          radius: 2,
         },
         {
           label: 'Scenario 3',
@@ -58,7 +58,7 @@ export class PaymentCompareComponent implements OnInit {
           borderColor: 'rgb(11,138,93)',
           fill: false,
           lineTension: 0.2,
-          radius: 5,
+          radius: 2,
         },
       ],
     };
