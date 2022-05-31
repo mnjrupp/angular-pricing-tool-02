@@ -31,10 +31,10 @@ export class PaymentCompareComponent implements OnInit {
     // }
 
     data = {
-      labels: ['Apples', 'Oranges', 'Mixed Fruit'],
+      labels: ['Scenario 1', 'Scenario 2', 'Scenario 3'],
       datasets: [
         {
-          label: 'Apples',
+          label: 'Scenario 1',
           data: [0, 50, 45, 100],
           backgroundColor: 'rgba(40,125,200,.5)',
           borderColor: 'rgb(40,100,200)',
@@ -43,10 +43,19 @@ export class PaymentCompareComponent implements OnInit {
           radius: 5,
         },
         {
-          label: 'Oranges',
+          label: 'Scenario 2',
           data: [30, 90, 111, 20],
-          backgroundColor: 'rgba(75,10,125,.5)',
-          borderColor: 'rgb(75,10,125)',
+          backgroundColor: 'rgba(138,11,26,.5)',
+          borderColor: 'rgb(138,11,26)',
+          fill: false,
+          lineTension: 0.2,
+          radius: 5,
+        },
+        {
+          label: 'Scenario 3',
+          data: [20, 70, 75, 80],
+          backgroundColor: 'rgba(11,138,93,.5)',
+          borderColor: 'rgb(11,138,93)',
           fill: false,
           lineTension: 0.2,
           radius: 5,
