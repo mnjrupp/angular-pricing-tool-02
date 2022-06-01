@@ -90,10 +90,7 @@ export class AmortSchedTwoComponent implements OnInit {
           TotalInt:CumInterest,
           AmorType:Amorttype
         });
-        /*console.log("Balance ",Balance)
-        console.log('RecomRate ',RecomRate)
-        console.log('Principal ',Principal)*/
-        //console.log('Payment Frequency ',data.paymentfreq)
+    
         Balance =
           Number(this.loanservice.unformatNumber(EndBalance));
           // Compute the next payment date
