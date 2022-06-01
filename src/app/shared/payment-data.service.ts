@@ -27,9 +27,13 @@ export class PaymentDataService {
     this.payments.next(newModel);
   }
 
-  buildpayments(data: PricingModel) {
+  buildpayments(data: PricingModel,scenario:number) {
     var TotalPayments = data.loanProd1 * data.paymentfreq;
-    var Amorttype = data.AmorType1;
+    var Amorttype = function(){ 
+              if(scenario==1){ return data.AmorType1}
+              else if(scenario==2){ return data.AmorType2}
+              else if(scenario==3){return data.AmorType3}
+            };
     var Balance = Number(this.unformatNumber(data.loanAmnt));
     var schedPay = Number(this.unformatNumber(data.PayAmnt1));
     var displayPay = this.formatCurrency(schedPay);
