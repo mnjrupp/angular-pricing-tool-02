@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoanDataService } from '../shared/loan-data.service';
 import { PricingModel } from '../pricing-model';
+import {PaymentModel} from '../payment-model';
 import moment from 'moment';
 
 @Component({
@@ -10,7 +11,9 @@ import moment from 'moment';
 })
 export class AmortSchedOneComponent implements OnInit {
   pricing: PricingModel;
-  payments = [
+  payments:PaymentModel[] = 
+  
+  [
     {
       paymentnum: '',
       payDate: '',
@@ -20,7 +23,8 @@ export class AmortSchedOneComponent implements OnInit {
       interest: '',
       endbalance: '',
       cumulativeint: '',
-      TotalInt:0
+      TotalInt:0,
+      AmorType:''
     },
   ];
 
@@ -38,6 +42,7 @@ export class AmortSchedOneComponent implements OnInit {
 
   buildpayments(data: PricingModel) {
     var TotalPayments = data.loanProd1 * data.paymentfreq;
+    var Amorttype = data.AmorType1;
     var Balance = Number(this.loanservice.unformatNumber(data.loanAmnt));
     var schedPay = Number(this.loanservice.unformatNumber(data.PayAmnt1));
     var displayPay = this.loanservice.formatCurrency(schedPay);
@@ -59,6 +64,7 @@ export class AmortSchedOneComponent implements OnInit {
         endbalance: '',
         cumulativeint: '',
         TotalInt:0,
+        AmorType:''
       },
     ];
     if (TotalPayments > 0 && Balance>0 && schedPay>0) {
@@ -83,12 +89,10 @@ export class AmortSchedOneComponent implements OnInit {
           interest: Interest,
           endbalance: EndBalance,
           cumulativeint: displayCum,
-          TotalInt:CumInterest
+          TotalInt:CumInterest,
+          AmorType:Amorttype
         });
-        /*console.log("Balance ",Balance)
-        console.log('RecomRate ',RecomRate)
-        console.log('Principal ',Principal)*/
-        //console.log('Payment Frequency ',data.paymentfreq)
+     
         Balance =
           Number(this.loanservice.unformatNumber(EndBalance));
           // Compute the next payment date
