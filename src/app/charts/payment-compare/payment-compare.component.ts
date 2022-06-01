@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Chart } from 'chart.js';
+import {PaymentModel} from '../../payment-model';
 @Component({
   selector: 'app-charts-payment-compare',
   templateUrl: './payment-compare.component.html',
