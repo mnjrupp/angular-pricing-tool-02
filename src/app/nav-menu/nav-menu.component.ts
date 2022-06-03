@@ -27,8 +27,8 @@ export class NavMenuComponent implements OnInit {
   toggleShowLoanOfficerTrue(){
     this.globaldata.toggleisShown('Loan')
   }
-  toggleShowFalse(){
-    this.globaldata.toggleisShown(false)
+  toggleShowCustomerTrue(){
+    this.globaldata.toggleisShown('Cust')
   }
 
 }

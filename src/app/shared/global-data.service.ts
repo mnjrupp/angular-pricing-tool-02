@@ -49,8 +49,12 @@ export class GlobalDataService {
     var newBoolValues:BoolValues
     switch(message){
       case 'Loan':
-        newBoolValues=this.boolValuesLO
+        newBoolValues=this.boolValuesLO;
+        break;
+      case 'Cust':
+        newBoolValues=this.boolValuesCUST;
     }
+    console.log('global-data newBoolValues',newBoolValues)
     this.toggleMessage.next(newBoolValues);
   }
 
