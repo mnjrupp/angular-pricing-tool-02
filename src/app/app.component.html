@@ -2,11 +2,11 @@
 
 <app-nav-menu></app-nav-menu>
 <!--<div [ngClass]="isShown==true?'container':'container  d-none'" >-->
-<div [ngClass]="isShown==true?'container':'container d-none'" >
+<div [ngClass]="boolValues.isShown==true?'container':'container d-none'" >
 <!--<router-outlet></router-outlet>-->
 <app-loanofficer></app-loanofficer>
 </div>
-<div [ngClass]="isShown==true?'container d-none':'container'" >
+<div [ngClass]="boolValues.isShown==true?'container d-none':'container'" >
 <app-customer></app-customer>
 <app-amort-sched-one></app-amort-sched-one>
 <app-amort-sched-two></app-amort-sched-two>

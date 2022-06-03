@@ -24,8 +24,8 @@ export class NavMenuComponent implements OnInit {
   }
   // The following functions are used to toggle the visability of the 
   // components
-  toggleShowTrue(){
-    this.globaldata.toggleisShown(true)
+  toggleShowLoanOfficerTrue(){
+    this.globaldata.toggleisShown('Loan')
   }
   toggleShowFalse(){
     this.globaldata.toggleisShown(false)
