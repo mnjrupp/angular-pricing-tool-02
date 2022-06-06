@@ -8,11 +8,23 @@
 </div>
 <div [ngClass]="boolValues.isShownCustomer==true?'container':'container d-none'" >
 <app-customer></app-customer>
+</div>
+<div [ngClass]="boolValues.isShownAmort1==true?'container':'container d-none'" >
 <app-amort-sched-one></app-amort-sched-one>
+</div>
+<div [ngClass]="boolValues.isShownAmort2==true?'container':'container d-none'">
 <app-amort-sched-two></app-amort-sched-two>
+</div>
+<div [ngClass]="boolValues.isShownAmort3==true?'container':'container d-none'">
 <app-amort-sched-three></app-amort-sched-three>
+</div>
+<div [ngClass]="boolValues.isShownChartInt==true?'container':'container d-none'">
 <app-charts-interest-compare></app-charts-interest-compare>
+</div>
+<div [ngClass]="boolValues.isShownChartPay==true?'container':'container d-none'">
 <app-charts-payment-compare></app-charts-payment-compare>
+</div>
+<div [ngClass]="boolValues.isShownCalc==true?'container':'container d-none'">
 <app-rate-calculator></app-rate-calculator>
 </div>
 
