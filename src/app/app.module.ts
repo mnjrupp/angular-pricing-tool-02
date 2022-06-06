@@ -19,6 +19,7 @@ import {InterestCompareComponent} from './charts/interest-compare/interest-compa
 import {RateCalculatorComponent} from './rate-calculator/rate-calculator.component';
 import {LoanDataService } from './shared/loan-data.service';
 import {GlobalDataService} from './shared/global-data.service';
+import {PaymentDataService} from './shared/payment-data.service';
 
 @NgModule({
   imports:      [ BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -50,7 +51,7 @@ import {GlobalDataService} from './shared/global-data.service';
     PaymentCompareComponent,
     InterestCompareComponent,
     RateCalculatorComponent],
-   providers:[LoanDataService,GlobalDataService],
+   providers:[LoanDataService,GlobalDataService,PaymentDataService],
   bootstrap:[ AppComponent ]
 })
 export class AppModule { }

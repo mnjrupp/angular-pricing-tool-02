@@ -1,64 +1,69 @@
 import { Injectable } from '@angular/core';
-import {BehaviorSubject} from 'rxjs';
-import {PaymentModel} from '../payment-model';
+import { BehaviorSubject } from 'rxjs';
+import { PaymentModel } from '../payment-model';
 import { PricingModel } from '../pricing-model';
 import moment from 'moment';
 
 @Injectable()
 export class PaymentDataService {
- paymentmodel:PaymentModel[] = [{
-  paymentnum: '',
-  payDate: '',
-  balance: '',
-  payment: '',
-  principal: '',
-  interest: '',
-  endbalance: '',
-  cumulativeint: '',
-  TotalInt:0,
-  AmorType:''
-},];
+  paymentmodel: PaymentModel[] = [
+    {
+      paymentnum: '',
+      payDate: '',
+      balance: '',
+      payment: '',
+      principal: '',
+      interest: '',
+      endbalance: '',
+      cumulativeint: '',
+      TotalInt: 0,
+      AmorType: '',
+    },
+  ];
 
- private payments = new BehaviorSubject<PaymentModel[]>(this.paymentmodel);
+  private payments = new BehaviorSubject<PaymentModel[]>(this.paymentmodel);
 
- cast = this.payments.asObservable();
-  constructor() { }
+  cast = this.payments.asObservable();
+  constructor() {}
 
-  editModel(newModel){
+  editModel(newModel) {
     this.payments.next(newModel);
   }
 
-  buildpayments(data: PricingModel,scenario:number) {
-    var TotalPayments = data.loanProd1 * data.paymentfreq;
-    var Amorttype = function(){ 
-              if(scenario==1){ return data.AmorType1}
-              else if(scenario==2){ return data.AmorType2}
-              else if(scenario==3){return data.AmorType3}
-            };
+  buildpayments(data: PricingModel, scenario: number) {
+    var TotalPayments;
+    var Amorttype;
+    var schedPay;
+    var RecomRate;
+    switch (scenario) {
+      case 1:
+        TotalPayments = data.loanProd1 * data.paymentfreq;
+        Amorttype = data.AmorType1;
+        schedPay  = Number(this.unformatNumber(data.PayAmnt1));
+        RecomRate = Number(this.unformatNumber(data.RecomRate1))/100;
+        break;
+      case 2:
+        TotalPayments = data.loanProd2 * data.paymentfreq;
+        Amorttype = data.AmorType2;
+        schedPay  = Number(this.unformatNumber(data.PayAmnt2));
+        RecomRate = Number(this.unformatNumber(data.RecomRate2))/100;
+        break;
+      case 3:
+        TotalPayments = data.loanProd3 * data.paymentfreq;
+        Amorttype = data.AmorType3;
+        schedPay  = Number(this.unformatNumber(data.PayAmnt3));
+        RecomRate = Number(this.unformatNumber(data.RecomRate3))/100;
+    }
+    
+   
     var Balance = Number(this.unformatNumber(data.loanAmnt));
 
-    var schedPay = function(){ var d;
-                                  switch(scenario){
-                                      case 1:d=data.PayAmnt1;break;
-                                      case 2:d=data.PayAmnt2;break;
-                                      case 3:d=data.PayAmnt3;break;
-                                  }
-                                return this.unformatNumber(d);
-
-                              }
+    
 
     var displayPay = this.formatCurrency(schedPay);
 
-    var RecomRate = function(){ var d;
-                                switch(scenario){
-                                    case 1:d=data.RecomRate1;break;
-                                    case 2:d=data.RecomRate2;break;
-                                    case 3:d=data.RecomRate3;break;
-                                }
-                              return Number(this.unformatNumber(d))/100;
-
-                            }
     
+
     //Number(this.unformatNumber(data.RecomRate1))/100;
     var PayDate = moment(data.loanDate).format('l');
     var Principal = '';
@@ -76,22 +81,24 @@ export class PaymentDataService {
         interest: '',
         endbalance: '',
         cumulativeint: '',
-        TotalInt:0,
-        AmorType:''
+        TotalInt: 0,
+        AmorType: '',
       },
     ];
-    if (TotalPayments > 0 && Balance>0 && Number(schedPay)>0) {
+    if (TotalPayments > 0 && Balance > 0 && schedPay > 0) {
       for (var i = 0; i < TotalPayments; i++) {
         Interest = this.formatCurrency(
-          Balance * (Number(RecomRate) / data.paymentfreq)
+          Balance * (RecomRate / data.paymentfreq)
         );
         Principal = this.formatCurrency(
-          Number(schedPay) - Balance * (Number(RecomRate) / data.paymentfreq)
+          schedPay - Balance * (RecomRate / data.paymentfreq)
         );
         EndBalance = this.formatCurrency(
-          Balance - (Number(schedPay) - Balance * (Number(RecomRate) / data.paymentfreq))
+          Balance -
+            (schedPay -
+              Balance * (RecomRate / data.paymentfreq))
         );
-        CumInterest +=Number(this.unformatNumber(Interest));
+        CumInterest += Number(this.unformatNumber(Interest));
         displayCum = this.formatCurrency(CumInterest);
         mPayments.push({
           paymentnum: (i + 1).toString(),
@@ -102,47 +109,52 @@ export class PaymentDataService {
           interest: Interest,
           endbalance: EndBalance,
           cumulativeint: displayCum,
-          TotalInt:CumInterest,
-          AmorType:Amorttype.toString()
+          TotalInt: CumInterest,
+          AmorType: Amorttype.toString(),
         });
-     
-        Balance =
-          Number(this.unformatNumber(EndBalance));
-          // Compute the next payment date
-          switch(Number(data.paymentfreq)){
-            case 12:{
-              PayDate = moment(PayDate).add(1,'month').format('l');
-              break;
-            }
-            case 4:{
-              console.log('Payment Date',PayDate)
-              PayDate = moment(PayDate).add(3,'month').format('l');
-              break;
-            }
-            case 1:{
-              console.log('Payment Date',PayDate)
-              PayDate = moment(PayDate).add(1,'y').format('l');
-             break;
-            }
-            case 2:{
-              console.log('Payment Date',PayDate)
-              PayDate = moment(PayDate).add(6,'month').format('l');
-             break;
-            }
+
+        Balance = Number(this.unformatNumber(EndBalance));
+        // Compute the next payment date
+        switch (Number(data.paymentfreq)) {
+          case 12: {
+            PayDate = moment(PayDate).add(1, 'month').format('l');
+            break;
           }
+          case 4: {
+            console.log('Payment Date', PayDate);
+            PayDate = moment(PayDate).add(3, 'month').format('l');
+            break;
+          }
+          case 1: {
+            console.log('Payment Date', PayDate);
+            PayDate = moment(PayDate).add(1, 'y').format('l');
+            break;
+          }
+          case 2: {
+            console.log('Payment Date', PayDate);
+            PayDate = moment(PayDate).add(6, 'month').format('l');
+            break;
+          }
+        }
       }
     }
-   
+    //console.log('payment-service ', mPayments);
     return mPayments;
   }
 
-  formatCurrency(value){
-    var uy = new Intl.NumberFormat('en-US',{style: 'currency', currency:'USD'}).format(value);
+  formatCurrency(value) {
+    var uy = new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+    }).format(value);
     return uy;
   }
 
-  formatPercent(value){
-    var uy = new Intl.NumberFormat('en-US',{style: 'percent', maximumFractionDigits: 2}).format(value);
+  formatPercent(value) {
+    var uy = new Intl.NumberFormat('en-US', {
+      style: 'percent',
+      maximumFractionDigits: 2,
+    }).format(value);
     return uy;
   }
 
