@@ -30,5 +30,25 @@ export class NavMenuComponent implements OnInit {
   toggleShowCustomerTrue(){
     this.globaldata.toggleisShown('Cust')
   }
+  toggleShowAmortOneTrue(){
+    this.globaldata.toggleisShown('Amort1')
+  }
+  toggleShowAmortTwoTrue(){
+    this.globaldata.toggleisShown('Amort2')
+  }
+  toggleShowAmortThreeTrue(){
+    this.globaldata.toggleisShown('Amort3')
+  }
+  toggleShowChartIntTrue(){
+    this.globaldata.toggleisShown('Chart1')
+  }
+
+  toggleShowChartPayTrue(){
+    this.globaldata.toggleisShown('Chart2')
+  }
+
+  toggleShowCalcTrue(){
+    this.globaldata.toggleisShown('Calc')
+  }
 
 }
