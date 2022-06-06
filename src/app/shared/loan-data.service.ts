@@ -151,7 +151,7 @@ export class LoanDataService {
     var dString = moment(value);
 
     //console.log('getLoanStartDate ', value)
-    console.log('getLoanStartDate ', moment(dString).add(30,'days') )
+    //console.log('getLoanStartDate ', moment(dString).add(30,'days') )
     return moment(dString).add(30,'days').format("MM/DD/yyyy");
   }
   unformatNumber(value) {

@@ -132,7 +132,7 @@ export class GlobalDataService {
         newBoolValues = this.boolValuesCalc;
         break;
     }
-    console.log('global-data newBoolValues', newBoolValues);
+   // console.log('global-data newBoolValues', newBoolValues);
     this.toggleMessage.next(newBoolValues);
   }
 }

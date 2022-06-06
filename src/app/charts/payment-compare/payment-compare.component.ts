@@ -16,6 +16,9 @@ export class PaymentCompareComponent implements OnInit {
   payments1:PaymentModel[] 
   payments2:PaymentModel[] 
   payments3:PaymentModel[] 
+  ctx: any 
+  lineChart:Chart
+
   constructor(private loanservice: LoanDataService,private paymentservice:PaymentDataService) { }
 
   ngOnInit() {
@@ -26,24 +29,54 @@ export class PaymentCompareComponent implements OnInit {
       this.payments2 = this.paymentservice.buildpayments(this.pricing,2);
       //console.log('payments2 ',this.payments2['cumpayment'])
       this.payments3 = this.paymentservice.buildpayments(this.pricing,3);
-      this.buildChartInterface();
+      //this.buildChartInterface();
+    // this.updateChart();
+    if(this.lineChart){
+     this.lineChart.data.datasets[0].data=this.payments1.map(d=>d.cumpayment)
+     this.lineChart.data.datasets[1].data=this.payments2.map(d=>d.cumpayment)
+     this.lineChart.data.datasets[2].data=this.payments3.map(d=>d.cumpayment)
+     this.lineChart.update();
+      }
     });
   }
 
   ngAfterViewInit() {
+    this.ctx= document.getElementById('areaChart') as HTMLElement;
+   // this.chart = new Chart(this.ctx)
    this.buildChartInterface();
   }
 
+  updateChart(){
+   console.log('Chart object ',this.lineChart)
+    this.removeChartData(this.lineChart);
+    //this.addChartData(this.chart)
+    this.buildChartInterface();
+
+  }
+  removeChartData(chart){
+      chart.data.datasets.forEach((dataset) => {
+        dataset.data.pop();
+    });
+    chart.update();
+  }
+
+  addChartData(chart,data){
+
+      chart.data.datasets.forEach((dataset) => {
+      dataset.data.push(data);
+    });
+    chart.update();
+  }
   buildChartInterface(){
     let data: any,
-    options: any,
-    chart: any,
-    canvas:any = document.getElementById('areaChart') as HTMLElement;
+    options: any;
+   
+    /*canvas:any = document.getElementById('areaChart') as HTMLElement;
     console.log('canvas object ',canvas);
     canvas.remove();
     let division: any = document.getElementById('myChart') as HTMLElement;
-        division.append('<canvas id="areaChart"></canvas>');
-    let ctx: any = document.getElementById('areaChart') as HTMLElement;
+        division.append('<canvas id="areaChart"></canvas>');*/
+   
     //ctx.destroy();
  
 
@@ -99,11 +132,13 @@ export class PaymentCompareComponent implements OnInit {
       },
     },
   };
-
-  chart = new Chart(ctx, {
+  console.log('this.ctx ',this.ctx)
+  console.log('this.chart ',this.lineChart)
+  this.lineChart = new Chart(this.ctx, {
     type: 'line',
     data: data,
     options: options,
   });
+ 
 }
   }
