@@ -24,7 +24,7 @@ export class PaymentCompareComponent implements OnInit {
       this.payments1 = this.paymentservice.buildpayments(this.pricing,1);
     // console.log('payments1 ',this.payments1.map(d=>d.cumpayment))
       this.payments2 = this.paymentservice.buildpayments(this.pricing,2);
-      console.log('payments2 ',this.payments2['cumpayment'])
+      //console.log('payments2 ',this.payments2['cumpayment'])
       this.payments3 = this.paymentservice.buildpayments(this.pricing,3);
      
     });
@@ -52,7 +52,7 @@ export class PaymentCompareComponent implements OnInit {
         },
         {
           label: this.pricing.AmorType2,
-          data: this.payments2['cumpayment'],
+          data:this.payments2.map(d=>d.cumpayment),
           backgroundColor: 'rgba(138,11,26,.5)',
           borderColor: 'rgb(138,11,26)',
           fill: false,
@@ -61,7 +61,7 @@ export class PaymentCompareComponent implements OnInit {
         },
         {
           label: this.pricing.AmorType3,
-          data: this.payments3['cumpayment'],
+          data: this.payments3.map(d=>d.cumpayment),
           backgroundColor: 'rgba(11,138,93,.5)',
           borderColor: 'rgb(11,138,93)',
           fill: false,
