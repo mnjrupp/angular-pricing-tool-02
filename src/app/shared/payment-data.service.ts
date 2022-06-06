@@ -16,6 +16,7 @@ export class PaymentDataService {
       interest: '',
       endbalance: '',
       cumulativeint: '',
+      cumpayment:0,
       TotalInt: 0,
       AmorType: '',
     },
@@ -70,6 +71,7 @@ export class PaymentDataService {
     var Interest = '';
     var EndBalance = '';
     var CumInterest = 0.0;
+    var CumPayment = 0.0;
     var displayCum = '';
     var mPayments = [
       {
@@ -81,6 +83,7 @@ export class PaymentDataService {
         interest: '',
         endbalance: '',
         cumulativeint: '',
+        cumpayment:0,
         TotalInt: 0,
         AmorType: '',
       },
@@ -98,6 +101,7 @@ export class PaymentDataService {
             (schedPay -
               Balance * (RecomRate / data.paymentfreq))
         );
+        CumPayment += schedPay;
         CumInterest += Number(this.unformatNumber(Interest));
         displayCum = this.formatCurrency(CumInterest);
         mPayments.push({
@@ -109,6 +113,7 @@ export class PaymentDataService {
           interest: Interest,
           endbalance: EndBalance,
           cumulativeint: displayCum,
+          cumpayment:CumPayment,
           TotalInt: CumInterest,
           AmorType: Amorttype.toString(),
         });

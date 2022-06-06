@@ -24,6 +24,7 @@ export class AmortSchedOneComponent implements OnInit {
       interest: '',
       endbalance: '',
       cumulativeint: '',
+      cumpayment:0,
       TotalInt:0,
       AmorType:''
     },

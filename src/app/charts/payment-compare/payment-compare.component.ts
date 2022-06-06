@@ -13,15 +13,18 @@ export class PaymentCompareComponent implements OnInit {
 
   dataArray: any = [];
   pricing: PricingModel;
-  payments:any[] = []
+  payments1:PaymentModel[] 
+  payments2:PaymentModel[] 
+  payments3:PaymentModel[] 
   constructor(private loanservice: LoanDataService,private paymentservice:PaymentDataService) { }
 
   ngOnInit() {
     this.loanservice.cast.subscribe((data) => {
       this.pricing = data;
-      this.payments[0] = this.paymentservice.buildpayments(this.pricing,1);
-      this.payments[1] = this.paymentservice.buildpayments(this.pricing,2);
-      this.payments[2] = this.paymentservice.buildpayments(this.pricing,3);
+      this.payments1 = this.paymentservice.buildpayments(this.pricing,1);
+     console.log('payments1 ',this.payments1)
+      this.payments2 = this.paymentservice.buildpayments(this.pricing,2);
+      this.payments3 = this.paymentservice.buildpayments(this.pricing,3);
      
     });
   }
@@ -39,7 +42,7 @@ export class PaymentCompareComponent implements OnInit {
       datasets: [
         {
           label: this.pricing.AmorType1,
-          data: [0, 50, 45, 100],
+          data: this.payments1.map(d=>d.cumpayment),
           backgroundColor: 'rgba(40,125,200,.5)',
           borderColor: 'rgb(40,100,200)',
           fill: false,
@@ -48,7 +51,7 @@ export class PaymentCompareComponent implements OnInit {
         },
         {
           label: this.pricing.AmorType2,
-          data: [30, 90, 111, 20],
+          data: this.payments2['cumpayment'],
           backgroundColor: 'rgba(138,11,26,.5)',
           borderColor: 'rgb(138,11,26)',
           fill: false,
@@ -57,7 +60,7 @@ export class PaymentCompareComponent implements OnInit {
         },
         {
           label: this.pricing.AmorType3,
-          data: [20, 70, 75, 80],
+          data: this.payments3['cumpayment'],
           backgroundColor: 'rgba(11,138,93,.5)',
           borderColor: 'rgb(11,138,93)',
           fill: false,

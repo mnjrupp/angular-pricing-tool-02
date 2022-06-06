@@ -8,6 +8,7 @@ export interface PaymentModel{
   interest: string,
   endbalance: string,
   cumulativeint:string,
+  cumpayment:number,
   TotalInt:number,
   AmorType:string
 }
