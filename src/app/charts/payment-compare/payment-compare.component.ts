@@ -36,6 +36,7 @@ export class PaymentCompareComponent implements OnInit {
      this.lineChart.data.datasets[1].data=this.payments2.map(d=>d.cumpayment)
      this.lineChart.data.datasets[2].data=this.payments3.map(d=>d.cumpayment)
      this.lineChart.update();
+     console.log('lineChart ',this.lineChart)
       }
     });
   }
