@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {BehaviorSubject} from 'rxjs';
 import {PaymentModel} from '../payment-model';
 import { PricingModel } from '../pricing-model';
+import moment from 'moment';
 
 @Injectable()
 export class PaymentDataService {
@@ -35,9 +36,30 @@ export class PaymentDataService {
               else if(scenario==3){return data.AmorType3}
             };
     var Balance = Number(this.unformatNumber(data.loanAmnt));
-    var schedPay = Number(this.unformatNumber(data.PayAmnt1));
+
+    var schedPay = function(){ var d;
+                                  switch(scenario){
+                                      case 1:d=data.PayAmnt1;break;
+                                      case 2:d=data.PayAmnt2;break;
+                                      case 3:d=data.PayAmnt3;break;
+                                  }
+                                return this.unformatNumber(d);
+
+                              }
+
     var displayPay = this.formatCurrency(schedPay);
-    var RecomRate = Number(this.unformatNumber(data.RecomRate1))/100;
+
+    var RecomRate = function(){ var d;
+                                switch(scenario){
+                                    case 1:d=data.RecomRate1;break;
+                                    case 2:d=data.RecomRate2;break;
+                                    case 3:d=data.RecomRate3;break;
+                                }
+                              return Number(this.unformatNumber(d))/100;
+
+                            }
+    
+    //Number(this.unformatNumber(data.RecomRate1))/100;
     var PayDate = moment(data.loanDate).format('l');
     var Principal = '';
     var Interest = '';
@@ -58,16 +80,16 @@ export class PaymentDataService {
         AmorType:''
       },
     ];
-    if (TotalPayments > 0 && Balance>0 && schedPay>0) {
+    if (TotalPayments > 0 && Balance>0 && Number(schedPay)>0) {
       for (var i = 0; i < TotalPayments; i++) {
         Interest = this.formatCurrency(
-          Balance * (RecomRate / data.paymentfreq)
+          Balance * (Number(RecomRate) / data.paymentfreq)
         );
         Principal = this.formatCurrency(
-          schedPay - Balance * (RecomRate / data.paymentfreq)
+          Number(schedPay) - Balance * (Number(RecomRate) / data.paymentfreq)
         );
         EndBalance = this.formatCurrency(
-          Balance - (schedPay - Balance * (RecomRate / data.paymentfreq))
+          Balance - (Number(schedPay) - Balance * (Number(RecomRate) / data.paymentfreq))
         );
         CumInterest +=Number(this.unformatNumber(Interest));
         displayCum = this.formatCurrency(CumInterest);
@@ -81,7 +103,7 @@ export class PaymentDataService {
           endbalance: EndBalance,
           cumulativeint: displayCum,
           TotalInt:CumInterest,
-          AmorType:Amorttype
+          AmorType:Amorttype.toString()
         });
      
         Balance =
