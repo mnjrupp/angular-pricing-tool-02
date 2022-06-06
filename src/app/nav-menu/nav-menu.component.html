@@ -1,55 +1,57 @@
 <header class="sticky-top">
-<nav
-  class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-primary"
->
-  <div class="container">
- 
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-toggle="collapse"
-      data-target=".navbar-collapse"
-      aria-label="Toggle navigation"
-      [attr.aria-expanded]="isExpanded"
-      (click)="toggle()"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div
-      class="navbar-collapse collapse d-sm-inline-flex justify-content"
-      [ngClass]="{ show: isExpanded }"
-    >
-      <ul class="nav nav-pill flex-grow">
-        <li
-          class="nav-item mp-1"
-        >
-          <button class="btn btn-light m-1" (click)="toggleShowLoanOfficerTrue()">Loan Officer</button>
-        </li>
-        <li class="nav-item mp-1">
-          <button class="btn btn-light m-1" (click)="toggleShowCustomerTrue()"
-            >Customer</button
+  <nav
+    class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-primary"
+  >
+    <div class="container">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target=".navbar-collapse"
+        aria-label="Toggle navigation"
+        [attr.aria-expanded]="isExpanded"
+        (click)="toggle()"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div
+        class="navbar-collapse collapse d-sm-inline-flex justify-content"
+        [ngClass]="{ show: isExpanded }"
+      >
+        <div class="btn-group">
+          <a class="btn btn-primary" (click)="toggleShowLoanOfficerTrue()">
+            Loan Officer
+          </a>
+
+          <a class="btn btn-primary" (click)="toggleShowCustomerTrue()">
+            Customer
+          </a>
+
+          <a class="btn btn-primary" (click)="toggleShowAmortOneTrue()">
+            Amortization Schedule One
+          </a>
+
+          <a class="btn btn-primary" (click)="toggleShowAmortTwoTrue()">
+            Amortization Schedule Two
+          </a>
+
+          <a class="btn btn-primary" (click)="toggleShowAmortThreeTrue()">
+            Amortization Schedule Three
+          </a>
+
+          <a class="btn btn-primary" (click)="toggleShowChartIntTrue()">
+            Interest Compare Chart
+          </a>
+
+          <a class="btn btn-primary" (click)="toggleShowChartPayTrue()">
+            Payments Compare Chart
+          </a>
+
+          <a class="btn btn-primary" (click)="toggleShowCalcTrue()"
+            >Rate Conversion Calc</a
           >
-        </li>
-        <!--<li class="nav-item" [routerLinkActive]="['link-active']">
-          <a class="nav-link text-dark " [routerLink]="['/AmortSchedOne']">Amortization Schedule One</a>
-        </li>
-        <li class="nav-item" [routerLinkActive]="['link-active']">
-        <a class="nav-link text-dark " [routerLink]="['/AmortSchedTwo']">Amortization Schedule Two</a>
-        </li>
-        <li class="nav-item" [routerLinkActive]="['link-active']">
-        <a class="nav-link text-dark " [routerLink]="['/AmortSchedThree']">Amortization Schedule Three</a>
-      </li>
-      <li class="nav-item" [routerLinkActive]="['link-active']">
-      <a class="nav-link text-dark " [routerLink]="['/InterestCompare']">Interest Compare Chart</a>
-    </li>
-    <li class="nav-item" [routerLinkActive]="['link-active']">
-    <a class="nav-link text-dark " [routerLink]="['/PaymentsCompare']">Payments Compare Chart</a>
-  </li>
-  <li class="nav-item" [routerLinkActive]="['link-active']">
-  <a class="nav-link text-dark " [routerLink]="['/RateCalc']">Rate Conversion Calc</a>
-</li>-->
-      </ul>
+        </div>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 </header>
