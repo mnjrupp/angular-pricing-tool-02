@@ -16,7 +16,7 @@ export class PaymentDataService {
       interest: '',
       endbalance: '',
       cumulativeint: '',
-      cumpayment:0,
+      cumpayment: 0,
       TotalInt: 0,
       AmorType: '',
     },
@@ -40,30 +40,25 @@ export class PaymentDataService {
       case 1:
         TotalPayments = data.loanProd1 * data.paymentfreq;
         Amorttype = data.AmorType1;
-        schedPay  = Number(this.unformatNumber(data.PayAmnt1));
-        RecomRate = Number(this.unformatNumber(data.RecomRate1))/100;
+        schedPay = Number(this.unformatNumber(data.PayAmnt1));
+        RecomRate = Number(this.unformatNumber(data.RecomRate1)) / 100;
         break;
       case 2:
         TotalPayments = data.loanProd2 * data.paymentfreq;
         Amorttype = data.AmorType2;
-        schedPay  = Number(this.unformatNumber(data.PayAmnt2));
-        RecomRate = Number(this.unformatNumber(data.RecomRate2))/100;
+        schedPay = Number(this.unformatNumber(data.PayAmnt2));
+        RecomRate = Number(this.unformatNumber(data.RecomRate2)) / 100;
         break;
       case 3:
         TotalPayments = data.loanProd3 * data.paymentfreq;
         Amorttype = data.AmorType3;
-        schedPay  = Number(this.unformatNumber(data.PayAmnt3));
-        RecomRate = Number(this.unformatNumber(data.RecomRate3))/100;
+        schedPay = Number(this.unformatNumber(data.PayAmnt3));
+        RecomRate = Number(this.unformatNumber(data.RecomRate3)) / 100;
     }
-    
-   
+
     var Balance = Number(this.unformatNumber(data.loanAmnt));
 
-    
-
     var displayPay = this.formatCurrency(schedPay);
-
-    
 
     //Number(this.unformatNumber(data.RecomRate1))/100;
     var PayDate = moment(data.loanDate).format('l');
@@ -83,7 +78,7 @@ export class PaymentDataService {
         interest: '',
         endbalance: '',
         cumulativeint: '',
-        cumpayment:0,
+        cumpayment: 0,
         TotalInt: 0,
         AmorType: '',
       },
@@ -97,9 +92,7 @@ export class PaymentDataService {
           schedPay - Balance * (RecomRate / data.paymentfreq)
         );
         EndBalance = this.formatCurrency(
-          Balance -
-            (schedPay -
-              Balance * (RecomRate / data.paymentfreq))
+          Balance - (schedPay - Balance * (RecomRate / data.paymentfreq))
         );
         CumPayment += schedPay;
         CumInterest += Number(this.unformatNumber(Interest));
@@ -113,7 +106,7 @@ export class PaymentDataService {
           interest: Interest,
           endbalance: EndBalance,
           cumulativeint: displayCum,
-          cumpayment:CumPayment,
+          cumpayment: CumPayment,
           TotalInt: CumInterest,
           AmorType: Amorttype.toString(),
         });
@@ -147,11 +140,47 @@ export class PaymentDataService {
     return mPayments;
   }
 
-  getMaxPayMonth(t1,t2,t3,startDte){
-    var years =  Math.max(t1,t2,t3);
-    return moment(startDte).add(years,'years').format("MM/DD/yyyy");
+  getMaxPayMonth(t1, t2, t3, startDte) {
+    var years = Math.max(t1, t2, t3);
+    return moment(startDte).add(years, 'years').format('MM/DD/yyyy');
   }
-  
+
+  buildPaymentDates(t1, t2, t3, startDte, freq) {
+    var years = Math.max(t1, t2, t3);
+    var payments = years * freq;
+    var labels = [];
+    var snapshots;
+    var duration;
+    var nextDte = startDte;
+    switch (freq) {
+      case 1:
+         duration = 'y'
+         snapshots=years;
+        break;
+      case 2:
+          duration='M';
+          snapshots=6;
+        break;
+      case 4:
+         duration='Q'
+         snapshots=4;
+        break;
+      case 12:
+         duration='M';
+         snapshots=1;
+        break;
+    }
+
+     for(var i = 0;i<payments-1;i++){
+
+      
+       labels.push(nextDte)
+       nextDte = moment(nextDte).add(snapshots,duration);
+
+     }
+     return labels;
+  }
+
   formatCurrency(value) {
     var uy = new Intl.NumberFormat('en-US', {
       style: 'currency',

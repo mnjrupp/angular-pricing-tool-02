@@ -13,11 +13,12 @@ export class PaymentCompareComponent implements OnInit {
 
   dataArray: any = [];
   pricing: PricingModel;
-  payments1:PaymentModel[] 
-  payments2:PaymentModel[] 
-  payments3:PaymentModel[] 
-  ctx: any 
-  lineChart:Chart
+  payments1:PaymentModel[] ;
+  payments2:PaymentModel[] ;
+  payments3:PaymentModel[] ;
+  ctx: any ;
+  lineChart:Chart;
+  chartLabels:any = [];
 
   constructor(private loanservice: LoanDataService,private paymentservice:PaymentDataService) { }
 
@@ -29,8 +30,12 @@ export class PaymentCompareComponent implements OnInit {
       this.payments2 = this.paymentservice.buildpayments(this.pricing,2);
       //console.log('payments2 ',this.payments2['cumpayment'])
       this.payments3 = this.paymentservice.buildpayments(this.pricing,3);
-      //this.buildChartInterface();
-    // this.updateChart();
+     this.chartLabels= this.paymentservice.buildPaymentDates(this.pricing.AmorTerm1,
+                                            this.pricing.AmorTerm2,
+                                            this.pricing.AmorTerm3,
+                                            this.pricing.loanDate,
+                                            this.pricing.paymentfreq);
+     console.log('chartLabels ',this.chartLabels);
     if(this.lineChart){
      this.lineChart.data.datasets[0].data=this.payments1.map(d=>d.cumpayment)
      this.lineChart.data.datasets[1].data=this.payments2.map(d=>d.cumpayment)
