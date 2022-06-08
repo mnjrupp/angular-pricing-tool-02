@@ -175,7 +175,7 @@ export class PaymentDataService {
 
       
        labels.push(nextDte)
-       nextDte = moment(nextDte).add(snapshots,duration);
+       nextDte = moment(nextDte).add(snapshots,duration).format("L");
 
      }
      return labels;

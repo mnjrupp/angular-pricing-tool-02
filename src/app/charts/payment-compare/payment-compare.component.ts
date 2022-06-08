@@ -35,13 +35,14 @@ export class PaymentCompareComponent implements OnInit {
                                             this.pricing.AmorTerm3,
                                             this.pricing.loanDate,
                                             this.pricing.paymentfreq);
-     console.log('chartLabels ',this.chartLabels);
+    // console.log('chartLabels ',this.chartLabels);
     if(this.lineChart){
+      this.lineChart.data.labels=this.chartLabels;
      this.lineChart.data.datasets[0].data=this.payments1.map(d=>d.cumpayment)
      this.lineChart.data.datasets[1].data=this.payments2.map(d=>d.cumpayment)
      this.lineChart.data.datasets[2].data=this.payments3.map(d=>d.cumpayment)
      this.lineChart.update();
-     console.log('lineChart ',this.lineChart)
+    // console.log('lineChart ',this.lineChart)
       }
     });
   }
