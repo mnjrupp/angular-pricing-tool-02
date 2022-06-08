@@ -19,9 +19,9 @@ export class PaymentCompareComponent implements OnInit {
   ctx: any ;
   lineChart:Chart;
   chartLabels:any = [];
-  ttlloanAmnt1:number
-  ttlloanAmnt2:number
-  ttlloanAmnt3:number
+  ttlloanAmnt1:string
+  ttlloanAmnt2:string
+  ttlloanAmnt3:string
 
   constructor(private loanservice: LoanDataService,private paymentservice:PaymentDataService) { }
 

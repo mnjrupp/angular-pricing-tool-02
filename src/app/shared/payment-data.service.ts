@@ -147,7 +147,7 @@ export class PaymentDataService {
 
   buildTotalLoanAmntwInt(I:PaymentModel[],loanAmnt:string){
 
-    return (Math.max(...I.map(d=>d.TotalInt)) + Number(this.unformatNumber(loanAmnt)))
+    return this.formatCurrency(Math.max(...I.map(d=>d.TotalInt)) + Number(this.unformatNumber(loanAmnt)))
 
   }
   buildPaymentDates(t1, t2, t3, startDte, freq) {
