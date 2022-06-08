@@ -19,6 +19,9 @@ export class PaymentCompareComponent implements OnInit {
   ctx: any ;
   lineChart:Chart;
   chartLabels:any = [];
+  ttlloanAmnt1:number
+  ttlloanAmnt2:number
+  ttlloanAmnt3:number
 
   constructor(private loanservice: LoanDataService,private paymentservice:PaymentDataService) { }
 
@@ -26,7 +29,7 @@ export class PaymentCompareComponent implements OnInit {
     this.loanservice.cast.subscribe((data) => {
       this.pricing = data;
       this.payments1 = this.paymentservice.buildpayments(this.pricing,1);
-     console.log('payments1 ',this.payments1.map(d=>d.cumpayment))
+     console.log('payments1 ',this.payments1)
       this.payments2 = this.paymentservice.buildpayments(this.pricing,2);
       //console.log('payments2 ',this.payments2['cumpayment'])
       this.payments3 = this.paymentservice.buildpayments(this.pricing,3);
@@ -35,6 +38,9 @@ export class PaymentCompareComponent implements OnInit {
                                             this.pricing.AmorTerm3,
                                             this.pricing.loanDate,
                                             this.pricing.paymentfreq);
+     this.ttlloanAmnt1 = this.paymentservice.buildTotalLoanAmntwInt(this.payments1,this.pricing.loanAmnt)
+     this.ttlloanAmnt2 = this.paymentservice.buildTotalLoanAmntwInt(this.payments2,this.pricing.loanAmnt)
+     this.ttlloanAmnt3 = this.paymentservice.buildTotalLoanAmntwInt(this.payments3,this.pricing.loanAmnt)
     // console.log('chartLabels ',this.chartLabels);
     if(this.lineChart){
       this.lineChart.data.labels=this.chartLabels;

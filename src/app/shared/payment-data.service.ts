@@ -145,6 +145,11 @@ export class PaymentDataService {
     return moment(startDte).add(years, 'years').format('MM/DD/yyyy');
   }
 
+  buildTotalLoanAmntwInt(I:PaymentModel[],loanAmnt:string){
+
+    return (Math.max(...I.map(d=>d.TotalInt)) + Number(this.unformatNumber(loanAmnt)))
+
+  }
   buildPaymentDates(t1, t2, t3, startDte, freq) {
     /*
       t1       = Amort Term Scenario 1
