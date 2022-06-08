@@ -136,7 +136,7 @@ export class PaymentDataService {
         }
       }
     }
-    //console.log('payment-service ', mPayments);
+   
     return mPayments;
   }
 
@@ -146,6 +146,14 @@ export class PaymentDataService {
   }
 
   buildPaymentDates(t1, t2, t3, startDte, freq) {
+    /*
+      t1       = Amort Term Scenario 1
+      t2       = Amort Term Scenario 2
+      t3       = Amort Term Scenario 3
+      startDte = Loan Start Date
+      freq     = Payment Frequency
+    
+    */
     var years = Math.max(t1, t2, t3);
     var payments = years * freq;
     var labels = [];
