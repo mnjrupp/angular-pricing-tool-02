@@ -147,6 +147,11 @@ export class PaymentDataService {
     return mPayments;
   }
 
+  getMaxPayMonth(t1,t2,t3,startDte){
+    var years =  Math.max(t1,t2,t3);
+    return moment(startDte).add(years,'years').format("MM/DD/yyyy");
+  }
+  
   formatCurrency(value) {
     var uy = new Intl.NumberFormat('en-US', {
       style: 'currency',

@@ -25,7 +25,7 @@ export class PaymentCompareComponent implements OnInit {
     this.loanservice.cast.subscribe((data) => {
       this.pricing = data;
       this.payments1 = this.paymentservice.buildpayments(this.pricing,1);
-    // console.log('payments1 ',this.payments1.map(d=>d.cumpayment))
+     console.log('payments1 ',this.payments1.map(d=>d.cumpayment))
       this.payments2 = this.paymentservice.buildpayments(this.pricing,2);
       //console.log('payments2 ',this.payments2['cumpayment'])
       this.payments3 = this.paymentservice.buildpayments(this.pricing,3);
@@ -54,15 +54,18 @@ export class PaymentCompareComponent implements OnInit {
     this.buildChartInterface();
 
   }
+
+ 
   removeChartData(chart){
+     
       chart.data.datasets.forEach((dataset) => {
         dataset.data.pop();
     });
     chart.update();
   }
 
-  addChartData(chart,data){
-
+  addChartData(chart,data,label){
+      chart.data.labels.push(label)
       chart.data.datasets.forEach((dataset) => {
       dataset.data.push(data);
     });

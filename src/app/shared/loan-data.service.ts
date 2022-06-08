@@ -154,6 +154,8 @@ export class LoanDataService {
     //console.log('getLoanStartDate ', moment(dString).add(30,'days') )
     return moment(dString).add(30,'days').format("MM/DD/yyyy");
   }
+
+ 
   unformatNumber(value) {
     //console.log(value.replace(/\$|,/g, ''));
     return value.replace(/\$|,|\%/g, '');
