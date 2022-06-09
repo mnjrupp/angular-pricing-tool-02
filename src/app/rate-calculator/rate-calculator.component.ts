@@ -9,7 +9,11 @@ import {PricingModel} from '../pricing-model';
 })
 export class RateCalculatorComponent implements OnInit {
   pricing:PricingModel;
-
+  LoanBalance:string;
+  COFCurrent:string;
+  COFConv:string;
+  SpreadCurrent:string;
+  SpreadConv:string;
   grossRateCurrent:string;
   grossRateConverted:string;
   annualEarnBorrowCur:string;
@@ -23,6 +27,10 @@ export class RateCalculatorComponent implements OnInit {
 
   ngOnInit() {
     this.loanservice.cast.subscribe(data=>this.pricing = data);
+    console.log('pricing ',this.pricing)
+    this.COFConv = this.pricing.COF1
+    this.SpreadConv=this.pricing.finalSpread1;
+    this.LoanBalance=this.pricing.loanAmnt;
 
   }
 
