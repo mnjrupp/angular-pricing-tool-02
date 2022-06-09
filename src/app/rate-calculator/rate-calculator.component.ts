@@ -9,10 +9,24 @@ import {PricingModel} from '../pricing-model';
 })
 export class RateCalculatorComponent implements OnInit {
   pricing:PricingModel;
+
+  grossRateCurrent:string;
+  grossRateConverted:string;
+  annualEarnBorrowCur:string;
+  annualEarnBorrowConv:string;
+  annualEarnCapitalCur:string;
+  annualEarnCapitalConv:string;
+  annualIntEarnCur:string;
+  annualIntEarnConv:string;
+
   constructor(private loanservice:LoanDataService) { }
 
   ngOnInit() {
     this.loanservice.cast.subscribe(data=>this.pricing = data);
+
   }
 
+  updateCalc(value){
+
+  }
 }

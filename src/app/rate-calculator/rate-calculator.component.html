@@ -16,7 +16,7 @@
   </div>
   <div class="row g-1">
     <div class="col">
-    <div class="mb-1 p-1 text-decoration-underline">
+    <div class="mb-2 p-1 text-decoration-underline">
     <small class="text-muted">Pricing Elements</small>
   </div>
     </div>
@@ -33,19 +33,50 @@
   </div>
   <div class="row g-1">
   <div class="col">
-  <div class="mb-1 p-1 bg-light">
+  <div class="m-1 p-1 bg-light" style="height:30px">
   <small class="text-muted">COF:</small>
 </div>
   </div>
   <div class="col">
-  <div class="mb-1 p-1 bg-light">
-  <small class="text-muted">&nbsp;</small>
+  <div class="mb-1 p-1 bg-light" style="height:30px">
+  <input
+  type="text"
+  class="form-control form-control-sm"
+  formControlName="CurrentCof"
+  id="CurrentCof"
+  placeholder=""
+  (change)="updateCalc($event)"
+/>
 </div>
   </div>
   <div class="col">
-  <div class="mb-1 p-1 bg-light">
+  <div class="m-1 p-1 bg-light">
   <small class="text-muted">&nbsp;</small>
 </div>
   </div>
+</div>
+<div class="row g-1">
+<div class="col">
+<div class="m-1 p-1 bg-light" style="height:30px">
+<small class="text-muted">Spread:</small>
+</div>
+</div>
+<div class="col">
+<div class="mb-1 p-1 bg-light" style="height:30px">
+<input
+type="text"
+class="form-control form-control-sm"
+formControlName="CurrentSpread"
+id="CurrentSpread"
+placeholder=""
+(change)="updateCalc($event)"
+/>
+</div>
+</div>
+<div class="col">
+<div class="m-1 p-1 bg-light">
+<small class="text-muted">&nbsp;</small>
+</div>
+</div>
 </div>
 </div>
