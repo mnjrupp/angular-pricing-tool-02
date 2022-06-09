@@ -15,7 +15,7 @@ export class LoanDataService {
 
     strtoday = this.mm + '/' + this.dd + '/' + this.yyyy;
   pricingmodel:PricingModel ={
-    applicationName: 'Joe Brown',
+    applicationName: '',
     phoneNumber: '',
     address: '',
     loanDate:this.getLoanStartDate(this.strtoday).toString(),

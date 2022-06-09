@@ -22,6 +22,9 @@ export class PaymentCompareComponent implements OnInit {
   ttlloanAmnt1:string
   ttlloanAmnt2:string
   ttlloanAmnt3:string
+  ttlInterest1:string
+  ttlInterest2:string
+  ttlInterest3:string
 
   constructor(private loanservice: LoanDataService,private paymentservice:PaymentDataService) { }
 
@@ -41,6 +44,9 @@ export class PaymentCompareComponent implements OnInit {
      this.ttlloanAmnt1 = this.paymentservice.buildTotalLoanAmntwInt(this.payments1,this.pricing.loanAmnt)
      this.ttlloanAmnt2 = this.paymentservice.buildTotalLoanAmntwInt(this.payments2,this.pricing.loanAmnt)
      this.ttlloanAmnt3 = this.paymentservice.buildTotalLoanAmntwInt(this.payments3,this.pricing.loanAmnt)
+     this.ttlInterest1 = this.paymentservice.formatCurrency(Math.max(...this.payments1.map(d=>d.TotalInt)))
+     this.ttlInterest2 = this.paymentservice.formatCurrency(Math.max(...this.payments2.map(d=>d.TotalInt)))
+     this.ttlInterest3 = this.paymentservice.formatCurrency(Math.max(...this.payments3.map(d=>d.TotalInt)))
     // console.log('chartLabels ',this.chartLabels);
     if(this.lineChart){
       this.lineChart.data.labels=this.chartLabels;
@@ -87,14 +93,6 @@ export class PaymentCompareComponent implements OnInit {
     let data: any,
     options: any;
    
-    /*canvas:any = document.getElementById('areaChart') as HTMLElement;
-    console.log('canvas object ',canvas);
-    canvas.remove();
-    let division: any = document.getElementById('myChart') as HTMLElement;
-        division.append('<canvas id="areaChart"></canvas>');*/
-   
-    //ctx.destroy();
- 
 
   data = {
     labels: ['Scenario 1', 'Scenario 2', 'Scenario 3'],
