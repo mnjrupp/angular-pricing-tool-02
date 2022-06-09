@@ -4,6 +4,7 @@ import {PaymentModel} from '../../payment-model';
 import { PricingModel } from '../../pricing-model';
 import { LoanDataService } from '../../shared/loan-data.service';
 import {PaymentDataService} from '../../shared/payment-data.service';
+
 @Component({
   selector: 'app-charts-payment-compare',
   templateUrl: './payment-compare.component.html',
@@ -19,12 +20,12 @@ export class PaymentCompareComponent implements OnInit {
   ctx: any ;
   lineChart:Chart;
   chartLabels:any = [];
-  ttlloanAmnt1:string
-  ttlloanAmnt2:string
-  ttlloanAmnt3:string
-  ttlInterest1:string
-  ttlInterest2:string
-  ttlInterest3:string
+  ttlloanAmnt1:string;
+  ttlloanAmnt2:string;
+  ttlloanAmnt3:string;
+  ttlInterest1:string;
+  ttlInterest2:string;
+  ttlInterest3:string;
 
   constructor(private loanservice: LoanDataService,private paymentservice:PaymentDataService) { }
 
@@ -60,7 +61,7 @@ export class PaymentCompareComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-    this.ctx= document.getElementById('areaChart') as HTMLElement;
+    this.ctx= document.getElementById('linePayChart') as HTMLElement;
    // this.chart = new Chart(this.ctx)
    this.buildChartInterface();
   }

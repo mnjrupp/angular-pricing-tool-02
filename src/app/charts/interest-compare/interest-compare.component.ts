@@ -33,7 +33,7 @@ export class InterestCompareComponent implements OnInit {
     this.loanservice.cast.subscribe((data) => {
       this.pricing = data;
       this.payments1 = this.paymentservice.buildpayments(this.pricing,1);
-     console.log('payments1 ',this.payments1)
+     //console.log('payments1 ',this.payments1)
       this.payments2 = this.paymentservice.buildpayments(this.pricing,2);
       //console.log('payments2 ',this.payments2['cumpayment'])
       this.payments3 = this.paymentservice.buildpayments(this.pricing,3);
@@ -51,9 +51,9 @@ export class InterestCompareComponent implements OnInit {
     // console.log('chartLabels ',this.chartLabels);
     if(this.lineChart){
       this.lineChart.data.labels=this.chartLabels;
-     this.lineChart.data.datasets[0].data=this.payments1.map(d=>d.cumpayment)
-     this.lineChart.data.datasets[1].data=this.payments2.map(d=>d.cumpayment)
-     this.lineChart.data.datasets[2].data=this.payments3.map(d=>d.cumpayment)
+     this.lineChart.data.datasets[0].data=this.payments1.map(d=>d.TotalInt)
+     this.lineChart.data.datasets[1].data=this.payments2.map(d=>d.TotalInt)
+     this.lineChart.data.datasets[2].data=this.payments3.map(d=>d.TotalInt)
      this.lineChart.update();
     // console.log('lineChart ',this.lineChart)
       }
@@ -61,7 +61,7 @@ export class InterestCompareComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-    this.ctx= document.getElementById('areaChart') as HTMLElement;
+    this.ctx= document.getElementById('lineIntChart') as HTMLElement;
    // this.chart = new Chart(this.ctx)
    this.buildChartInterface();
   }
