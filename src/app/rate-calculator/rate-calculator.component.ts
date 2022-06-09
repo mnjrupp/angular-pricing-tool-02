@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import {LoanDataService} from '../shared/loan-data.service';
 import {PricingModel} from '../pricing-model';
 
@@ -23,6 +24,8 @@ export class RateCalculatorComponent implements OnInit {
   annualIntEarnCur:string;
   annualIntEarnConv:string;
 
+  formCalc:FormGroup
+  formBuilder:FormBuilder
   constructor(private loanservice:LoanDataService) { }
 
   ngOnInit() {
@@ -31,7 +34,10 @@ export class RateCalculatorComponent implements OnInit {
     this.COFConv = this.pricing.COF1
     this.SpreadConv=this.pricing.finalSpread1;
     this.LoanBalance=this.pricing.loanAmnt;
+    this.formCalc = this.formBuilder.group({
 
+      
+    });
   }
 
   updateCalc(value){

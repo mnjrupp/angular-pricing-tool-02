@@ -2,81 +2,86 @@
   <!--<img src="https://raw.githubusercontent.com/mnjrupp/angular-ivy-ylwyj7/master/src/assets/RateCalc.PNG" alt=" Amort Schedule">-->
   <h5 class="d-flex justify-content-left">Repricing Calculator</h5>
   <hr />
-  <div class="row g-1">
-    <div class="col-3">
-      <div class="mb-1 p-1 bg-light">
-        <small class="text-muted">Loan balance:</small>
+  <form [formGroup]="formCalc" action="">
+    <div class="row g-1">
+      <div class="col-3">
+        <div class="mb-1 p-1 bg-light">
+          <small class="text-muted">Loan balance:</small>
+        </div>
+      </div>
+      <div class="col-3">
+        <div
+          class="mb-1 p-1 bg-secondary text-end"
+          style="--bs-bg-opacity: .25;"
+        >
+          <small class="text-muted">&nbsp;{{ LoanBalance }}</small>
+        </div>
       </div>
     </div>
-    <div class="col-3">
-      <div class="mb-1 p-1 bg-secondary text-end" style="--bs-bg-opacity: .25;">
-        <small class="text-muted">&nbsp;{{LoanBalance}}</small>
+    <div class="row g-1">
+      <div class="col">
+        <div class="mb-2 p-1 text-decoration-underline">
+          <small class="text-muted">Pricing Elements</small>
+        </div>
+      </div>
+      <div class="col">
+        <div class="mb-1 p-1 text-decoration-underline">
+          <small class="text-muted">Current</small>
+        </div>
+      </div>
+      <div class="col">
+        <div class="mb-1 p-1 text-decoration-underline">
+          <small class="text-muted">Converted</small>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="row g-1">
-    <div class="col">
-    <div class="mb-2 p-1 text-decoration-underline">
-    <small class="text-muted">Pricing Elements</small>
-  </div>
+    <div class="row g-1">
+      <div class="col">
+        <div class="m-1 p-1 bg-light" style="height:30px">
+          <small class="text-muted">COF:</small>
+        </div>
+      </div>
+      <div class="col">
+        <div class="mb-1 p-1 bg-light" style="height:30px">
+          <input
+            type="text"
+            class="form-control form-control-sm"
+            formControlName="CurrentCof"
+            id="CurrentCof"
+            placeholder=""
+            (change)="updateCalc($event)"
+          />
+        </div>
+      </div>
+      <div class="col">
+        <div class="m-1 p-1 bg-light">
+          <small class="text-muted">&nbsp;{{ COFConv }}</small>
+        </div>
+      </div>
     </div>
-    <div class="col">
-    <div class="mb-1 p-1 text-decoration-underline">
-    <small class="text-muted">Current</small>
-  </div>
+    <div class="row g-1">
+      <div class="col">
+        <div class="m-1 p-1 bg-light" style="height:30px">
+          <small class="text-muted">Spread:</small>
+        </div>
+      </div>
+      <div class="col">
+        <div class="mb-1 p-1 bg-light" style="height:30px">
+          <input
+            type="text"
+            class="form-control form-control-sm"
+            formControlName="CurrentSpread"
+            id="CurrentSpread"
+            placeholder=""
+            (change)="updateCalc($event)"
+          />
+        </div>
+      </div>
+      <div class="col">
+        <div class="m-1 p-1 bg-light">
+          <small class="text-muted">&nbsp;{{ SpreadConv }}</small>
+        </div>
+      </div>
     </div>
-    <div class="col">
-    <div class="mb-1 p-1 text-decoration-underline">
-    <small class="text-muted">Converted</small>
-  </div>
-    </div>
-  </div>
-  <div class="row g-1">
-  <div class="col">
-  <div class="m-1 p-1 bg-light" style="height:30px">
-  <small class="text-muted">COF:</small>
-</div>
-  </div>
-  <div class="col">
-  <div class="mb-1 p-1 bg-light" style="height:30px">
-  <input
-  type="text"
-  class="form-control form-control-sm"
-  formControlName="CurrentCof"
-  id="CurrentCof"
-  placeholder=""
-  (change)="updateCalc($event)"
-/>
-</div>
-  </div>
-  <div class="col">
-  <div class="m-1 p-1 bg-light">
-  <small class="text-muted">&nbsp;{{COFConv}}</small>
-</div>
-  </div>
-</div>
-<div class="row g-1">
-<div class="col">
-<div class="m-1 p-1 bg-light" style="height:30px">
-<small class="text-muted">Spread:</small>
-</div>
-</div>
-<div class="col">
-<div class="mb-1 p-1 bg-light" style="height:30px">
-<input
-type="text"
-class="form-control form-control-sm"
-formControlName="CurrentSpread"
-id="CurrentSpread"
-placeholder=""
-(change)="updateCalc($event)"
-/>
-</div>
-</div>
-<div class="col">
-<div class="m-1 p-1 bg-light">
-<small class="text-muted">&nbsp;{{SpreadConv}}</small>
-</div>
-</div>
-</div>
+  </form>
 </div>
