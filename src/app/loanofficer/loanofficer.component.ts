@@ -11,8 +11,8 @@ import { PricingModel } from '../pricing-model';
 import { LocationUpgradeModule } from '@angular/common/upgrade';
 import { NumberFormatStyle } from '@angular/common';
 
-import {COFs} from '../COFReqdummy';
-import {COFResponse} from '../COFRespdummy';
+import { COFs } from '../COFReqdummy';
+import { COFResponse } from '../COFRespdummy';
 import moment from 'moment';
 
 @Component({
@@ -36,14 +36,14 @@ export class LoanOfficerComponent implements OnInit {
   ) {
     this.officers = dbOfficers;
     this.costoffundsreqObj = COFs;
-    this.costoffundsresObj = COFResponse; 
+    this.costoffundsresObj = COFResponse;
   }
 
   getCOF() {
     // TODO: implemet the CostOfFunds from FCBT
     var copyformValue: PricingModel;
     copyformValue = this.formValue.value;
-   
+
     this.apiservice.postCostofFunds(this.buildCOF(copyformValue)).subscribe(
       (data) => {
         console.log('data returned ', data);
@@ -202,19 +202,40 @@ export class LoanOfficerComponent implements OnInit {
       this.pricing.paymentfreq,
       this.pricing.AmorTerm3
     );
-   // console.log('recomrate1 recomrate2 recomrate3 ',recomrate1 + '~' + recomrate2 + '~' + recomrate3)
-    var recomspread1 = (recomrate1 - value[0].Data[0].Spread);
-    var recomspread2 = (recomrate2 - value[0].Data[1].Spread);
-    var recomspread3 = (recomrate3 - value[0].Data[2].Spread);
-    
-    var estIntRate1 = (recomrate1+(parseFloat(this.pricing.Variance1) || 0))
-    var estIntRate2 = (recomrate2+(parseFloat(this.pricing.Variance2) || 0))
-    var estIntRate3 = (recomrate3+(parseFloat(this.pricing.Variance3) || 0))
-    var payment1 = this.formatCurrency(-1*this.build1stPaymnt(estIntRate1,(this.pricing.AmorTerm1*this.pricing.paymentfreq),this.unformatNumber(this.pricing.loanAmnt)))
-    var payment2 = this.formatCurrency(-1*this.build1stPaymnt(estIntRate2,(this.pricing.AmorTerm2*this.pricing.paymentfreq),this.unformatNumber(this.pricing.loanAmnt)))
-    var payment3 = this.formatCurrency(-1*this.build1stPaymnt(estIntRate3,(this.pricing.AmorTerm3*this.pricing.paymentfreq),this.unformatNumber(this.pricing.loanAmnt)))
-     
-    //console.log('Loan Officer Variance 1 ',this.pricing.Variance1)
+    // console.log('recomrate1 recomrate2 recomrate3 ',recomrate1 + '~' + recomrate2 + '~' + recomrate3)
+    var recomspread1 = recomrate1 - value[0].Data[0].Spread;
+    var recomspread2 = recomrate2 - value[0].Data[1].Spread;
+    var recomspread3 = recomrate3 - value[0].Data[2].Spread;
+
+    var estIntRate1 = recomrate1 + (parseFloat(this.pricing.Variance1) || 0);
+    var estIntRate2 = recomrate2 + (parseFloat(this.pricing.Variance2) || 0);
+    var estIntRate3 = recomrate3 + (parseFloat(this.pricing.Variance3) || 0);
+    var payment1 = this.formatCurrency(
+      -1 *
+        this.build1stPaymnt(
+          estIntRate1,
+          this.pricing.AmorTerm1 * this.pricing.paymentfreq,
+          this.unformatNumber(this.pricing.loanAmnt)
+        )
+    );
+    var payment2 = this.formatCurrency(
+      -1 *
+        this.build1stPaymnt(
+          estIntRate2,
+          this.pricing.AmorTerm2 * this.pricing.paymentfreq,
+          this.unformatNumber(this.pricing.loanAmnt)
+        )
+    );
+    var payment3 = this.formatCurrency(
+      -1 *
+        this.build1stPaymnt(
+          estIntRate3,
+          this.pricing.AmorTerm3 * this.pricing.paymentfreq,
+          this.unformatNumber(this.pricing.loanAmnt)
+        )
+    );
+
+    console.log('COF 1 ',value[0].Data[0].Spread)
     //console.log('Recommended Spread 1 ',recomspread1);
     this.formValue.patchValue({
       COF1: this.formatPercent(value[0].Data[0].Spread),
@@ -226,20 +247,29 @@ export class LoanOfficerComponent implements OnInit {
       RecomSpread1: this.formatPercent(recomspread1),
       RecomSpread2: this.formatPercent(recomspread2),
       RecomSpread3: this.formatPercent(recomspread3),
-      finalSpread1:this.formatPercent(recomspread1+(parseFloat(this.pricing.Variance1) || 0)),
-      finalSpread2:this.formatPercent(recomspread2+(parseFloat(this.pricing.Variance2) || 0)),
-      finalSpread3:this.formatPercent(recomspread3+(parseFloat(this.pricing.Variance3) || 0)),
-      IntRate1:this.formatPercent(estIntRate1),
-      IntRate2:this.formatPercent(estIntRate2),
-      IntRate3:this.formatPercent(estIntRate3),
-      PayAmnt1:payment1,
-      PayAmnt2:payment2,
-      PayAmnt3:payment3
+      finalSpread1: this.formatPercent(
+        recomspread1 + (parseFloat(this.pricing.Variance1) || 0)
+      ),
+      finalSpread2: this.formatPercent(
+        recomspread2 + (parseFloat(this.pricing.Variance2) || 0)
+      ),
+      finalSpread3: this.formatPercent(
+        recomspread3 + (parseFloat(this.pricing.Variance3) || 0)
+      ),
+      IntRate1: this.formatPercent(estIntRate1),
+      IntRate2: this.formatPercent(estIntRate2),
+      IntRate3: this.formatPercent(estIntRate3),
+      PayAmnt1: payment1,
+      PayAmnt2: payment2,
+      PayAmnt3: payment3,
     });
 
     this.pricing.PayAmnt1 = payment1;
     this.pricing.PayAmnt2 = payment2;
     this.pricing.PayAmnt3 = payment3;
+    this.pricing.COF1 = this.formatPercent(value[0].Data[0].Spread);
+    this.pricing.COF2 = this.formatPercent(value[0].Data[1].Spread);
+    this.pricing.COF3 = this.formatPercent(value[0].Data[2].Spread);
     this.pricing.RecomSpread1 = this.formatPercent(recomspread1);
     this.pricing.RecomSpread2 = this.formatPercent(recomspread2);
     this.pricing.RecomSpread3 = this.formatPercent(recomspread3);
@@ -249,38 +279,55 @@ export class LoanOfficerComponent implements OnInit {
 
     this.pricing.PostPatRate1 = this.formatPercent(
       this.buildPatrRate(
-        this.pricing.branchOffice, estIntRate1,
-      (recomspread1+(parseFloat(this.pricing.Variance1) || 0)) ));
+        this.pricing.branchOffice,
+        estIntRate1,
+        recomspread1 + (parseFloat(this.pricing.Variance1) || 0)
+      )
+    );
 
     this.pricing.PostPatRate2 = this.formatPercent(
-        this.buildPatrRate(
-          this.pricing.branchOffice, estIntRate2,
-        (recomspread2+(parseFloat(this.pricing.Variance2) || 0)) ));
+      this.buildPatrRate(
+        this.pricing.branchOffice,
+        estIntRate2,
+        recomspread2 + (parseFloat(this.pricing.Variance2) || 0)
+      )
+    );
 
     this.pricing.PostPatRate3 = this.formatPercent(
-          this.buildPatrRate(
-            this.pricing.branchOffice, estIntRate3,
-          (recomspread3+(parseFloat(this.pricing.Variance3) || 0)) ))
+      this.buildPatrRate(
+        this.pricing.branchOffice,
+        estIntRate3,
+        recomspread3 + (parseFloat(this.pricing.Variance3) || 0)
+      )
+    );
 
     this.pricing.PostPatSave1 = this.formatCurrency(
-      this.buildPatrSavings(this.pricing.branchOffice,
+      this.buildPatrSavings(
+        this.pricing.branchOffice,
         this.unformatNumber(this.pricing.loanAmnt),
-        (recomspread1+(parseFloat(this.pricing.Variance1) || 0)) ));
+        recomspread1 + (parseFloat(this.pricing.Variance1) || 0)
+      )
+    );
 
     this.loanservice.editModel(this.pricing);
 
     this.pricing.PostPatSave2 = this.formatCurrency(
-      this.buildPatrSavings(this.pricing.branchOffice,
+      this.buildPatrSavings(
+        this.pricing.branchOffice,
         this.unformatNumber(this.pricing.loanAmnt),
-        (recomspread2+(parseFloat(this.pricing.Variance2) || 0)) ));
+        recomspread2 + (parseFloat(this.pricing.Variance2) || 0)
+      )
+    );
 
     this.pricing.PostPatSave3 = this.formatCurrency(
-          this.buildPatrSavings(this.pricing.branchOffice,
-            this.unformatNumber(this.pricing.loanAmnt),
-            (recomspread3+(parseFloat(this.pricing.Variance3) || 0)) ));
-    
+      this.buildPatrSavings(
+        this.pricing.branchOffice,
+        this.unformatNumber(this.pricing.loanAmnt),
+        recomspread3 + (parseFloat(this.pricing.Variance3) || 0)
+      )
+    );
+
     this.loanservice.editModel(this.pricing);
-   
   }
   buildRecomRate(
     spread: number,
@@ -289,26 +336,29 @@ export class LoanOfficerComponent implements OnInit {
     pd: number,
     lgd: number,
     payfreq: number,
-    amort:number
+    amort: number
   ) {
-
-   
-         spread + 0;
+    spread + 0;
     var loanfloat = 0;
-    var premium:any = {prodamort:0,value:0.0}
-    var loanProduct:any = {Product:0,value:0.0}
-    
-    
-    loanProduct = this.loanservice.loanProductArray.filter(function
-      (x) { 
-        return x.Product == loanProd;
-      }
-    );
+    var premium: any;
+    var loanProduct: any;
+
+    loanProduct = this.loanservice.loanProductArray.filter(function (x) {
+      return x.Product == loanProd;
+    });
+    if (loanProduct === 'undefined') {
+      loanProduct = [{ Product: 0, value: 0.0 }];
+    }
     //console.log('loanProduct ',loanProduct)
     var paymentfrequency = 0;
     premium = this.loanservice.loanPremiumArray.filter(
-      (x)=> x.prodamort==(loanProd+amort)
-    ) 
+      (x) => x.prodamort == loanProd + amort
+    );
+    if (premium.length==0) {
+      premium = [{ prodamort: 0, value: 0.0 }];
+    }
+   console.log('premium ',premium);
+
     var pdlgdStr = this.buildPDLGDStr(pd, lgd);
     var pdlgdfloat = this.loanservice.loanpdlgdArray.filter(
       (x) => x.pd === pdlgdStr
@@ -329,7 +379,7 @@ export class LoanOfficerComponent implements OnInit {
       loanfloat +
       loanProduct[0].value +
       pdlgdfloat[0].value +
-      (premium[0].value ) +
+      premium[0].value +
       paymentfrequency
     );
   }
@@ -375,31 +425,29 @@ export class LoanOfficerComponent implements OnInit {
     this.loanservice.editModel(this.pricing);
   }
 
-  updateTotalInterest(l,i,p,d){
+  updateTotalInterest(l, i, p, d) {
     /*  l = loanAmnt
         i = interest
         p = loan Prod years
         d = Loan Start Date */
-        var loanAmnt = 0;
-        var interest = 0.0;
-        var yrs = 0;
-        var dDate:Date;
-        var ttlInt:number;
+    var loanAmnt = 0;
+    var interest = 0.0;
+    var yrs = 0;
+    var dDate: Date;
+    var ttlInt: number;
 
-        loanAmnt = Number(l);
-        interest = Number(i);
-        yrs = Number(p);
-        dDate = moment(d,'mm/dd/yyyy').toDate();
-        
-        console.log('updateTotalInterest loanAmnt ',loanAmnt)
-        console.log('updateTotalInterest interest ',interest)
-        console.log('updateTotalInterest years ',yrs)
-        console.log('updateTotalInterest loan date  ',Number(dDate))
+    loanAmnt = Number(l);
+    interest = Number(i);
+    yrs = Number(p);
+    dDate = moment(d, 'mm/dd/yyyy').toDate();
 
-        ttlInt = loanAmnt*interest*yrs* Number(dDate)
-        return ttlInt;
+    console.log('updateTotalInterest loanAmnt ', loanAmnt);
+    console.log('updateTotalInterest interest ', interest);
+    console.log('updateTotalInterest years ', yrs);
+    console.log('updateTotalInterest loan date  ', Number(dDate));
 
-
+    ttlInt = loanAmnt * interest * yrs * Number(dDate);
+    return ttlInt;
   }
   updateApplicantDataName(event) {
     //console.log(event.target.value);
@@ -422,7 +470,7 @@ export class LoanOfficerComponent implements OnInit {
     this.loanservice.editModel(this.pricing);
   }
   updateApplicantDataAmortTypeTwo(event) {
-   // console.log(event.target.value);
+    // console.log(event.target.value);
     this.pricing.AmorType2 = event.target.value;
     this.loanservice.editModel(this.pricing);
   }
@@ -432,7 +480,7 @@ export class LoanOfficerComponent implements OnInit {
     this.loanservice.editModel(this.pricing);
   }
   updateApplicantDataAmortTermOne(event) {
-   // console.log(event.target.value);
+    // console.log(event.target.value);
     this.pricing.AmorTerm1 = event.target.value;
     this.loanservice.editModel(this.pricing);
   }
@@ -442,7 +490,7 @@ export class LoanOfficerComponent implements OnInit {
     this.loanservice.editModel(this.pricing);
   }
   updateApplicantDataAmortTermThree(event) {
-   // console.log(event.target.value);
+    // console.log(event.target.value);
     this.pricing.AmorTerm3 = event.target.value;
     this.loanservice.editModel(this.pricing);
   }
@@ -456,32 +504,32 @@ export class LoanOfficerComponent implements OnInit {
     this.loanservice.editModel(this.pricing);
   }
   updateApplicantDataLoanProdTwo(event) {
-   // console.log(event.target.value);
+    // console.log(event.target.value);
     this.pricing.loanProd2 = event.target.value;
     this.loanservice.editModel(this.pricing);
   }
   updateApplicantDataLoanProdThree(event) {
-   // console.log(event.target.value);
+    // console.log(event.target.value);
     this.pricing.loanProd3 = event.target.value;
     this.loanservice.editModel(this.pricing);
   }
   updateApplicantDataTransOptOne(event) {
-   // console.log(event.target.value);
+    // console.log(event.target.value);
     this.pricing.TransferOption1 = event.target.value;
     this.loanservice.editModel(this.pricing);
   }
   updateApplicantDataTransOptTwo(event) {
-   // console.log(event.target.value);
+    // console.log(event.target.value);
     this.pricing.TransferOption2 = event.target.value;
     this.loanservice.editModel(this.pricing);
   }
   updateApplicantDataTransOptThree(event) {
-   // console.log(event.target.value);
+    // console.log(event.target.value);
     this.pricing.TransferOption3 = event.target.value;
     this.loanservice.editModel(this.pricing);
   }
-  updatePayFreq(event){
-   // console.log(event.target.value);
+  updatePayFreq(event) {
+    // console.log(event.target.value);
     this.pricing.paymentfreq = event.target.value;
     this.loanservice.editModel(this.pricing);
   }
@@ -519,80 +567,84 @@ export class LoanOfficerComponent implements OnInit {
     return uy;
   }
   formatPercent_var1(event) {
-    this.pricing.Variance1=event.target.value;
-    this.pricing.finalSpread1 = this.formatPercent((this.unformatNumber(this.pricing.RecomSpread1)/100)+(parseFloat(this.pricing.Variance1)));
+    this.pricing.Variance1 = event.target.value;
+    this.pricing.finalSpread1 = this.formatPercent(
+      this.unformatNumber(this.pricing.RecomSpread1) / 100 +
+        parseFloat(this.pricing.Variance1)
+    );
     //console.log('Final Spread 1 ',this.pricing.finalSpread1);
     this.formValue.patchValue({
       Variance1: this.formatPercent(event.target.value),
-      finalSpread1:this.pricing.finalSpread1
-      
-     
+      finalSpread1: this.pricing.finalSpread1,
     });
-    
+
     this.loanservice.editModel(this.pricing);
   }
   formatPercent_var2(event) {
-    this.pricing.Variance2=event.target.value;
-    this.pricing.finalSpread2 = this.formatPercent((this.unformatNumber(this.pricing.RecomSpread2)/100)+(parseFloat(this.pricing.Variance2)));
+    this.pricing.Variance2 = event.target.value;
+    this.pricing.finalSpread2 = this.formatPercent(
+      this.unformatNumber(this.pricing.RecomSpread2) / 100 +
+        parseFloat(this.pricing.Variance2)
+    );
     this.formValue.patchValue({
       Variance2: this.formatPercent(event.target.value),
-      finalSpread2:this.pricing.finalSpread2
+      finalSpread2: this.pricing.finalSpread2,
     });
-    
+
     this.loanservice.editModel(this.pricing);
   }
   formatPercent_var3(event) {
-    this.pricing.Variance3=event.target.value;
-    this.pricing.finalSpread3 = this.formatPercent((this.unformatNumber(this.pricing.RecomSpread3)/100)+(parseFloat(this.pricing.Variance3)));
+    this.pricing.Variance3 = event.target.value;
+    this.pricing.finalSpread3 = this.formatPercent(
+      this.unformatNumber(this.pricing.RecomSpread3) / 100 +
+        parseFloat(this.pricing.Variance3)
+    );
     this.formValue.patchValue({
       Variance3: this.formatPercent(event.target.value),
-      finalSpread3:this.pricing.finalSpread3
+      finalSpread3: this.pricing.finalSpread3,
     });
-    
+
     this.loanservice.editModel(this.pricing);
   }
   unformatNumber(value) {
     //console.log(value.replace(/\$|,/g, ''));
     return value.replace(/\$|,|\%/g, '');
   }
-  buildPatrRate(location:string,ir:number,fs:number){
-   /*
+  buildPatrRate(location: string, ir: number, fs: number) {
+    /*
      location - Branch 
      ir       - Est Interest Rate
      fs       - Final Spread
       */
-     var ppRate = ir;
-      if(location =="Agribusiness"){
-        ppRate = ir - 0.0085;
-      } else if(fs == 0.0247){
-         ppRate = ir - 0.01
-      }else{
-        ppRate = ir - ((fs/0.0247) *0.01)
-      }
-      return ppRate;
+    var ppRate = ir;
+    if (location == 'Agribusiness') {
+      ppRate = ir - 0.0085;
+    } else if (fs == 0.0247) {
+      ppRate = ir - 0.01;
+    } else {
+      ppRate = ir - (fs / 0.0247) * 0.01;
+    }
+    return ppRate;
   }
 
-  buildPatrSavings(location:string,loanAmnt:number,fs:number){
-
+  buildPatrSavings(location: string, loanAmnt: number, fs: number) {
     /*
      location - Branch 
      loanAmnt - Loan Amount
      fs       - Final Spread
       */
 
-     var ppSavings = 0;
-     if(location =="Agribusiness"){
-        ppSavings = loanAmnt * 0.0085;
-
-     } else if(fs==0.0247){
-        ppSavings = loanAmnt * 0.01
-     }else{
-       ppSavings = loanAmnt * ((fs/0.0247) * 0.01)
-     }
-     return ppSavings;
-
+    var ppSavings = 0;
+    if (location == 'Agribusiness') {
+      ppSavings = loanAmnt * 0.0085;
+    } else if (fs == 0.0247) {
+      ppSavings = loanAmnt * 0.01;
+    } else {
+      ppSavings = loanAmnt * ((fs / 0.0247) * 0.01);
+    }
+    return ppSavings;
   }
-  buildPMT(ir:number, np:number, pv:number,fv?:number,type?:number){
+  buildPMT(ir: number, np: number, pv: number, fv?: number, type?: number) {
     /*
      * ir   - interest rate per month
      * np   - number of periods (months)
@@ -607,27 +659,25 @@ export class LoanOfficerComponent implements OnInit {
     fv || (fv = 0);
     type || (type = 0);
 
-    if (ir === 0)
-        return -(pv + fv)/np;
+    if (ir === 0) return -(pv + fv) / np;
 
     pvif = Math.pow(1 + ir, np);
-    pmt = - ir * (pv * pvif + fv) / (pvif - 1);
+    pmt = (-ir * (pv * pvif + fv)) / (pvif - 1);
 
-    if (type === 1)
-        pmt /= (1 + ir);
+    if (type === 1) pmt /= 1 + ir;
 
     return pmt;
-
   }
 
-  build1stPaymnt(ir:number,np:number,pv:number){
+  build1stPaymnt(ir: number, np: number, pv: number) {
     /* PMT(Estimated Interest Rate/Payments per year,(Loan Years * Payments per year),Loan Amount)
 	      + (Loan Amount * ( Estimated Interest Rate/Payments per year)) */
-       // console.log('Interest Rate buid1stPaymnt ',ir)
-       // console.log('payments per year buid1stPaymnt ',this.pricing.paymentfreq)
-       // console.log('Loan Amount buid1stPaymnt ',pv)
-       // console.log('# payments buid1stPaymnt ',np)
-    return this.buildPMT(ir/this.pricing.paymentfreq,np,pv) + (pv*(ir/np));
-
+    // console.log('Interest Rate buid1stPaymnt ',ir)
+    // console.log('payments per year buid1stPaymnt ',this.pricing.paymentfreq)
+    // console.log('Loan Amount buid1stPaymnt ',pv)
+    // console.log('# payments buid1stPaymnt ',np)
+    return (
+      this.buildPMT(ir / this.pricing.paymentfreq, np, pv) + pv * (ir / np)
+    );
   }
 }
