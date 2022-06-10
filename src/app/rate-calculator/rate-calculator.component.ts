@@ -26,8 +26,8 @@ export class RateCalculatorComponent implements OnInit {
   interestChange:string = '0.0%';
 
   formCalc:FormGroup
-  formBuilder:FormBuilder
-  constructor(private loanservice:LoanDataService) { }
+  
+  constructor(private loanservice:LoanDataService,private formBuilder: FormBuilder,) { }
 
   ngOnInit() {
     this.loanservice.cast.subscribe((data)=>{
@@ -46,7 +46,18 @@ export class RateCalculatorComponent implements OnInit {
     });
   }
 
-  updateCalc(value){
+  updateCurrentCofCalc(event){
+    console.log('updateCurrentCofCalc ',event.target.value)
+    var uy = new Intl.NumberFormat('en-US', {
+      style: 'percent',
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    }).format(event.target.value);
+    this.formCalc.patchValue({ CurrentCof: uy });
+
+  }
+
+  updateCurrentSpreadCalc(value){
 
   }
 }
