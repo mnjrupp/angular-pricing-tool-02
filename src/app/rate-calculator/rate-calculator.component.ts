@@ -73,9 +73,8 @@ export class RateCalculatorComponent implements OnInit {
   }
 
   updateCurrentElements(){
-    this.grossRateCurrent = this.loanservice.formatPercent(
-      (this.COFCurrent + this.SpreadCurrent)
-
-    )
+    var grossRate = (this.COFCurrent + this.SpreadCurrent)
+    console.log('updateCurrentElements() ',this.COFCurrent + '~' + this.SpreadCurrent)
+    this.grossRateCurrent = this.loanservice.formatPercent(grossRate);
   }
 }
