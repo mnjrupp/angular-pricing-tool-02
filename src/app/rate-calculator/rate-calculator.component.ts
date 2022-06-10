@@ -23,13 +23,15 @@ export class RateCalculatorComponent implements OnInit {
   annualEarnCapitalConv:string = '$0.0';
   annualIntEarnCur:string;
   annualIntEarnConv:string;
+  interestChange:string = '0.0%';
 
   formCalc:FormGroup
   formBuilder:FormBuilder
   constructor(private loanservice:LoanDataService) { }
 
   ngOnInit() {
-    this.loanservice.cast.subscribe((data)=>{this.pricing = data
+    this.loanservice.cast.subscribe((data)=>{
+      this.pricing = data
       console.log('pricing ',this.pricing)
       this.COFConv = this.pricing.COF1
       this.SpreadConv=this.pricing.finalSpread1;
@@ -38,8 +40,8 @@ export class RateCalculatorComponent implements OnInit {
     });
     
     this.formCalc = this.formBuilder.group({
-      CurrentCof:new FormControl(),
-      CurrentSpread: new FormControl()
+      CurrentCof:0,
+      CurrentSpread: 0
       
     });
   }

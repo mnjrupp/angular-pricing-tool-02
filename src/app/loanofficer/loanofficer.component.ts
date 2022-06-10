@@ -346,7 +346,7 @@ export class LoanOfficerComponent implements OnInit {
     loanProduct = this.loanservice.loanProductArray.filter(function (x) {
       return x.Product == loanProd;
     });
-    if (loanProduct === 'undefined') {
+    if (loanProduct === 'undefined' || loanProduct.length==0) {
       loanProduct = [{ Product: 0, value: 0.0 }];
     }
     //console.log('loanProduct ',loanProduct)
