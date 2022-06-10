@@ -235,7 +235,7 @@ export class LoanOfficerComponent implements OnInit {
         )
     );
 
-    console.log('COF 1 ',value[0].Data[0].Spread)
+    console.log('COF 1 ', value[0].Data[0].Spread);
     //console.log('Recommended Spread 1 ',recomspread1);
     this.formValue.patchValue({
       COF1: this.formatPercent(value[0].Data[0].Spread),
@@ -354,10 +354,10 @@ export class LoanOfficerComponent implements OnInit {
     premium = this.loanservice.loanPremiumArray.filter(
       (x) => x.prodamort == loanProd + amort
     );
-    if (premium.length==0) {
+    if (premium.length == 0) {
       premium = [{ prodamort: 0, value: 0.0 }];
     }
-   console.log('premium ',premium);
+    console.log('premium ', premium);
 
     var pdlgdStr = this.buildPDLGDStr(pd, lgd);
     var pdlgdfloat = this.loanservice.loanpdlgdArray.filter(
@@ -441,10 +441,10 @@ export class LoanOfficerComponent implements OnInit {
     yrs = Number(p);
     dDate = moment(d, 'mm/dd/yyyy').toDate();
 
-    console.log('updateTotalInterest loanAmnt ', loanAmnt);
+    /*console.log('updateTotalInterest loanAmnt ', loanAmnt);
     console.log('updateTotalInterest interest ', interest);
     console.log('updateTotalInterest years ', yrs);
-    console.log('updateTotalInterest loan date  ', Number(dDate));
+    console.log('updateTotalInterest loan date  ', Number(dDate));*/
 
     ttlInt = loanAmnt * interest * yrs * Number(dDate);
     return ttlInt;

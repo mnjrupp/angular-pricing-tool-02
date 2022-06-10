@@ -15,12 +15,12 @@ export class RateCalculatorComponent implements OnInit {
   COFConv:string;
   SpreadCurrent:string;
   SpreadConv:string;
-  grossRateCurrent:string;
-  grossRateConverted:string;
+  grossRateCurrent:string = '0.0%';
+  grossRateConverted:string='0.0%';
   annualEarnBorrowCur:string;
   annualEarnBorrowConv:string;
-  annualEarnCapitalCur:string;
-  annualEarnCapitalConv:string;
+  annualEarnCapitalCur:string  = '$0.0';
+  annualEarnCapitalConv:string = '$0.0';
   annualIntEarnCur:string;
   annualIntEarnConv:string;
 
