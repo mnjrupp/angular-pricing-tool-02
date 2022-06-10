@@ -67,7 +67,7 @@ export class PaymentCompareComponent implements OnInit {
   }
 
   updateChart(){
-   console.log('Chart object ',this.lineChart)
+   //console.log('Chart object ',this.lineChart)
     this.removeChartData(this.lineChart);
     //this.addChartData(this.chart)
     this.buildChartInterface();

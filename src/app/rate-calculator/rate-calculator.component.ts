@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import {LoanDataService} from '../shared/loan-data.service';
 import {PricingModel} from '../pricing-model';
 
@@ -38,7 +38,8 @@ export class RateCalculatorComponent implements OnInit {
     });
     
     this.formCalc = this.formBuilder.group({
-
+      CurrentCof:new FormControl(),
+      CurrentSpread: new FormControl()
       
     });
   }

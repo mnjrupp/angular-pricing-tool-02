@@ -43,10 +43,7 @@ export class LoanOfficerComponent implements OnInit {
     // TODO: implemet the CostOfFunds from FCBT
     var copyformValue: PricingModel;
     copyformValue = this.formValue.value;
-   // console.log(copyformValue);
-   // console.log(this.unformatNumber(copyformValue.IntRate1));
-    //console.log(this.costoffundsreqObj[2].amortizationTermMonths);
-   // console.log(this.buildCOF(copyformValue));
+   
     this.apiservice.postCostofFunds(this.buildCOF(copyformValue)).subscribe(
       (data) => {
         console.log('data returned ', data);
@@ -205,7 +202,7 @@ export class LoanOfficerComponent implements OnInit {
       this.pricing.paymentfreq,
       this.pricing.AmorTerm3
     );
-    console.log('recomrate1 recomrate2 recomrate3 ',recomrate1 + '~' + recomrate2 + '~' + recomrate3)
+   // console.log('recomrate1 recomrate2 recomrate3 ',recomrate1 + '~' + recomrate2 + '~' + recomrate3)
     var recomspread1 = (recomrate1 - value[0].Data[0].Spread);
     var recomspread2 = (recomrate2 - value[0].Data[1].Spread);
     var recomspread3 = (recomrate3 - value[0].Data[2].Spread);
@@ -303,7 +300,7 @@ export class LoanOfficerComponent implements OnInit {
         return x.Product == loanProd;
       }
     );
-    console.log('loanProduct ',loanProduct)
+    //console.log('loanProduct ',loanProduct)
     var paymentfrequency = 0;
     var premium = this.loanservice.loanPremiumArray.filter(
       (x)=> x.prodamort==(loanProd+amort)
