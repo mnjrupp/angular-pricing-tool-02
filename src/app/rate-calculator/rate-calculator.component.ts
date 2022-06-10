@@ -29,11 +29,14 @@ export class RateCalculatorComponent implements OnInit {
   constructor(private loanservice:LoanDataService) { }
 
   ngOnInit() {
-    this.loanservice.cast.subscribe(data=>this.pricing = data);
-    console.log('pricing ',this.pricing)
-    this.COFConv = this.pricing.COF1
-    this.SpreadConv=this.pricing.finalSpread1;
-    this.LoanBalance=this.pricing.loanAmnt;
+    this.loanservice.cast.subscribe((data)=>{this.pricing = data
+      console.log('pricing ',this.pricing)
+      this.COFConv = this.pricing.COF1
+      this.SpreadConv=this.pricing.finalSpread1;
+      this.LoanBalance=this.pricing.loanAmnt;
+    
+    });
+    
     this.formCalc = this.formBuilder.group({
 
       

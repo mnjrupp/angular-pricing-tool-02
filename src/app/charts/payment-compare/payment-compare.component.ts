@@ -33,7 +33,7 @@ export class PaymentCompareComponent implements OnInit {
     this.loanservice.cast.subscribe((data) => {
       this.pricing = data;
       this.payments1 = this.paymentservice.buildpayments(this.pricing,1);
-     console.log('payments1 ',this.payments1)
+     //console.log('payments1 ',this.payments1)
       this.payments2 = this.paymentservice.buildpayments(this.pricing,2);
       //console.log('payments2 ',this.payments2['cumpayment'])
       this.payments3 = this.paymentservice.buildpayments(this.pricing,3);
