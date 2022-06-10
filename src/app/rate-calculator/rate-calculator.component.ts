@@ -11,9 +11,9 @@ import {PricingModel} from '../pricing-model';
 export class RateCalculatorComponent implements OnInit {
   pricing:PricingModel;
   LoanBalance:string;
-  COFCurrent:string;
+  COFCurrent:number = 0.0;
   COFConv:string;
-  SpreadCurrent:string;
+  SpreadCurrent:number = 0.0;
   SpreadConv:string;
   grossRateCurrent:string = '0.0%';
   grossRateConverted:string='0.0%';
@@ -47,17 +47,35 @@ export class RateCalculatorComponent implements OnInit {
   }
 
   updateCurrentCofCalc(event){
-    console.log('updateCurrentCofCalc ',event.target.value)
+    //console.log('updateCurrentCofCalc ',event.target.value)
     var uy = new Intl.NumberFormat('en-US', {
       style: 'percent',
       minimumFractionDigits: 2,
       maximumFractionDigits: 2
     }).format(event.target.value);
+    this.COFCurrent = event.target.value;
     this.formCalc.patchValue({ CurrentCof: uy });
+    this.updateCurrentElements();
 
   }
 
-  updateCurrentSpreadCalc(value){
+  updateCurrentSpreadCalc(event){
 
+    var uy = new Intl.NumberFormat('en-US', {
+      style: 'percent',
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    }).format(event.target.value);
+    this.SpreadCurrent = event.target.value;
+    this.formCalc.patchValue({ CurrentSpread: uy });
+    this.updateCurrentElements();
+
+  }
+
+  updateCurrentElements(){
+    this.grossRateCurrent = this.loanservice.formatPercent(
+      (this.COFCurrent + this.SpreadCurrent)
+
+    )
   }
 }
