@@ -54,7 +54,7 @@ export class RateCalculatorComponent implements OnInit {
       minimumFractionDigits: 2,
       maximumFractionDigits: 2,
     }).format(event.target.value);
-    this.COFCurrent = event.target.value;
+    this.COFCurrent = Number(event.target.value);
     this.formCalc.patchValue({ CurrentCof: uy });
     this.updateCurrentElements();
   }
@@ -65,7 +65,7 @@ export class RateCalculatorComponent implements OnInit {
       minimumFractionDigits: 2,
       maximumFractionDigits: 2,
     }).format(event.target.value);
-    this.SpreadCurrent = event.target.value;
+    this.SpreadCurrent = Number(event.target.value);
     this.formCalc.patchValue({ CurrentSpread: uy });
     this.updateCurrentElements();
   }
