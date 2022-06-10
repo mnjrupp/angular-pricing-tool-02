@@ -295,16 +295,20 @@ export class LoanOfficerComponent implements OnInit {
    
          spread + 0;
     var loanfloat = 0;
-    var loanProduct = this.loanservice.loanProductArray.filter(function
+    var premium:any = {prodamort:0,value:0.0}
+    var loanProduct:any = {Product:0,value:0.0}
+    
+    
+    loanProduct = this.loanservice.loanProductArray.filter(function
       (x) { 
         return x.Product == loanProd;
       }
     );
     //console.log('loanProduct ',loanProduct)
     var paymentfrequency = 0;
-    var premium = this.loanservice.loanPremiumArray.filter(
+    premium = this.loanservice.loanPremiumArray.filter(
       (x)=> x.prodamort==(loanProd+amort)
-    );
+    ) 
     var pdlgdStr = this.buildPDLGDStr(pd, lgd);
     var pdlgdfloat = this.loanservice.loanpdlgdArray.filter(
       (x) => x.pd === pdlgdStr
@@ -325,7 +329,7 @@ export class LoanOfficerComponent implements OnInit {
       loanfloat +
       loanProduct[0].value +
       pdlgdfloat[0].value +
-      premium[0].value +
+      (premium[0].value ) +
       paymentfrequency
     );
   }

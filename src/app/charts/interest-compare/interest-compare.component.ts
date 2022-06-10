@@ -67,7 +67,7 @@ export class InterestCompareComponent implements OnInit {
   }
 
   updateChart(){
-   console.log('Chart object ',this.lineChart)
+   //console.log('Chart object ',this.lineChart)
     this.removeChartData(this.lineChart);
     //this.addChartData(this.chart)
     this.buildChartInterface();
@@ -147,8 +147,8 @@ export class InterestCompareComponent implements OnInit {
       },
     },
   };
-  console.log('this.ctx ',this.ctx)
-  console.log('this.chart ',this.lineChart)
+  //console.log('this.ctx ',this.ctx)
+  //console.log('this.chart ',this.lineChart)
   this.lineChart = new Chart(this.ctx, {
     type: 'line',
     data: data,
