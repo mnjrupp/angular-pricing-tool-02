@@ -13,7 +13,7 @@ export interface CostOfFundsRequest {
   optionCategoryId: number;
   lockCategory: string;
   lockCategoryId: number;
-  RoundingRule: Roundingrule;
+ 
 }
 export interface Roundingrule {
   Type: string;

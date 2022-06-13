@@ -17,11 +17,7 @@ export const COFs:CostOfFundsRequest[] = [
     optionCategoryId: 0,
     lockCategory: '30DL',
     lockCategoryId: 0,
-    RoundingRule: {
-      Type: 'Actual',
-      Precision: 0,
-      BasisPoint: 0,
-    },
+   
   },
   {
     correlationId: '',
@@ -38,11 +34,7 @@ export const COFs:CostOfFundsRequest[] = [
     optionCategoryId: 0,
     lockCategory: '30DL',
     lockCategoryId: 0,
-    RoundingRule: {
-      Type: 'Actual',
-      Precision: 0,
-      BasisPoint: 0,
-    },
+    
   },
   {
     correlationId: '',
@@ -59,10 +51,6 @@ export const COFs:CostOfFundsRequest[] = [
     optionCategoryId: 0,
     lockCategory: '30DL',
     lockCategoryId: 0,
-    RoundingRule: {
-      Type: 'Actual',
-      Precision: 0,
-      BasisPoint: 0,
-    },
+    
   },
 ];
