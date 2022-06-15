@@ -39,6 +39,14 @@ export class RateCalculatorComponent implements OnInit {
       this.COFConv = this.pricing.COF1;
       this.SpreadConv = this.pricing.finalSpread1;
       this.LoanBalance = this.pricing.loanAmnt;
+      console.log('COF Convert ',Number(this.loanservice.unformatNumber(this.COFConv)))
+      console.log('Spread Convert ',Number(this.loanservice.unformatNumber(this.SpreadConv)) )
+      this.grossRateConverted = new Intl.NumberFormat('en-US', {
+        style: 'percent',
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+      }).format((Number(this.loanservice.unformatNumber(this.COFConv))
+       + Number(this.loanservice.unformatNumber(this.SpreadConv)))/100)
     });
 
     this.formCalc = this.formBuilder.group({
