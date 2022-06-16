@@ -59,8 +59,8 @@ export class RateCalculatorComponent implements OnInit {
       );
       this.annualEarnBorrowConv = this.loanservice.formatCurrency(
         Number(this.loanservice.unformatNumber(this.LoanBalance)) *
-          Number(this.loanservice.unformatNumber(this.SpreadConv)) *
-          (1 - Number(this.loanservice.unformatNumber(this.acaCapCurrent)))
+          (Number(this.loanservice.unformatNumber(this.SpreadConv))/100) *
+          (1 - (Number(this.loanservice.unformatNumber(this.acaCapCurrent))/100))
       );
       this.annualEarnCapitalCur = this.loanservice.formatCurrency(
         Number(this.loanservice.unformatNumber(this.LoanBalance)) *
@@ -70,8 +70,8 @@ export class RateCalculatorComponent implements OnInit {
 
       this.annualEarnCapitalConv = this.loanservice.formatCurrency(
         Number(this.loanservice.unformatNumber(this.LoanBalance)) *
-          Number(this.loanservice.unformatNumber(this.grossRateConverted)) *
-          Number(this.loanservice.unformatNumber(this.acaCapConv))
+          (Number(this.loanservice.unformatNumber(this.grossRateConverted))/100) *
+          (Number(this.loanservice.unformatNumber(this.acaCapConv))/100)
       );
     });
 
