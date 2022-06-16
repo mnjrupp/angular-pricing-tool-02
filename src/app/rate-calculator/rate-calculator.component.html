@@ -4,14 +4,14 @@
   <hr />
   <form [formGroup]="formCalc" action="">
     <div class="row g-1">
-      <div class="col-3">
-        <div class="mb-1 p-1 bg-light">
+      <div class="col">
+        <div class="mb-1 p-1 bg-light" style="height:30px;width:200px">
           <small class="text-muted">Loan balance:</small>
         </div>
       </div>
-      <div class="col-3">
+      <div class="col">
         <div
-          class="mb-1 p-1 bg-secondary text-end"
+          class="mb-1 p-1 bg-light text-end"
           style="--bs-bg-opacity: .25;"
         >
           <small class="text-muted">&nbsp;{{ LoanBalance }}</small>
@@ -20,7 +20,7 @@
     </div>
     <div class="row g-1">
       <div class="col">
-        <div class="mb-2 p-1 text-decoration-underline">
+        <div class="mb-2 p-1 text-decoration-underline" style="height:30px;width:200px">
           <small class="text-muted">Pricing Elements</small>
         </div>
       </div>
@@ -37,7 +37,7 @@
     </div>
     <div class="row g-1">
       <div class="col">
-        <div class="m-1 p-1 bg-light" style="height:30px">
+        <div class="m-1 p-1" style="height:30px;width:200px">
           <small class="text-muted">COF:</small>
         </div>
       </div>
@@ -61,7 +61,7 @@
     </div>
     <div class="row g-1">
       <div class="col">
-        <div class="m-1 p-1 bg-light" style="height:30px">
+        <div class="m-1 p-1" style="height:30px;width:200px">
           <small class="text-muted">Spread:</small>
         </div>
       </div>
@@ -85,18 +85,18 @@
     </div>
     <div class="row g-1 mb-1">
     <div class="col">
-      <div class="m-1 p-1 bg-light" style="height:30px">
+      <div class="m-1 p-1" style="height:30px;width:200px">
         <small class="text-muted">Gross Rate:</small>
       </div>
     </div>
     <div class="col">
     <div class="m-1 p-1 bg-light text-center">
-    <small class="text-muted">&nbsp;{{grossRateCurrent}}</small>
+    <small class="text-muted">{{grossRateCurrent}}</small>
   </div>
     </div>
     <div class="col">
       <div class="m-1 p-1 bg-light text-center">
-        <small class="text-muted">&nbsp;{{grossRateConverted}}</small>
+        <small class="text-muted">{{grossRateConverted}}</small>
       </div>
     </div>
   </div>
@@ -107,7 +107,7 @@
     </div>
   </div>
   <div class="col">
-  <div class="m-1 p-1">
+  <div class="m-1 p-1 text-center">
   <small class="text-white">{{acaCapCurrent}}</small>
 </div>
   </div>
@@ -120,18 +120,18 @@
 <br>
 <div class="row g-1">
 <div class="col">
-  <div class="m-1 p-1 bg-light" style="height:30px;width:220px">
+  <div class="m-1 p-1" style="height:30px;width:220px">
     <small class="text-muted text-overflow">Annual Earnings from Borrowings:</small>
   </div>
 </div>
 <div class="col">
 <div class="m-1 p-1 bg-light text-center">
-<small class="text-muted">&nbsp;{{annualEarnBorrowCur}}</small>
+<small class="text-muted">{{annualEarnBorrowCur}}</small>
 </div>
 </div>
 <div class="col">
   <div class="m-1 p-1 bg-light text-center">
-    <small class="text-muted">&nbsp;{{annualEarnBorrowConv}}</small>
+    <small class="text-muted">{{annualEarnBorrowConv}}</small>
   </div>
 </div>
 </div>
@@ -143,12 +143,12 @@
 </div>
 <div class="col">
 <div class="m-1 p-1 bg-secondary text-center">
-<small class="text-white">&nbsp;{{annualEarnCapitalCur}}</small>
+<small class="text-white">{{annualEarnCapitalCur}}</small>
 </div>
 </div>
 <div class="col">
   <div class="m-1 p-1 bg-secondary text-center">
-    <small class="text-white">&nbsp;{{annualEarnCapitalConv}}</small>
+    <small class="text-white">{{annualEarnCapitalConv}}</small>
   </div>
 </div>
 </div>
@@ -161,12 +161,12 @@
 </div>
 <div class="col">
 <div class="m-1 p-1 text-center">
-<small class="text-muted">&nbsp;{{annualIntEarnCur}}</small>
+<small class="text-muted">{{annualIntEarnCur}}</small>
 </div>
 </div>
 <div class="col">
   <div class="m-1 p-1 text-center">
-    <small class="text-muted">&nbsp;{{annualIntEarnConv}}</small>
+    <small class="text-muted">{{annualIntEarnConv}}</small>
   </div>
 </div>
 </div>
@@ -179,7 +179,7 @@
 <div class="col-2"></div>
 <div class="col-2">
   <div class="m-1 p-1">
-    <small class="text-black">&nbsp;{{ interestChange}}</small>
+    <small class="text-black">{{interestChange}}</small>
   </div>
 </div>
 </div>
