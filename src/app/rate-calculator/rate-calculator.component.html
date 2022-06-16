@@ -45,7 +45,7 @@
         <div class="mb-1 p-1 bg-light" style="height:30px">
           <input
             type="text"
-            class="form-control form-control-sm"
+            class="form-control form-control-sm text-center"
             formControlName="CurrentCof"
             id="CurrentCof"
             placeholder=""
@@ -54,7 +54,7 @@
         </div>
       </div>
       <div class="col">
-        <div class="m-1 p-1 bg-light">
+        <div class="m-1 p-1 bg-light text-center">
           <small class="text-muted">&nbsp;{{ COFConv }}</small>
         </div>
       </div>
@@ -66,10 +66,10 @@
         </div>
       </div>
       <div class="col">
-        <div class="mb-1 p-1 bg-light" style="height:30px">
+        <div class="mb-1 p-1 bg-light text-center" style="height:30px">
           <input
             type="text"
-            class="form-control form-control-sm"
+            class="form-control form-control-sm text-center"
             formControlName="CurrentSpread"
             id="CurrentSpread"
             placeholder=""
@@ -78,7 +78,7 @@
         </div>
       </div>
       <div class="col">
-        <div class="m-1 p-1 bg-light">
+        <div class="m-1 p-1 bg-light text-center">
           <small class="text-muted">&nbsp;{{ SpreadConv }}</small>
         </div>
       </div>
@@ -90,82 +90,82 @@
       </div>
     </div>
     <div class="col">
-    <div class="m-1 p-1 bg-light">
+    <div class="m-1 p-1 bg-light text-center">
     <small class="text-muted">&nbsp;{{grossRateCurrent}}</small>
   </div>
     </div>
     <div class="col">
-      <div class="m-1 p-1 bg-light">
+      <div class="m-1 p-1 bg-light text-center">
         <small class="text-muted">&nbsp;{{grossRateConverted}}</small>
       </div>
     </div>
   </div>
   <div class="row g-1 bg-secondary">
-  <div class="col-6">
+  <div class="col">
     <div class="m-1 p-1 bg-secondary" style="height:30px">
-      <small class="text-white">Rate of ACA Capitalization:</small>
+      <small class="text-white">Rate of ACA Capital:</small>
     </div>
   </div>
-  <div class="col-2">
-  <div class="m-1 p-1">
-  <small class="text-white">&nbsp;{{grossRateCurrent}}</small>
+  <div class="col">
+  <div class="m-1 p-1 text-center">
+  <small class="text-white">{{acaCapCurrent}}</small>
 </div>
   </div>
-  <div class="col-2">
-    <div class="m-1 p-1">
-      <small class="text-white">&nbsp;{{ grossRateConverted}}</small>
+  <div class="col">
+    <div class="m-1 p-1 text-center">
+      <small class="text-white">{{acaCapConv}}</small>
     </div>
   </div>
 </div>
 <br>
 <div class="row g-1">
-<div class="col-6">
+<div class="col">
   <div class="m-1 p-1 bg-light" style="height:30px">
     <small class="text-muted">Annual Earnings from Borrowings:</small>
   </div>
 </div>
-<div class="col-2">
-<div class="m-1 p-1 bg-light">
-<small class="text-muted">&nbsp;{{ grossRateCurrent}}</small>
+<div class="col">
+<div class="m-1 p-1 bg-light text-center">
+<small class="text-muted">&nbsp;{{annualEarnBorrowCur}}</small>
 </div>
 </div>
-<div class="col-2">
-  <div class="m-1 p-1 bg-light">
-    <small class="text-muted">&nbsp;{{ grossRateConverted}}</small>
+<div class="col">
+  <div class="m-1 p-1 bg-light text-center">
+    <small class="text-muted">&nbsp;{{annualEarnBorrowConv}}</small>
   </div>
 </div>
 </div>
 <div class="row g-1 bg-secondary">
-<div class="col-6">
+<div class="col">
   <div class="m-1 p-1 bg-secondary" style="height:30px">
     <small class="text-white">Annual Earnings from Capital:</small>
   </div>
 </div>
-<div class="col-2">
-<div class="m-1 p-1 bg-secondary">
-<small class="text-white">&nbsp;{{ grossRateCurrent}}</small>
+<div class="col">
+<div class="m-1 p-1 bg-secondary text-center">
+<small class="text-white">&nbsp;{{annualEarnCapitalCur}}</small>
 </div>
 </div>
-<div class="col-2">
-  <div class="m-1 p-1 bg-secondary">
-    <small class="text-white">&nbsp;{{ grossRateConverted}}</small>
+<div class="col">
+  <div class="m-1 p-1 bg-secondary text-center">
+    <small class="text-white">&nbsp;{{annualEarnCapitalConv}}</small>
   </div>
 </div>
 </div>
 <br>
 <div class="row g-1">
-<div class="col-6">
+<div class="col">
   <div class="m-1 p-1 " style="height:30px">
     <small class="text-muted">Annual Interest earnings:</small>
   </div>
 </div>
-<div class="col-2">
-<div class="m-1 p-1">
+<div class="col">
+<div class="m-1 p-1 text-center">
 <small class="text-muted">&nbsp;{{ grossRateCurrent}}</small>
 </div>
 </div>
-<div class="col-2">
-  <div class="m-1 p-1">
+<div class="col">
+  <div class="m-1 p-1 text-center">
     <small class="text-muted">&nbsp;{{ grossRateConverted}}</small>
   </div>
 </div>

@@ -24,6 +24,8 @@ export class RateCalculatorComponent implements OnInit {
   annualIntEarnCur: string;
   annualIntEarnConv: string;
   interestChange: string = '0.0%';
+  acaCapCurrent: string = this.loanservice.formatPercent(0.16);
+  acaCapConv: string = this.loanservice.formatPercent(0.16);
 
   formCalc: FormGroup;
 
@@ -39,14 +41,38 @@ export class RateCalculatorComponent implements OnInit {
       this.COFConv = this.pricing.COF1;
       this.SpreadConv = this.pricing.finalSpread1;
       this.LoanBalance = this.pricing.loanAmnt;
-      console.log('COF Convert ',Number(this.loanservice.unformatNumber(this.COFConv)))
-      console.log('Spread Convert ',Number(this.loanservice.unformatNumber(this.SpreadConv)) )
+      //console.log('COF Convert ',Number(this.loanservice.unformatNumber(this.COFConv)))
+      // console.log('Spread Convert ',Number(this.loanservice.unformatNumber(this.SpreadConv)) )
       this.grossRateConverted = new Intl.NumberFormat('en-US', {
         style: 'percent',
         minimumFractionDigits: 2,
         maximumFractionDigits: 2,
-      }).format((Number(this.loanservice.unformatNumber(this.COFConv))
-       + Number(this.loanservice.unformatNumber(this.SpreadConv)))/100)
+      }).format(
+        (Number(this.loanservice.unformatNumber(this.COFConv)) +
+          Number(this.loanservice.unformatNumber(this.SpreadConv))) /
+          100
+      );
+      this.annualEarnBorrowCur = this.loanservice.formatCurrency(
+        Number(this.loanservice.unformatNumber(this.LoanBalance)) *
+          this.SpreadCurrent *
+          (1 - Number(this.loanservice.unformatNumber(this.acaCapCurrent)))
+      );
+      this.annualEarnBorrowConv = this.loanservice.formatCurrency(
+        Number(this.loanservice.unformatNumber(this.LoanBalance)) *
+          Number(this.loanservice.unformatNumber(this.SpreadConv)) *
+          (1 - Number(this.loanservice.unformatNumber(this.acaCapCurrent)))
+      );
+      this.annualEarnCapitalCur = this.loanservice.formatCurrency(
+        Number(this.loanservice.unformatNumber(this.LoanBalance)) *
+          Number(this.loanservice.unformatNumber(this.grossRateCurrent)) *
+          Number(this.loanservice.unformatNumber(this.acaCapCurrent))
+      );
+
+      this.annualEarnCapitalConv = this.loanservice.formatCurrency(
+        Number(this.loanservice.unformatNumber(this.LoanBalance)) *
+          Number(this.loanservice.unformatNumber(this.grossRateConverted)) *
+          Number(this.loanservice.unformatNumber(this.acaCapConv))
+      );
     });
 
     this.formCalc = this.formBuilder.group({
