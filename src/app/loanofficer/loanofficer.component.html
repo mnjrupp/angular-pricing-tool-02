@@ -128,25 +128,26 @@
           <small class="text-muted">FSA Guarantee:</small>
         </div>
         <div class="mb-1 p-1 border bg-light text-truncate">
-          <small class="text-muted">Loan type / Collateral type</small>
+          <small class="text-muted">Loan type</small>
         </div>
         <div class="mb-1 p-1 border bg-light text-truncate">
           <small class="text-muted">Consumer Purpose - Lien position</small>
         </div>
         <div class="mb-1 p-1 border bg-light text-truncate">
-          <small class="text-muted">Loan Amount / Fee</small>
+          <small class="text-muted">Loan Amount</small>
         </div>
         <div class="mb-1 p-1 border bg-light text-truncate">
           <small class="text-muted">Payment frequency</small>
         </div>
         <div class="mb-1 p-1 border bg-light text-truncate">
-          <small class="text-muted">PD/LGD</small>
+          <small class="text-muted">PD</small>
         </div>
         <div class="mb-1 p-1 border bg-light text-truncate">
-          <small class="text-muted">Balloon / How many years</small>
+          <small class="text-muted">Balloon</small>
         </div>
       </div>
-      <div class="col p-1 border">
+
+      <div class="col border border-danger">
         <div class="mb-1">
           <select
             class="form-select form-select-sm"
@@ -155,8 +156,8 @@
             id="fsaguarantee"
           >
             <option selected></option>
-            <option value=1>No</option>
-            <option value=2>Yes</option>
+            <option value="1">No</option>
+            <option value="2">Yes</option>
           </select>
         </div>
         <div class="mb-1">
@@ -167,11 +168,11 @@
             id="loantype"
           >
             <option selected></option>
-            <option value=1>AgFast</option>
-            <option value=2>AgTerm Loan</option>
-            <option value=3>Construction</option>
-            <option value=4>Equip & Chattel</option>
-            <option value=5>Operating</option>
+            <option value="1">AgFast</option>
+            <option value="2">AgTerm Loan</option>
+            <option value="3">Construction</option>
+            <option value="4">Equip & Chattel</option>
+            <option value="5">Operating</option>
           </select>
         </div>
         <div class="mb-1">
@@ -181,9 +182,9 @@
             formControlName="lienpos"
             id="lienpos"
           >
-            <option selected value=1>N/A</option>
-            <option value=2>Yes - 1st Lien</option>
-            <option value=3>Yes - 2nd Lien</option>
+            <option selected value="1">N/A</option>
+            <option value="2">Yes - 1st Lien</option>
+            <option value="3">Yes - 2nd Lien</option>
           </select>
         </div>
         <div class="mb-1">
@@ -203,10 +204,10 @@
             id="paymentfreq"
             (change)="updatePayFreq($event)"
           >
-            <option value=12 selected>Monthly</option>
-            <option value=4>Quarterly</option>
-            <option value=2>Semi-Annual</option>
-            <option value=1>Annual</option>
+            <option value="12" selected>Monthly</option>
+            <option value="4">Quarterly</option>
+            <option value="2">Semi-Annual</option>
+            <option value="1">Annual</option>
           </select>
         </div>
         <div class="mb-1">
@@ -217,15 +218,15 @@
             id="pd"
           >
             <option selected></option>
-            <option value=4>4</option>
-            <option value=5>5</option>
-            <option value=6>6</option>
-            <option value=7>7</option>
-            <option value=8>8</option>
-            <option value=9>9</option>
-            <option value=10>10</option>
-            <option value=11>11</option>
-            <option value=12>12</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
           </select>
         </div>
         <div class="mb-1">
@@ -235,13 +236,36 @@
             formControlName="ballonyrs"
             id="ballonyrs"
           >
-            <option selected value=1>No</option>
-            <option value=2>Yes</option>
+            <option selected value="1">No</option>
+            <option value="2">Yes</option>
           </select>
         </div>
       </div>
-      <div class="col p-1">
+      <div class="col p-1 border border-primary">
         <div class="mb-1" style="height:30px"></div>
+        <!-- Collateral Type-->
+        <div class="mb-1 p-1 border bg-light text-truncate">
+          <small class="text-muted">Collateral type</small>
+        </div>
+        <div class="mb-1" style="height:30px"></div>
+        <!--Fee -->
+        <div class="mb-1 p-1 border bg-light text-truncate">
+          <small class="text-muted">Fee</small>
+        </div>
+        <div class="mb-1" style="height:30px"></div>
+        <!--LGD -->
+        <div class="mb-1 p-1 border bg-light text-truncate">
+          <small class="text-muted">LGD</small>
+        </div>
+        <!-- Ballon Number of Years -->
+        <div class="mb-1 p-1 border bg-light text-truncate">
+          <small class="text-muted">How many years</small>
+        </div>
+      </div>
+      <div class="col p-1 border border-warning">
+        <div class="mb-1">
+          <button type="submit" class="btn btn-primary">Get Rates</button>
+        </div>
         <div class="mb-1">
           <select
             class="form-select form-select-sm"
@@ -250,11 +274,11 @@
             id="locateral"
           >
             <option selected></option>
-            <option value=1>Agricultural Land</option>
-            <option value=2>Chattel</option>
-            <option value=3>Homesite</option>
-            <option value=4>Land in Transition</option>
-            <option value=5>Specialized Facility/Agribusiness</option>
+            <option value="1">Agricultural Land</option>
+            <option value="2">Chattel</option>
+            <option value="3">Homesite</option>
+            <option value="4">Land in Transition</option>
+            <option value="5">Specialized Facility/Agribusiness</option>
           </select>
         </div>
         <div class="mb-1" style="height:30px"></div>
@@ -276,10 +300,10 @@
             id="lgd"
           >
             <option selected></option>
-            <option value=1>B-Well</option>
-            <option value=2>D-Adequate</option>
-            <option value=3>E-Marginal</option>
-            <option value=4>F-Under-Secured</option>
+            <option value="1">B-Well</option>
+            <option value="2">D-Adequate</option>
+            <option value="3">E-Marginal</option>
+            <option value="4">F-Under-Secured</option>
           </select>
         </div>
         <div class="mb-1">
@@ -290,19 +314,14 @@
             id="ballon"
           >
             <option selected></option>
-            <option value=1>1 Yr</option>
-            <option value=2>2 Yr</option>
-            <option value=3>3 Yr</option>
-            <option value=4>4 Yr</option>
-            <option value=5>5 Yr</option>
-            <option value=6>6 Yr</option>
-            <option value=7>7 Yr</option>
+            <option value="1">1 Yr</option>
+            <option value="2">2 Yr</option>
+            <option value="3">3 Yr</option>
+            <option value="4">4 Yr</option>
+            <option value="5">5 Yr</option>
+            <option value="6">6 Yr</option>
+            <option value="7">7 Yr</option>
           </select>
-        </div>
-      </div>
-      <div class="col">
-        <div class="mb-1">
-          <button type="submit" class="btn btn-primary">Get Rates</button>
         </div>
       </div>
       <div class="row align-items-start">
@@ -348,17 +367,17 @@
               id="AmorTerm1"
               (change)="updateApplicantDataAmortTermOne($event)"
             >
-              <option value=20 selected>20YRS</option>
-              <option value=1>1YR</option>
-              <option value=2>2YRS</option>
-              <option value=3>3YRS</option>
-              <option value=4>4YRS</option>
-              <option value=5>5YRS</option>
-              <option value=7>7YRS</option>
-              <option value=10>10YRS</option>
-              <option value=15>15YRS</option>
-              <option value=25>25YRS</option>
-              <option value=30>30YRS</option>
+              <option value="20" selected>20YRS</option>
+              <option value="1">1YR</option>
+              <option value="2">2YRS</option>
+              <option value="3">3YRS</option>
+              <option value="4">4YRS</option>
+              <option value="5">5YRS</option>
+              <option value="7">7YRS</option>
+              <option value="10">10YRS</option>
+              <option value="15">15YRS</option>
+              <option value="25">25YRS</option>
+              <option value="30">30YRS</option>
             </select>
           </div>
           <div class="mb-1">
@@ -369,17 +388,17 @@
               id="loanProd1"
               (change)="updateApplicantDataLoanProdOne($event)"
             >
-              <option value=20 selected>20YRS FIXED</option>
-              <option value=1>1YR FIXED</option>
-              <option value=2>2YRS FIXED</option>
-              <option value=3>3YRS FIXED</option>
-              <option value=4>4YRS FIXED</option>
-              <option value=5>5YRS FIXED</option>
-              <option value=7>7YRS FIXED</option>
-              <option value=10>10YRS FIXED</option>
-              <option value=15>15YRS FIXED</option>
-              <option value=20>25YRS FIXED</option>
-              <option value=30>30YRS FIXED</option>
+              <option value="20" selected>20YRS FIXED</option>
+              <option value="1">1YR FIXED</option>
+              <option value="2">2YRS FIXED</option>
+              <option value="3">3YRS FIXED</option>
+              <option value="4">4YRS FIXED</option>
+              <option value="5">5YRS FIXED</option>
+              <option value="7">7YRS FIXED</option>
+              <option value="10">10YRS FIXED</option>
+              <option value="15">15YRS FIXED</option>
+              <option value="20">25YRS FIXED</option>
+              <option value="30">30YRS FIXED</option>
             </select>
           </div>
           <div class="mb-1">
@@ -440,17 +459,17 @@
               id="AmorTerm2"
               (change)="updateApplicantDataAmortTermTwo($event)"
             >
-              <option value=20 selected>20YRS</option>
-              <option value=1>1YR</option>
-              <option value=2>2YRS</option>
-              <option value=3>3YRS</option>
-              <option value=4>4YRS</option>
-              <option value=5>5YRS</option>
-              <option value=7>7YRS</option>
-              <option value=10>10YRS</option>
-              <option value=15>15YRS</option>
-              <option value=25>25YRS</option>
-              <option value=30>30YRS</option>
+              <option value="20" selected>20YRS</option>
+              <option value="1">1YR</option>
+              <option value="2">2YRS</option>
+              <option value="3">3YRS</option>
+              <option value="4">4YRS</option>
+              <option value="5">5YRS</option>
+              <option value="7">7YRS</option>
+              <option value="10">10YRS</option>
+              <option value="15">15YRS</option>
+              <option value="25">25YRS</option>
+              <option value="30">30YRS</option>
             </select>
           </div>
           <div class="mb-1">
@@ -461,17 +480,17 @@
               id="loanProd2"
               (change)="updateApplicantDataLoanProdTwo($event)"
             >
-              <option value=20 selected>20YRS FIXED</option>
-              <option value=1>1YR FIXED</option>
-              <option value=2>2YRS FIXED</option>
-              <option value=3>3YRS FIXED</option>
-              <option value=4>4YRS FIXED</option>
-              <option value=5>5YRS FIXED</option>
-              <option value=7>7YRS FIXED</option>
-              <option value=10>10YRS FIXED</option>
-              <option value=15>15YRS FIXED</option>
-              <option value=25>25YRS FIXED</option>
-              <option value=30>30YRS FIXED</option>
+              <option value="20" selected>20YRS FIXED</option>
+              <option value="1">1YR FIXED</option>
+              <option value="2">2YRS FIXED</option>
+              <option value="3">3YRS FIXED</option>
+              <option value="4">4YRS FIXED</option>
+              <option value="5">5YRS FIXED</option>
+              <option value="7">7YRS FIXED</option>
+              <option value="10">10YRS FIXED</option>
+              <option value="15">15YRS FIXED</option>
+              <option value="25">25YRS FIXED</option>
+              <option value="30">30YRS FIXED</option>
             </select>
           </div>
           <div class="mb-1">
@@ -482,10 +501,10 @@
               id="TransferOption2"
               (change)="updateApplicantDataTransOptTwo($event)"
             >
-            <option selected value="OPO">Open Prepayment</option>
-            <option value="OLO">1-Yr Lock-Out</option>
-            <option value="FYM">Full Yield</option>
-            <option value="PLO">Period Lockout</option>
+              <option selected value="OPO">Open Prepayment</option>
+              <option value="OLO">1-Yr Lock-Out</option>
+              <option value="FYM">Full Yield</option>
+              <option value="PLO">Period Lockout</option>
             </select>
           </div>
           <div class="mb-1">
@@ -532,17 +551,17 @@
               id="AmorTerm3"
               (click)="updateApplicantDataAmortTermThree($event)"
             >
-              <option value=20 selected>20YRS</option>
-              <option value=1>1YR</option>
-              <option value=2>2YRS</option>
-              <option value=3>3YRS</option>
-              <option value=4>4YRS</option>
-              <option value=5>5YRS</option>
-              <option value=7>7YRS</option>
-              <option value=10>10YRS</option>
-              <option value=15>15YRS</option>
-              <option value=25>25YRS</option>
-              <option value=30>30YRS</option>
+              <option value="20" selected>20YRS</option>
+              <option value="1">1YR</option>
+              <option value="2">2YRS</option>
+              <option value="3">3YRS</option>
+              <option value="4">4YRS</option>
+              <option value="5">5YRS</option>
+              <option value="7">7YRS</option>
+              <option value="10">10YRS</option>
+              <option value="15">15YRS</option>
+              <option value="25">25YRS</option>
+              <option value="30">30YRS</option>
             </select>
           </div>
           <div class="mb-1">
@@ -553,17 +572,17 @@
               id="loanProd3"
               (change)="updateApplicantDataLoanProdThree($event)"
             >
-              <option value=20 selected>20YRS FIXED</option>
-              <option value=1>1YR FIXED</option>
-              <option value=2>2YRS FIXED</option>
-              <option value=3>3YRS FIXED</option>
-              <option value=4>4YRS FIXED</option>
-              <option value=5>5YRS FIXED</option>
-              <option value=7>7YRS FIXED</option>
-              <option value=10>10YRS FIXED</option>
-              <option value=15>15YRS FIXED</option>
-              <option value=25>25YRS FIXED</option>
-              <option value=30>30YRS FIXED</option>
+              <option value="20" selected>20YRS FIXED</option>
+              <option value="1">1YR FIXED</option>
+              <option value="2">2YRS FIXED</option>
+              <option value="3">3YRS FIXED</option>
+              <option value="4">4YRS FIXED</option>
+              <option value="5">5YRS FIXED</option>
+              <option value="7">7YRS FIXED</option>
+              <option value="10">10YRS FIXED</option>
+              <option value="15">15YRS FIXED</option>
+              <option value="25">25YRS FIXED</option>
+              <option value="30">30YRS FIXED</option>
             </select>
           </div>
           <div class="mb-1">
@@ -611,8 +630,8 @@
           <small class="text-muted">Recommended Rate</small>
         </div>
         <div class="mb-1 p-1 border bg-light" style="height:40px">
-        <small class="text-muted">COF</small>
-      </div>
+          <small class="text-muted">COF</small>
+        </div>
         <div class="mb-1 p-1 border bg-light" style="height:40px">
           <small class="text-muted">Recommended Spread</small>
         </div>
@@ -637,17 +656,16 @@
         </div>
         <!--The Cof here-->
         <div class="mb-1">
-        <input
-          class="form-control bg-white"
-         
-          type="text"
-          value=""
-          aria-label="readonly input example"
-          formControlName="COF1"
-          id="COF1"
-          readonly
-        />
-      </div>
+          <input
+            class="form-control bg-white"
+            type="text"
+            value=""
+            aria-label="readonly input example"
+            formControlName="COF1"
+            id="COF1"
+            readonly
+          />
+        </div>
         <div class="mb-1">
           <input
             class="form-control"
@@ -696,20 +714,19 @@
             readonly
           />
         </div>
-           <!--The Cof here-->
+        <!--The Cof here-->
         <div class="mb-1">
-        <input
-          class="form-control bg-white"
-         
-          type="text"
-          value=""
-          aria-label="readonly input example"
-          formControlName="COF2"
-          id="COF2"
-          readonly
-        />
-      </div>
-        
+          <input
+            class="form-control bg-white"
+            type="text"
+            value=""
+            aria-label="readonly input example"
+            formControlName="COF2"
+            id="COF2"
+            readonly
+          />
+        </div>
+
         <div class="mb-1">
           <input
             class="form-control"
@@ -758,19 +775,18 @@
             readonly
           />
         </div>
-         <!--The Cof here-->
-         <div class="mb-1">
-         <input
-           class="form-control bg-white"
-          
-           type="text"
-           value=""
-           aria-label="readonly input example"
-           formControlName="COF3"
-           id="COF3"
-           readonly
-         />
-       </div>
+        <!--The Cof here-->
+        <div class="mb-1">
+          <input
+            class="form-control bg-white"
+            type="text"
+            value=""
+            aria-label="readonly input example"
+            formControlName="COF3"
+            id="COF3"
+            readonly
+          />
+        </div>
         <div class="mb-1">
           <input
             class="form-control"
