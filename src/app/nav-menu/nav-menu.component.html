@@ -2,7 +2,7 @@
   <nav
     class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-primary"
   >
-    <div class="container">
+    <div class="container-fluid">
       <button
         class="navbar-toggler"
         type="button"
@@ -17,40 +17,50 @@
       <div
         class="navbar-collapse collapse d-sm-inline-flex justify-content"
         [ngClass]="{ show: isExpanded }"
-      >
-        <div class="btn-group">
-          <a class="btn btn-primary text-sm" (click)="toggleShowLoanOfficerTrue()">
+      >  <ul class="navbar-nav">
+        <!--<div class="btn-group">-->
+        <li class="nav-item">
+          <a class="nav-link " (click)="toggleShowLoanOfficerTrue()">
             Loan Officer
           </a>
-
-          <a class="btn btn-primary" (click)="toggleShowCustomerTrue()">
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="toggleShowCustomerTrue()">
             Customer
           </a>
-
-          <a class="btn btn-primary" (click)="toggleShowAmortOneTrue()">
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="toggleShowAmortOneTrue()">
             Amortization Schedule One
           </a>
-
-          <a class="btn btn-primary" (click)="toggleShowAmortTwoTrue()">
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="toggleShowAmortTwoTrue()">
             Amortization Schedule Two
           </a>
-
-          <a class="btn btn-primary" (click)="toggleShowAmortThreeTrue()">
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="toggleShowAmortThreeTrue()">
             Amortization Schedule Three
           </a>
-
-          <a class="btn btn-primary" (click)="toggleShowChartIntTrue()">
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="toggleShowChartIntTrue()">
             Interest Compare Chart
           </a>
-
-          <a class="btn btn-primary" (click)="toggleShowChartPayTrue()">
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="toggleShowChartPayTrue()">
             Payments Compare Chart
           </a>
-
-          <a class="btn btn-primary" (click)="toggleShowCalcTrue()"
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="toggleShowCalcTrue()"
             >Rate Conversion Calc</a
           >
-        </div>
+        </li>
+       <!-- </div> -->
+        </ul>
       </div>
     </div>
   </nav>

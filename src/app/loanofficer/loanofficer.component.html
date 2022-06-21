@@ -8,21 +8,21 @@
     </div>
     <div class="row align-items-start">
       <div class="col">
-        <div class="mb-1 p-1 border bg-light text-truncate" style="width:220px;">
+        <div class="mb-1 p-1 border bg-light text-truncate" style="height:30px;">
           <small class="text-muted">Applicant Name:</small>
         </div>
-        <div class="mb-1 p-1 border bg-light text-truncate">
+        <div class="mb-1 p-1 border bg-light text-truncate" style="height:30px;">
           <small class="text-muted">Phone #:</small>
         </div>
-        <div class="mb-1 p-1 border bg-light text-truncate">
+        <div class="mb-1 p-1 border bg-light text-truncate" style="height:30px;">
           <small class="text-muted">Customer Address:</small>
         </div>
-        <div class="mb-1 p-1 border bg-light text-truncate">
+        <div class="mb-1 p-1 border bg-light text-truncate" style="height:30px;">
           <small class="text-muted">Estimated Start Date of Loan:</small>
         </div>
       </div>
-      <div class="col p-1">
-        <div class="mb-1">
+      <div class="col">
+        <div class="mb-1" style="height:30px;">
           <input
             type="text"
             class="form-control form-control-sm"
@@ -32,7 +32,7 @@
             (change)="updateApplicantDataName($event)"
           />
         </div>
-        <div class="mb-1">
+        <div class="mb-1" style="height:30px;">
           <input
             type="text"
             class="form-control form-control-sm"
@@ -42,7 +42,7 @@
             (change)="updateApplicantDataPhone($event)"
           />
         </div>
-        <div class="mb-1">
+        <div class="mb-1" style="height:30px;">
           <textarea
             class="form-control form-control-sm"
             formControlName="address"
@@ -51,7 +51,7 @@
             (change)="updateApplicantDataAddress($event)"
           ></textarea>
         </div>
-        <div class="mb-1">
+        <div class="mb-1" style="height:30px;">
           <input
             type="text"
             class="form-control form-control-sm"
@@ -63,21 +63,21 @@
       </div>
 
       <div class="col">
-        <div class="mb-1 p-1 border bg-light text-truncate">
+        <div class="mb-1 p-1 border bg-light text-truncate" style="height:30px;">
           <small class="text-muted">Loan Officer:</small>
         </div>
-        <div class="mb-1 p-1 border bg-light text-truncate">
+        <div class="mb-1 p-1 border bg-light text-truncate" style="height:30px;">
           <small class="text-muted">Location:</small>
         </div>
-        <div class="mb-1 p-1 border bg-light text-truncate">
+        <div class="mb-1 p-1 border bg-light text-truncate" style="height:30px;">
           <small class="text-muted">Credit Office Loc:</small>
         </div>
-        <div class="mb-1 p-1 border bg-light text-truncate">
+        <div class="mb-1 p-1 border bg-light text-truncate" style="height:30px;">
           <small class="text-muted">Date of Calculation:</small>
         </div>
       </div>
-      <div class="col p-1">
-        <div class="mb-1">
+      <div class="col">
+        <div class="mb-1" style="height:30px;">
           <select
             class="form-select form-select-sm"
             aria-label=".form-select-sm"
@@ -92,7 +92,7 @@
             </option>
           </select>
         </div>
-        <div class="mb-1">
+        <div class="mb-1" style="height:30px;">
           <input
             type="text"
             class="form-control form-control-sm"
@@ -101,7 +101,7 @@
             value="{{ officers.location }}"
           />
         </div>
-        <div class="mb-1">
+        <div class="mb-1" style="height:30px;">
           <textarea
             class="form-control form-control-sm"
             formControlName="branchaddress"
@@ -110,7 +110,7 @@
             value="{{ officers.Address }}"
           ></textarea>
         </div>
-        <div>
+        <div style="height:30px;">
           <input
             type="text"
             class="form-control form-control-sm"
@@ -121,12 +121,12 @@
         </div>
       </div>
     </div>
-    <div class="row align-items-start border">
+    <div class="row align-items-start">
       <h5 class="d-flex justify-content-center">Loan Details</h5>
       <div class="mb-1">
       <button type="submit" class="btn btn-primary">Get Rates</button>
     </div>
-      <div class="col border" style="width:282px;">
+      <div class="col">
         <div class="mb-1 p-1 border bg-light text-truncate" style="height:30px;">
           <small class="text-muted">FSA Guarantee:</small>
         </div>
@@ -150,7 +150,7 @@
         </div>
       </div>
 
-      <div class="col border border-danger">
+      <div class="col">
         <div class="mb-1" style="height:30px">
           <select
             class="form-select form-select-sm"
@@ -244,8 +244,8 @@
           </select>
         </div>
       </div>
-      <div class="col p-1 border border-primary">
-        <div class="mb-1 p-1" style="height:30px"></div>
+      <div class="col">
+        <div class="mb-1" style="height:30px"></div>
         <!-- Collateral Type-->
         <div class="mb-1 p-1 border bg-light text-truncate" style="height:30px;">
           <small class="text-muted">Collateral type</small>
@@ -265,9 +265,9 @@
           <small class="text-muted">How many years</small>
         </div>
       </div>
-      <div class="col p-1 border border-warning">
+      <div class="col">
       <div class="mb-1" style="height:30px"></div>
-        <div class="mb-1">
+        <div class="mb-1" style="height:30px">
           <select
             class="form-select form-select-sm"
             aria-label=".form-select-sm example"
@@ -283,7 +283,7 @@
           </select>
         </div>
         <div class="mb-1" style="height:30px"></div>
-        <div class="mb-1">
+        <div class="mb-1" style="height:30px">
           <input
             type="text"
             class="form-control form-control-sm"
@@ -293,7 +293,7 @@
           />
         </div>
         <div class="mb-1" style="height:30px"></div>
-        <div class="mb-1">
+        <div class="mb-1" style="height:30px">
           <select
             class="form-select form-select-sm"
             aria-label=".form-select-sm example"
@@ -307,7 +307,7 @@
             <option value="4">F-Under-Secured</option>
           </select>
         </div>
-        <div class="mb-1">
+        <div class="mb-1" style="height:30px">
           <select
             class="form-select form-select-sm"
             aria-label=".form-select-sm example"
@@ -325,30 +325,30 @@
           </select>
         </div>
       </div>
-      <div class="row align-items-start">
+      <div class="row">
         <h5 class="d-flex justify-content-center">Rate Scenarios</h5>
-        <div class="col" style="width:282px;">
-          <div class="mb-1 p-1 border bg-light">
+        <div class="col">
+          <div class="mb-1 p-1 border bg-light" style="height:30px">
             <small class="text-muted">Amortization Type:</small>
           </div>
-          <div class="mb-1 p-1 border bg-light">
+          <div class="mb-1 p-1 border bg-light" style="height:30px">
             <small class="text-muted">Amortization Term</small>
           </div>
-          <div class="mb-1 p-1 border bg-light">
+          <div class="mb-1 p-1 border bg-light" style="height:30px">
             <small class="text-muted">Loan Product</small>
           </div>
-          <div class="mb-1 p-1 border bg-light">
+          <div class="mb-1 p-1 border bg-light" style="height:30px">
             <small class="text-muted">Transfer Option</small>
           </div>
-          <div class="mb-1 p-1 border bg-light">
+          <div class="mb-1 p-1 border bg-light" style="height:30px">
             <small class="text-muted">Estimated Interest Rate</small>
           </div>
-          <div class="mb-1 p-1 border bg-light">
+          <div class="mb-1 p-1 border bg-light text-truncate" style="height:30px"> 
             <small class="text-muted">Approximate Payment Amount</small>
           </div>
         </div>
-        <div class="col p-1">
-          <div class="mb-1">
+        <div class="col">
+          <div class="mb-1" style="height:30px">
             <select
               class="form-select form-select-sm"
               aria-label=".form-select-sm example"
@@ -360,7 +360,7 @@
               <option>P+I</option>
             </select>
           </div>
-          <div class="mb-1">
+          <div class="mb-1" style="height:30px">
             <select
               class="form-select form-select-sm"
               aria-label=".form-select-sm example"
@@ -381,7 +381,7 @@
               <option value="30">30YRS</option>
             </select>
           </div>
-          <div class="mb-1">
+          <div class="mb-1" style="height:30px">
             <select
               class="form-select form-select-sm"
               aria-label=".form-select-sm example"
@@ -402,7 +402,7 @@
               <option value="30">30YRS FIXED</option>
             </select>
           </div>
-          <div class="mb-1">
+          <div class="mb-1" style="height:30px">
             <select
               class="form-select form-select-sm"
               aria-label=".form-select-sm example"
@@ -419,6 +419,7 @@
           <div class="mb-1">
             <input
               class="form-control bg-white"
+              style="height:30px;"
               type="text"
               value=""
               aria-label="readonly input example"
@@ -430,6 +431,7 @@
           <div class="mb-1">
             <input
               class="form-control"
+              style="height:30px;"
               type="text"
               value=""
               aria-label="readonly input example"
@@ -439,8 +441,8 @@
             />
           </div>
         </div>
-        <div class="col p-1">
-          <div class="mb-1">
+        <div class="col">
+          <div class="mb-1" style="height:30px">
             <select
               class="form-select form-select-sm"
               aria-label=".form-select-sm example"
@@ -452,7 +454,7 @@
               <option>P+I</option>
             </select>
           </div>
-          <div class="mb-1">
+          <div class="mb-1" style="height:30px">
             <select
               class="form-select form-select-sm"
               aria-label=".form-select-sm example"
@@ -473,7 +475,7 @@
               <option value="30">30YRS</option>
             </select>
           </div>
-          <div class="mb-1">
+          <div class="mb-1" style="height:30px">
             <select
               class="form-select form-select-sm"
               aria-label=".form-select-sm example"
@@ -494,7 +496,7 @@
               <option value="30">30YRS FIXED</option>
             </select>
           </div>
-          <div class="mb-1">
+          <div class="mb-1" style="height:30px">
             <select
               class="form-select form-select-sm"
               aria-label=".form-select-sm example"
@@ -511,6 +513,7 @@
           <div class="mb-1">
             <input
               class="form-control bg-white"
+              style="height:30px;"
               type="text"
               value=""
               aria-label="readonly input example"
@@ -522,6 +525,7 @@
           <div class="mb-1">
             <input
               class="form-control"
+              style="height:30px;"
               type="text"
               value=""
               aria-label="readonly input example"
@@ -531,8 +535,8 @@
             />
           </div>
         </div>
-        <div class="col p-1">
-          <div class="mb-1">
+        <div class="col">
+          <div class="mb-1" style="height:30px">
             <select
               class="form-select form-select-sm"
               aria-label=".form-select-sm example"
@@ -544,7 +548,7 @@
               <option>P+I</option>
             </select>
           </div>
-          <div class="mb-1">
+          <div class="mb-1" style="height:30px;">
             <select
               class="form-select form-select-sm"
               aria-label=".form-select-sm example"
@@ -565,7 +569,7 @@
               <option value="30">30YRS</option>
             </select>
           </div>
-          <div class="mb-1">
+          <div class="mb-1" style="height:30px;">
             <select
               class="form-select form-select-sm"
               aria-label=".form-select-sm example"
@@ -586,7 +590,7 @@
               <option value="30">30YRS FIXED</option>
             </select>
           </div>
-          <div class="mb-1">
+          <div class="mb-1" style="height:30px;">
             <select
               class="form-select form-select-sm"
               aria-label=".form-select-sm example"
@@ -602,6 +606,7 @@
           <div class="mb-1">
             <input
               class="form-control bg-white"
+              style="height:30px;"
               type="text"
               value=""
               aria-label="readonly input example"
@@ -613,6 +618,7 @@
           <div class="mb-1">
             <input
               class="form-control"
+              style="height:30px;"
               type="text"
               value=""
               aria-label="readonly input example"
@@ -626,27 +632,28 @@
     </div>
     <div class="row align-items-start">
       <h5 class="d-flex justify-content-center">Rate & Spread Scenarios</h5>
-      <div class="col" style="width:282px;">
-        <div class="mb-1 p-1 border bg-light" style="height:40px">
+      <div class="col">
+        <div class="mb-1 p-1 border bg-light text-truncate" style="height:30px;">
           <small class="text-muted">Recommended Rate</small>
         </div>
-        <div class="mb-1 p-1 border bg-light" style="height:40px">
+        <div class="mb-1 p-1 border bg-light text-truncate" style="height:30px;">
           <small class="text-muted">COF</small>
         </div>
-        <div class="mb-1 p-1 border bg-light" style="height:40px">
+        <div class="mb-1 p-1 border bg-light text-truncate" style="height:30px;">
           <small class="text-muted">Recommended Spread</small>
         </div>
-        <div class="mb-1 p-1 border bg-light" style="height:40px">
+        <div class="mb-1 p-1 border bg-light text-truncate" style="height:30px;">
           <small class="text-muted">Loan Officer Variance</small>
         </div>
-        <div class="mb-1 p-1 border bg-light" style="height:35px">
+        <div class="mb-1 p-1 border bg-light text-truncate" style="height:30px">
           <small class="text-muted">Final Spread</small>
         </div>
       </div>
-      <div class="col p-1">
+      <div class="col">
         <div class="mb-1">
           <input
             class="form-control bg-white"
+            style="height:30px;"
             type="text"
             value=""
             aria-label="readonly input example"
@@ -659,6 +666,7 @@
         <div class="mb-1">
           <input
             class="form-control bg-white"
+            style="height:30px;"
             type="text"
             value=""
             aria-label="readonly input example"
@@ -670,7 +678,7 @@
         <div class="mb-1">
           <input
             class="form-control"
-            style="background-color: #fd7e14"
+            style="background-color: #fd7e14;height:30px;"
             type="text"
             value=""
             aria-label="readonly input example"
@@ -682,6 +690,7 @@
         <div class="mb-1">
           <input
             class="form-control bg-white"
+            style="height:30px;"
             type="text"
             value=""
             aria-label="readonly input example"
@@ -693,7 +702,7 @@
         <div class="mb-1">
           <input
             class="form-control"
-            style="background-color:#9bc48a"
+            style="background-color:#9bc48a;height:30px;"
             type="text"
             value=""
             aria-label="readonly input example"
@@ -703,10 +712,11 @@
           />
         </div>
       </div>
-      <div class="col p-1">
+      <div class="col">
         <div class="mb-1">
           <input
             class="form-control bg-white"
+            style="height:30px;"
             type="text"
             value=""
             aria-label="readonly input example"
@@ -719,6 +729,7 @@
         <div class="mb-1">
           <input
             class="form-control bg-white"
+            style="height:30px;"
             type="text"
             value=""
             aria-label="readonly input example"
@@ -732,7 +743,7 @@
           <input
             class="form-control"
             type="text"
-            style="background-color: #fd7e14"
+            style="background-color: #fd7e14;height:30px;"
             value=""
             aria-label="readonly input example"
             formControlName="RecomSpread2"
@@ -743,6 +754,7 @@
         <div class="mb-1">
           <input
             class="form-control bg-white"
+            style="height:30px;"
             type="text"
             value=""
             aria-label="readonly input example"
@@ -754,7 +766,7 @@
         <div class="mb-1">
           <input
             class="form-control"
-            style="background-color:#9bc48a"
+            style="background-color:#9bc48a;height:30px;"
             type="text"
             value=""
             aria-label="readonly input example"
@@ -764,10 +776,11 @@
           />
         </div>
       </div>
-      <div class="col p-1">
+      <div class="col">
         <div class="mb-1 vh-25">
           <input
             class="form-control bg-white"
+            style="height:30px;"
             type="text"
             value=""
             aria-label="readonly input example"
@@ -780,6 +793,7 @@
         <div class="mb-1">
           <input
             class="form-control bg-white"
+            style="height:30px;"
             type="text"
             value=""
             aria-label="readonly input example"
@@ -792,7 +806,7 @@
           <input
             class="form-control"
             type="text"
-            style="background-color: #fd7e14"
+            style="background-color: #fd7e14;height:30px;"
             value=""
             aria-label="readonly input example"
             formControlName="RecomSpread3"
@@ -803,6 +817,7 @@
         <div class="mb-1">
           <input
             class="form-control bg-white"
+            style="height:30px;"
             type="text"
             value=""
             aria-label="readonly input example"
@@ -814,7 +829,7 @@
         <div class="mb-1">
           <input
             class="form-control"
-            style="background-color:#9bc48a"
+            style="background-color:#9bc48a;height:30px;"
             type="text"
             value=""
             aria-label="readonly input example"
