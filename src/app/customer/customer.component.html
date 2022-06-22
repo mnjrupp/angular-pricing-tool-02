@@ -1,279 +1,394 @@
-
 <div class="container-sm">
-<h5 class="d-flex justify-content-left">Borrower Details</h5>
-<hr>
-<div class="row align-items-start">
-  <div class="col">
-  <div class="mb-1 p-1  border-bottom border-top  bg-light">
-  <small class="text-muted">Rate Estimate For:</small>
-</div>
-<div class="mb-1 p-1  border-bottom border-top  bg-light">
-  <small class="text-muted">Phone #:</small>
-</div>
-<div class="mb-1 p-1  border-bottom border-top  bg-light">
-  <small class="text-muted">Customer Address:</small>
-</div>
-  </div>
-  <div class="col">
-  <div class="mb-1 p-1 border " style="height:35px">
-  <small class="text-muted">{{pricing.applicationName}}</small>
-</div>
-<div class="mb-1 border" style="height:35px">
-  <small class="text-muted">{{pricing.phoneNumber}}</small>
-</div>
-<div class="mb-1 border" style="height:35px">
-<small class="text-muted">{{pricing.address}}</small>
-</div>
-  </div>
-</div>
-<br>
-<h5 class="d-flex justify-content-left">Loan Officer Details</h5>
-<hr>
-<div class="row align-items-start">
-  <div class="col">
-    <div class="mb-1 p-1  border-bottom border-top  bg-light">
-      <small class="text-muted">Loan/Credit Officer Name:</small>
+  <h5 class="d-flex justify-content-left">Borrower Details</h5>
+  <hr />
+  <div class="row align-items-start">
+    <div class="col">
+      <div class="mb-1 p-1 border-bottom border-top bg-light">
+        <small class="text-muted">Rate Estimate For:</small>
+      </div>
+      <div class="mb-1 p-1 border-bottom border-top bg-light">
+        <small class="text-muted">Phone #:</small>
+      </div>
+      <div class="mb-1 p-1 border-bottom border-top bg-light">
+        <small class="text-muted">Customer Address:</small>
+      </div>
     </div>
-    <div class="mb-1 p-1  border-bottom border-top  bg-light">
-      <small class="text-muted">Phone #:</small>
-    </div>
-    <div class="mb-1 p-1  border-bottom border-top  bg-light">
-      <small class="text-muted">Credit Office Location:</small>
-    </div>
-    <div class="mb-1 p-1  border-bottom border-top  bg-light">
-      <small class="text-muted">Date of Calculation:</small>
-    </div>
-    <div class="mb-1 p-1  border-bottom border-top  bg-light">
-      <small class="text-muted">Office Address:</small>
+    <div class="col">
+      <div class="mb-1 p-1 border" style="height:30px">
+        <small class="text-muted">{{ pricing.applicationName }}</small>
+      </div>
+      <div class="mb-1 border" style="height:30px">
+        <small class="text-muted">{{ pricing.phoneNumber }}</small>
+      </div>
+      <div class="mb-1 border" style="height:30px">
+        <small class="text-muted">{{ pricing.address }}</small>
+      </div>
     </div>
   </div>
-  <div class="col">
-    <div class="mb-1 p-1 border">
-      <small class="text-muted">{{pricing.loanOfficer}}&nbsp; </small>
+  <br />
+  <h5 class="d-flex justify-content-left">Loan Officer Details</h5>
+  <hr />
+  <div class="row align-items-start">
+    <div class="col">
+      <div class="mb-1 p-1 border-bottom border-top bg-light">
+        <small class="text-muted">Loan/Credit Officer Name:</small>
+      </div>
+      <div class="mb-1 p-1 border-bottom border-top bg-light">
+        <small class="text-muted">Phone #:</small>
+      </div>
+      <div class="mb-1 p-1 border-bottom border-top bg-light">
+        <small class="text-muted">Credit Office Location:</small>
+      </div>
+      <div class="mb-1 p-1 border-bottom border-top bg-light">
+        <small class="text-muted">Date of Calculation:</small>
+      </div>
+      <div class="mb-1 p-1 border-bottom border-top bg-light">
+        <small class="text-muted">Office Address:</small>
+      </div>
     </div>
-    <div class="mb-1 p-1 border">
-      <small class="text-muted">{{pricing.branchPhone}} &nbsp;</small>
-    </div>
-    <div class="mb-1 p-1 border">
-      <small class="text-muted">{{pricing.branchOffice}} &nbsp;</small>
-    </div>
-    <div class="mb-1 p-1 border">
-      <small class="text-muted">{{pricing.calcDate}} &nbsp;</small>
-    </div>
-    <div class="mb-1 p-1 border">
-      <small class="text-muted">{{pricing.branchaddress}} &nbsp;</small>
-    </div>
-  </div>
-</div>
-<br>
-<h5 class="d-flex justify-content-left">Loan Details</h5>
-<hr>
-<div class="row align-items-start">
-  <div class="col">
-    <div class="mb-1 p-1  border-bottom border-top  bg-light">
-      <small class="text-muted">Size of Loan:</small>
-    </div>
-    <div class="mb-1 p-1  border-bottom border-top  bg-light">
-      <small class="text-muted">Estimated Loan Fees:</small>
-    </div>
-    <div class="mb-1 p-1  border-bottom border-top  bg-light">
-      <small class="text-muted">Required Stock:</small>
-    </div>
-    <div class="mb-1 p-1  border-bottom border-top  bg-light">
-      <small class="text-muted">Timing of Payment:</small>
-    </div>
-  </div>
-  <div class="col">
-    <div class="mb-1 p-1 border">
-      <small class="text-muted">{{pricing.loanAmnt}}</small>
-    </div>
-    <div class="mb-1 p-1 border">
-      <small class="text-muted">{{pricing.feeAmnt}}</small>
-    </div>
-    <div class="mb-1 p-1 border">
-      <small class="text-muted">{{pricing.stockAmnt}}</small>
-    </div>
-    <div class="mb-1 p-1 border">
-      <small class="text-muted">{{pricing.paymentfreq}}</small>
+    <div class="col">
+      <div class="mb-1 p-1 border">
+        <small class="text-muted">{{ pricing.loanOfficer }}&nbsp; </small>
+      </div>
+      <div class="mb-1 p-1 border">
+        <small class="text-muted">{{ pricing.branchPhone }} &nbsp;</small>
+      </div>
+      <div class="mb-1 p-1 border">
+        <small class="text-muted">{{ pricing.branchOffice }} &nbsp;</small>
+      </div>
+      <div class="mb-1 p-1 border">
+        <small class="text-muted">{{ pricing.calcDate }} &nbsp;</small>
+      </div>
+      <div class="mb-1 p-1 border">
+        <small class="text-muted">{{ pricing.branchaddress }} &nbsp;</small>
+      </div>
     </div>
   </div>
-</div>
-<br>
-<h5 class="d-flex justify-content-left">Rate & Spread Scenarios</h5>
-<hr>
-<div class="row align-items-start">
-<div class="col" >
-  <div class="mb-1 p-1  border-bottom border-top  bg-light" style="height:35px">
-    <small class="text-muted">Amortization Type</small>
+  <br />
+  <h5 class="d-flex justify-content-left">Loan Details</h5>
+  <hr />
+  <div class="row align-items-start">
+    <div class="col">
+      <div class="mb-1 p-1 border-bottom border-top bg-light">
+        <small class="text-muted">Size of Loan:</small>
+      </div>
+      <div class="mb-1 p-1 border-bottom border-top bg-light">
+        <small class="text-muted">Estimated Loan Fees:</small>
+      </div>
+      <div class="mb-1 p-1 border-bottom border-top bg-light">
+        <small class="text-muted">Required Stock:</small>
+      </div>
+      <div class="mb-1 p-1 border-bottom border-top bg-light">
+        <small class="text-muted">Timing of Payment:</small>
+      </div>
+    </div>
+    <div class="col">
+      <div class="mb-1 p-1 border">
+        <small class="text-muted">{{ pricing.loanAmnt }}</small>
+      </div>
+      <div class="mb-1 p-1 border">
+        <small class="text-muted">{{ pricing.feeAmnt }}</small>
+      </div>
+      <div class="mb-1 p-1 border">
+        <small class="text-muted">{{ pricing.stockAmnt }}</small>
+      </div>
+      <div class="mb-1 p-1 border">
+        <small class="text-muted">{{ pricing.paymentfreq }}</small>
+      </div>
+    </div>
   </div>
-  <div class="mb-1 p-1  border-bottom border-top  bg-light" style="height:35px">
-  <small class="text-muted">Amortization Term</small>
-</div>
-  <div class="mb-1 p-1  border-bottom border-top  bg-light" style="height:35px">
-    <small class="text-muted">Loan Product</small>
-  </div>
-  <div class="mb-1 p-1  border-bottom border-top  bg-light" style="height:35px">
-    <small class="text-muted">Transfer Option</small>
-  </div>
-  <div class="mb-1 p-1  border-bottom border-top  bg-light" style="height:35px">
-    <small class="text-muted">Estimated Interest Rate</small>
-  </div>
-  <div class="mb-1 p-1  border-bottom border-top  bg-light" style="height:35px">
-  <small class="text-muted">Approximate Payment Amount</small>
-</div>
-</div>
-<div class="col-3">
-  <div class="mb-1 p-1 border" style="height:35px">
-  <small class="text-muted">{{pricing.AmorType1}}</small>
-  </div>
+  <br />
+  <h5 class="d-flex justify-content-left">Rate & Spread Scenarios</h5>
+  <hr />
+  <div class="row align-items-start">
+    <div class="col-5">
+      <div class="row">
+        <div class="col">
+          <div
+            class="mb-1 p-1 border-bottom border-top bg-light text-truncate"
+            style="height:30px"
+          >
+            <small class="text-muted">Amortization Type</small>
+          </div>
+        </div>
+        <div class="col">
+          <div class="mb-1 p-1 border" style="height:30px">
+            <small class="text-muted">{{ pricing.AmorType1 }}</small>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div
+            class="mb-1 p-1 border-bottom border-top bg-light text-truncate"
+            style="height:30px"
+          >
+            <small class="text-muted">Amortization Term</small>
+          </div>
+        </div>
+        <div class="col">
+          <div class="mb-1 p-1 border" style="height:30px">
+            <small class="text-muted">{{ pricing.AmorTerm1 }}YRS</small>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div
+            class="mb-1 p-1 border-bottom border-top bg-light text-truncate"
+            style="height:30px"
+          >
+            <small class="text-muted">Loan Product</small>
+          </div>
+        </div>
+        <div class="col">
+          <div class="mb-1 p-1 border" style="height:30px">
+            <small class="text-muted">{{ pricing.loanProd1 }} YR FIXED</small>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div
+            class="mb-1 p-1 border-bottom border-top bg-light text-truncate"
+            style="height:30px"
+          >
+            <small class="text-muted">Transfer Option</small>
+          </div>
+        </div>
+        <div class="col">
+          <div class="mb-1 p-1 border" style="height:30px">
+            <small class="text-muted">{{ pricing.TransferOption1 }}</small>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div
+            class="mb-1 p-1 border-bottom border-top bg-light text-truncate"
+            style="height:30px"
+          >
+            <small class="text-muted">Estimated Interest Rate</small>
+          </div>
+        </div>
+        <div class="col">
+          <div class="mb-1 p-1 border" style="height:30px">
+            <small class="text-muted">{{ pricing.IntRate1 }}</small>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div
+            class="mb-1 p-1 border-bottom border-top bg-light text-truncate"
+            style="height:30px"
+          >
+            <small class="text-muted">Approximate Payment Amount</small>
+          </div>
+        </div>
+        <div class="col">
+          <div class="col p-1 border" style="height:30px">
+            <small class="text-muted">{{ pricing.PayAmnt1 }}</small>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  <div class="mb-1 p-1 border" style="height:35px">
-  <small class="text-muted">{{pricing.AmorTerm1}}YRS</small>
-</div>
-  <div class="mb-1 p-1 border" style="height:35px">
-  <small class="text-muted">{{pricing.loanProd1}} YR FIXED</small>
-  </div>
-  <div class="mb-1 p-1 border" style="height:35px">
-  <small class="text-muted">{{pricing.TransferOption1}}</small>
-  </div>
-  <div class="mb-1 p-1 border" style="height:35px">
-  <small class="text-muted">{{pricing.IntRate1}}</small>
-</div>
-<div class="col p-1 border" style="height:35px">
-<small class="text-muted">{{pricing.PayAmnt1}}</small>
-  </div>
-</div>
-<div class="col-3">
-  <div class="mb-1 p-1 border" style="height:35px">
-    <small class="text-muted">{{pricing.AmorType2}}</small>
-  </div>
-  <div class="mb-1 p-1 border" style="height:35px">
-    <small class="text-muted">{{pricing.AmorTerm2}}YRS</small>
-  </div>
-  <div class="mb-1 p-1 border" style="height:35px">
-    <small class="text-muted">{{pricing.loanProd2}} YR FIXED</small>
-  </div>
-  <div class="mb-1 p-1 border" style="height:35px">
-    <small class="text-muted">{{pricing.TransferOption2}}</small>
-  </div>
-  <div class="mb-1 p-1 border" style="height:35px">
-  <small class="text-muted">{{pricing.IntRate2}}</small>
-</div>
-<div class="mb-1 p-1 border" style="height:35px">
-<small class="text-muted">{{pricing.PayAmnt2}}</small>
-</div>
-</div>
-<div class="col-3">
-  <div class="mb-1 p-1 border" style="height:35px">
-    <small class="text-muted">{{pricing.AmorType3}}</small>
-  </div>
-  <!--The Cof here-->
-  <div class="mb-1 p-1 border" style="height:35px">
-    <small class="text-muted">{{pricing.AmorTerm3}}YRS</small>
-  </div>
-  <div class="mb-1 p-1 border" style="height:35px">
-    <small class="text-muted">{{pricing.loanProd3}} YR FIXED</small>
-  </div>
-  <div class="mb-1 p-1 border" style="height:35px">
-    <small class="text-muted">{{pricing.TransferOption3}}</small>
-  </div>
-  <div class="mb-1 p-1 border" style="height:35px">
-    <small class="text-muted">{{pricing.IntRate3}}</small>
-  </div>
-  <div class="mb-1 p-1 border" style="height:35px">
-  <small class="text-muted">{{pricing.PayAmnt3}}</small>
-</div>
-</div>
-<br>
-<h5 class="d-flex justify-content-left">Impact of Patronage *</h5>
-<hr>
-<div class="row align-items-start">
-  <div class="col" >
-    <div class="mb-1 p-1  border-bottom border-top  bg-light" style="height:35px">
-      <small class="text-muted">Post-Patronage Rate</small>
+    <div class="col">
+      <div class="row">
+        <div class="col">
+          <div class="mb-1 p-1 border" style="height:30px">
+            <small class="text-muted">{{ pricing.AmorType2 }}</small>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="mb-1 p-1 border" style="height:30px">
+            <small class="text-muted">{{ pricing.AmorTerm2 }}YRS</small>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="mb-1 p-1 border" style="height:30px">
+            <small class="text-muted">{{ pricing.loanProd2 }} YR FIXED</small>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="mb-1 p-1 border" style="height:30px">
+            <small class="text-muted">{{ pricing.TransferOption2 }}</small>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="mb-1 p-1 border" style="height:30px">
+            <small class="text-muted">{{ pricing.IntRate2 }}</small>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="mb-1 p-1 border" style="height:30px">
+            <small class="text-muted">{{ pricing.PayAmnt2 }}</small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="row">
+        <div class="col">
+          <div class="mb-1 p-1 border" style="height:30px">
+            <small class="text-muted">{{ pricing.AmorType3 }}</small>
+          </div>
+        </div>
+      </div>
+      <!--The Cof here-->
+      <div class="row">
+        <div class="col">
+          <div class="mb-1 p-1 border" style="height:30px">
+            <small class="text-muted">{{ pricing.AmorTerm3 }}YRS</small>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="mb-1 p-1 border" style="height:30px">
+            <small class="text-muted">{{ pricing.loanProd3 }} YR FIXED</small>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="mb-1 p-1 border" style="height:30px">
+            <small class="text-muted">{{ pricing.TransferOption3 }}</small>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="mb-1 p-1 border" style="height:30px">
+            <small class="text-muted">{{ pricing.IntRate3 }}</small>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="mb-1 p-1 border" style="height:30px">
+            <small class="text-muted">{{ pricing.PayAmnt3 }}</small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+    <h5 class="d-flex justify-content-left">Impact of Patronage *</h5>
+    <hr />
+    <div class="row align-items-start">
+      <div class="col">
+        <div
+          class="mb-1 p-1 border-bottom border-top bg-light"
+          style="height:30px"
+        >
+          <small class="text-muted">Post-Patronage Rate</small>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="mb-1 p-1 border" style="height:30px">
+          <small class="text-muted">{{ pricing.PostPatRate1 }}</small>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="mb-1 p-1 border" style="height:30px">
+          <small class="text-muted">{{ pricing.PostPatRate2 }}</small>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="mb-1 p-1 border" style="height:30px">
+          <small class="text-muted">{{ pricing.PostPatRate3 }}</small>
+        </div>
+      </div>
+    </div>
+    <div class="row align-items-start">
+      <div class="col">
+        <div
+          class="mb-1 p-1 border-bottom border-top bg-light"
+          style="height:30px"
+        >
+          <small class="text-muted">Patronage Savings</small>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="mb-1 p-1 border" style="height:30px">
+          <small class="text-muted">{{ pricing.PostPatSave1 }}</small>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="mb-1 p-1 border" style="height:30px">
+          <small class="text-muted">{{ pricing.PostPatSave2 }}</small>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="mb-1 p-1 border" style="height:30px">
+          <small class="text-muted">{{ pricing.PostPatSave3 }}</small>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="col-3" >
-  <div class="mb-1 p-1 border " style="height:35px">
-    <small class="text-muted">{{pricing.PostPatRate1}}</small>
+  <div class="row align-items-start">
+    <h5 class="d-flex justify-content-left">Historical Patronage</h5>
+    <hr />
+    <table class="table table-striped">
+      <thead class="bg-body">
+        <tr>
+          <th scope="col">FISCAL YEAR</th>
+          <th scope="col">PATRONAGE DECLARATION</th>
+          <th scope="col">RETURN AS A % OF TOTAL EARNINGS</th>
+          <th scope="col">CUSTOMER-OWNER AVERAGE RATE REDUCED</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let patrons of patronage">
+          <td>
+            {{ patrons.year }}
+          </td>
+          <td>
+            {{ patrons.amount }}
+          </td>
+          <td>
+            {{ patrons.percent }}
+          </td>
+          <td>
+            {{ patrons.avgRate }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-</div>
-  <div class="col-3" >
-    <div class="mb-1 p-1 border " style="height:35px">
-      <small class="text-muted">{{pricing.PostPatRate2}}</small>
+  <div class="row align-items-start">
+    <h5 class="d-flex justify-content-left">Disclaimer</h5>
+    <hr style="height:2.5px;background-color:#191970;" />
+    <div class="col-10">
+      <small>
+        THIS PROPOSAL SHOULD BE VIEWED AS AN OUTLINE INTENDED FOR DISCUSSION
+        PURPOSES ONLY. IT SHOULD NOT IN ANY WAY BE VIEWED AS A COMMITMENT BY
+        LONE STAR AG CREDIT TO EXTEND CREDIT OR TO EXTEND CREDIT ON THE TERMS,
+        RATES, OR PAYMENT AMOUNTS SET FORTH ABOVE. ALL VALUES, TERMS, RATES, OR
+        PAYMENT AMOUNTS ON THIS SHEET ARE SUBJECT TO CHANGE AT THE DISCRETION OF
+        LONE STAR AG CREDIT BASED ON FACTORS AND STANDARDS THAT LONE STAR AG
+        CREDIT BELEIVES ARE VITAL TO GRANTING CREDIT. THIS INFORMATION IS
+        PROVIDED FOR THE CONFIDENTIAL USE OF APPLICANTS OR BORROWERS AND MAY NOT
+        BE DISCLOSED TO ANY OTHER PARTY WITHOUT THE EXPRESS WRITTEN CONSENT OF
+        LONE STAR AG CREDIT. THIS PROPOSAL SHOULD NOT BE CONSTRUED AS OBLIGATING
+        LONE STAR AG CREDIT TO PAY PATRONAGE IN ANY AMOUNT. PATRONAGE LEVELS ARE
+        SUBJECT TO BOARD APPROVAL AND ARE REFLECTIVE OF EACH BORROWERS’
+        CONTRIBUTION TO THE ASSOCIATION.
+        <br />
+        * PATRONAGE CALCULATIONS ASSUME A LOAN CLOSING DATE OF JANUARY 1
+      </small>
     </div>
   </div>
-  <div class="col-3" >
-    <div class="mb-1 p-1 border " style="height:35px">
-      <small class="text-muted">{{pricing.PostPatRate3}}</small>
-    </div>
-  </div>
+  <br /><br />
 </div>
-<div class="row align-items-start">
-  <div class="col">
-    <div class="mb-1 p-1  border-bottom border-top  bg-light" style="height:35px">
-      <small class="text-muted">Patronage Savings</small>
-    </div>
-  </div>
-  <div class="col-3">
-  <div class="mb-1 p-1 border " style="height:35px">
-    <small class="text-muted">{{pricing.PostPatSave1}}</small>
-  </div>
-</div>
-  <div class="col-3">
-    <div class="mb-1 p-1 border " style="height:35px">
-      <small class="text-muted">{{pricing.PostPatSave2}}</small>
-    </div>
-  </div>
-  <div class="col-3">
-    <div class="mb-1 p-1 border " style="height:35px">
-      <small class="text-muted">{{pricing.PostPatSave3}}</small>
-    </div>
-  </div>
-</div>
-</div>
-<div class="row align-items-start">
-  <h5 class="d-flex justify-content-left">Historical Patronage</h5>
-<hr>
-<table class="table table-striped">
-  <thead class="bg-body">
-    <tr>
-      <th scope="col">FISCAL YEAR</th>
-      <th scope="col">PATRONAGE DECLARATION</th>
-      <th scope="col">RETURN AS A % OF TOTAL EARNINGS</th>
-      <th scope="col">CUSTOMER-OWNER AVERAGE RATE REDUCED</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let patrons of patronage">
-      <td>
-        {{patrons.year}}
-      </td>
-      <td>
-        {{patrons.amount}}
-      </td>
-      <td>
-        {{patrons.percent}}
-      </td>
-      <td>
-        {{patrons.avgRate}}
-      </td>
-    </tr>
-  </tbody>
-</table>
-</div>
-<div class="row align-items-start">
-<h5 class="d-flex justify-content-left">Disclaimer</h5>
-<hr style="height:2.5px;background-color:#191970;">
-<div class="col-10">
-  <small>
-THIS PROPOSAL SHOULD BE VIEWED AS AN OUTLINE INTENDED FOR DISCUSSION PURPOSES ONLY. IT SHOULD NOT IN ANY WAY BE VIEWED AS A COMMITMENT BY LONE STAR AG CREDIT TO EXTEND CREDIT OR TO EXTEND CREDIT ON THE TERMS, RATES, OR PAYMENT AMOUNTS SET FORTH ABOVE. ALL VALUES, TERMS, RATES, OR PAYMENT AMOUNTS ON THIS SHEET ARE SUBJECT TO CHANGE AT THE DISCRETION OF LONE STAR AG CREDIT BASED ON FACTORS AND STANDARDS THAT LONE STAR AG CREDIT BELEIVES ARE VITAL TO GRANTING CREDIT. THIS INFORMATION IS PROVIDED FOR THE CONFIDENTIAL USE OF APPLICANTS OR BORROWERS AND MAY NOT BE DISCLOSED TO ANY OTHER PARTY WITHOUT THE EXPRESS WRITTEN CONSENT OF LONE STAR AG CREDIT.
-
-THIS PROPOSAL SHOULD NOT BE CONSTRUED AS OBLIGATING LONE STAR AG CREDIT TO PAY PATRONAGE IN ANY AMOUNT. PATRONAGE LEVELS ARE SUBJECT TO BOARD APPROVAL AND ARE REFLECTIVE OF EACH BORROWERS’ CONTRIBUTION TO THE ASSOCIATION.  
- <br>
-* PATRONAGE CALCULATIONS ASSUME A LOAN CLOSING DATE OF JANUARY 1
-</small>
-</div>
-</div>
-<br><br>
-
