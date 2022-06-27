@@ -1,15 +1,24 @@
-<div class="container-sm">
+<div class="container-fluid">
   <h5 class="d-flex justify-content-left">Borrower Details</h5>
   <hr />
   <div class="row align-items-start">
     <div class="col">
-      <div class="mb-1 p-1 border-bottom border-top bg-light" style="height:30px">
+      <div
+        class="mb-1 p-1 border-bottom border-top bg-light"
+        style="height:30px"
+      >
         <small class="text-muted">Rate Estimate For:</small>
       </div>
-      <div class="mb-1 p-1 border-bottom border-top bg-light" style="height:30px">
+      <div
+        class="mb-1 p-1 border-bottom border-top bg-light"
+        style="height:30px"
+      >
         <small class="text-muted">Phone #:</small>
       </div>
-      <div class="mb-1 p-1 border-bottom border-top bg-light" style="height:30px">
+      <div
+        class="mb-1 p-1 border-bottom border-top bg-light"
+        style="height:30px"
+      >
         <small class="text-muted">Customer Address:</small>
       </div>
     </div>
@@ -69,16 +78,28 @@
   <hr />
   <div class="row align-items-start">
     <div class="col">
-      <div class="mb-1 p-1 border-bottom border-top bg-light" style="height:30px">
+      <div
+        class="mb-1 p-1 border-bottom border-top bg-light"
+        style="height:30px"
+      >
         <small class="text-muted">Size of Loan:</small>
       </div>
-      <div class="mb-1 p-1 border-bottom border-top bg-light" style="height:30px">
+      <div
+        class="mb-1 p-1 border-bottom border-top bg-light"
+        style="height:30px"
+      >
         <small class="text-muted">Estimated Loan Fees:</small>
       </div>
-      <div class="mb-1 p-1 border-bottom border-top bg-light" style="height:30px">
+      <div
+        class="mb-1 p-1 border-bottom border-top bg-light"
+        style="height:30px"
+      >
         <small class="text-muted">Required Stock:</small>
       </div>
-      <div class="mb-1 p-1 border-bottom border-top bg-light" style="height:30px">
+      <div
+        class="mb-1 p-1 border-bottom border-top bg-light"
+        style="height:30px"
+      >
         <small class="text-muted">Timing of Payment:</small>
       </div>
     </div>
@@ -101,9 +122,9 @@
   <h5 class="d-flex justify-content-left">Rate & Spread Scenarios</h5>
   <hr />
   <div class="row align-items-start">
-    <div class="col-5">
+    <div class="col">
       <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm">
           <div
             class="mb-1 p-1 border-bottom border-top bg-light text-truncate"
             style="height:30px"
@@ -111,14 +132,24 @@
             <small class="text-muted">Amortization Type</small>
           </div>
         </div>
-        <div class="col-sm-6">
+        <div class="col">
           <div class="mb-1 p-1 border" style="height:30px">
             <small class="text-muted">{{ pricing.AmorType1 }}</small>
           </div>
         </div>
+        <div class="col">
+          <div class="mb-1 p-1 border" style="height:30px">
+            <small class="text-muted">{{ pricing.AmorType2 }}</small>
+          </div>
+        </div>
+        <div class="col">
+          <div class="mb-1 p-1 border" style="height:30px">
+            <small class="text-muted">{{ pricing.AmorType3 }}</small>
+          </div>
+        </div>
       </div>
       <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm">
           <div
             class="mb-1 p-1 border-bottom border-top bg-light text-truncate"
             style="height:30px"
@@ -126,14 +157,24 @@
             <small class="text-muted">Amortization Term</small>
           </div>
         </div>
-        <div class="col-sm-6">
+        <div class="col">
           <div class="mb-1 p-1 border" style="height:30px">
             <small class="text-muted">{{ pricing.AmorTerm1 }}YRS</small>
           </div>
         </div>
+        <div class="col">
+          <div class="mb-1 p-1 border" style="height:30px">
+            <small class="text-muted">{{ pricing.AmorTerm2 }}YRS</small>
+          </div>
+        </div>
+        <div class="col">
+          <div class="mb-1 p-1 border" style="height:30px">
+            <small class="text-muted">{{ pricing.AmorTerm3 }}YRS</small>
+          </div>
+        </div>
       </div>
       <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm">
           <div
             class="mb-1 p-1 border-bottom border-top bg-light text-truncate"
             style="height:30px"
@@ -141,14 +182,24 @@
             <small class="text-muted">Loan Product</small>
           </div>
         </div>
-        <div class="col-sm-6">
+        <div class="col">
           <div class="mb-1 p-1 border" style="height:30px">
             <small class="text-muted">{{ pricing.loanProd1 }} YR FIXED</small>
           </div>
         </div>
+        <div class="col">
+          <div class="mb-1 p-1 border" style="height:30px">
+            <small class="text-muted">{{ pricing.loanProd2 }} YR FIXED</small>
+          </div>
+        </div>
+        <div class="col">
+          <div class="mb-1 p-1 border" style="height:30px">
+            <small class="text-muted">{{ pricing.loanProd3 }} YR FIXED</small>
+          </div>
+        </div>
       </div>
       <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm">
           <div
             class="mb-1 p-1 border-bottom border-top bg-light text-truncate"
             style="height:30px"
@@ -156,14 +207,24 @@
             <small class="text-muted">Transfer Option</small>
           </div>
         </div>
-        <div class="col-sm-6">
+        <div class="col">
           <div class="mb-1 p-1 border" style="height:30px">
             <small class="text-muted">{{ pricing.TransferOption1 }}</small>
           </div>
         </div>
+        <div class="col">
+          <div class="mb-1 p-1 border" style="height:30px">
+            <small class="text-muted">{{ pricing.TransferOption2 }}</small>
+          </div>
+        </div>
+        <div class="col">
+          <div class="mb-1 p-1 border" style="height:30px">
+            <small class="text-muted">{{ pricing.TransferOption3 }}</small>
+          </div>
+        </div>
       </div>
       <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm">
           <div
             class="mb-1 p-1 border-bottom border-top bg-light text-truncate"
             style="height:30px"
@@ -171,17 +232,27 @@
             <small class="text-muted">Estimated Interest Rate</small>
           </div>
         </div>
-        <div class="col-sm-6">
+        <div class="col">
           <div class="mb-1 p-1 border" style="height:30px">
             <small class="text-muted">{{ pricing.IntRate1 }}</small>
           </div>
         </div>
+        <div class="col">
+          <div class="mb-1 p-1 border" style="height:30px">
+            <small class="text-muted">{{ pricing.IntRate2 }}</small>
+          </div>
+        </div>
+        <div class="col">
+          <div class="mb-1 p-1 border" style="height:30px">
+            <small class="text-muted">{{ pricing.IntRate3 }}</small>
+          </div>
+        </div>
       </div>
       <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm">
           <div
             class="mb-1 p-1 border-bottom border-top bg-light text-truncate"
-            style="height:30px"
+            style="height:30px;"
           >
             <small class="text-muted">Approximate Payment Amount</small>
           </div>
@@ -191,91 +262,11 @@
             <small class="text-muted">{{ pricing.PayAmnt1 }}</small>
           </div>
         </div>
-      </div>
-    </div>
-
-    <div class="col">
-      <div class="row">
-        <div class="col">
-          <div class="mb-1 p-1 border" style="height:30px">
-            <small class="text-muted">{{ pricing.AmorType2 }}</small>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <div class="mb-1 p-1 border" style="height:30px">
-            <small class="text-muted">{{ pricing.AmorTerm2 }}YRS</small>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <div class="mb-1 p-1 border" style="height:30px">
-            <small class="text-muted">{{ pricing.loanProd2 }} YR FIXED</small>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <div class="mb-1 p-1 border" style="height:30px">
-            <small class="text-muted">{{ pricing.TransferOption2 }}</small>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <div class="mb-1 p-1 border" style="height:30px">
-            <small class="text-muted">{{ pricing.IntRate2 }}</small>
-          </div>
-        </div>
-      </div>
-      <div class="row">
         <div class="col">
           <div class="mb-1 p-1 border" style="height:30px">
             <small class="text-muted">{{ pricing.PayAmnt2 }}</small>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="row">
-        <div class="col">
-          <div class="mb-1 p-1 border" style="height:30px">
-            <small class="text-muted">{{ pricing.AmorType3 }}</small>
-          </div>
-        </div>
-      </div>
-      <!--The Cof here-->
-      <div class="row">
-        <div class="col">
-          <div class="mb-1 p-1 border" style="height:30px">
-            <small class="text-muted">{{ pricing.AmorTerm3 }}YRS</small>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <div class="mb-1 p-1 border" style="height:30px">
-            <small class="text-muted">{{ pricing.loanProd3 }} YR FIXED</small>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <div class="mb-1 p-1 border" style="height:30px">
-            <small class="text-muted">{{ pricing.TransferOption3 }}</small>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <div class="mb-1 p-1 border" style="height:30px">
-            <small class="text-muted">{{ pricing.IntRate3 }}</small>
-          </div>
-        </div>
-      </div>
-      <div class="row">
         <div class="col">
           <div class="mb-1 p-1 border" style="height:30px">
             <small class="text-muted">{{ pricing.PayAmnt3 }}</small>
@@ -283,6 +274,24 @@
         </div>
       </div>
     </div>
+
+   <!-- <div class="col">
+      <div class="row"></div>
+      <div class="row"></div>
+      <div class="row"></div>
+      <div class="row"></div>
+      <div class="row"></div>
+      <div class="row"></div>
+    </div>
+    <div class="col">
+      <div class="row"></div>-->
+      <!--The Cof here-->
+    <!--  <div class="row"></div>
+      <div class="row"></div>
+      <div class="row"></div>
+      <div class="row"></div>
+      <div class="row"></div>
+    </div>-->
     <br />
     <h5 class="d-flex justify-content-left">Impact of Patronage *</h5>
     <hr />
