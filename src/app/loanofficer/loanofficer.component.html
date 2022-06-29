@@ -902,17 +902,16 @@
         </div>
       </div>
     </div>
-    <div class="col">
-      <div class="mb-1 p-1 border bg-light text-truncate" style="height:30px;">
-        <small class="text-muted">Loan Officer Variance</small>
+    <div class="row">
+      <div class="col-sm">
+        <div
+          class="mb-1 p-1 border bg-light text-truncate"
+          style="height:30px;"
+        >
+          <small class="text-muted">Loan Officer Variance</small>
+        </div>
       </div>
-      <div class="mb-1 p-1 border bg-light text-truncate" style="height:30px">
-        <small class="text-muted">Final Spread</small>
-      </div>
-    </div>
-    <div class="col">
-      <!--The Cof here-->
-      <div class="mb-1">
+      <div class="col">
         <div class="mb-1">
           <input
             class="form-control bg-white"
@@ -925,6 +924,44 @@
             (change)="formatPercent_var1($event)"
           />
         </div>
+      </div>
+      <div class="col">
+        <div class="mb-1">
+          <input
+            class="form-control bg-white"
+            style="height:30px;"
+            type="text"
+            value=""
+            aria-label="readonly input example"
+            formControlName="Variance2"
+            id="Variance2"
+            (change)="formatPercent_var2($event)"
+          />
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="mb-1">
+          <input
+            class="form-control bg-white"
+            style="height:30px;"
+            type="text"
+            value=""
+            aria-label="readonly input example"
+            formControlName="Variance3"
+            id="Variance3"
+            (change)="formatPercent_var3($event)"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm">
+        <div class="mb-1 p-1 border bg-light text-truncate" style="height:30px">
+          <small class="text-muted">Final Spread</small>
+        </div>
+      </div>
+      <div class="col">
         <div class="mb-1">
           <input
             class="form-control"
@@ -939,20 +976,6 @@
         </div>
       </div>
       <div class="col">
-        <!--The Cof here-->
-
-        <div class="mb-1">
-          <input
-            class="form-control bg-white"
-            style="height:30px;"
-            type="text"
-            value=""
-            aria-label="readonly input example"
-            formControlName="Variance2"
-            id="Variance2"
-            (change)="formatPercent_var2($event)"
-          />
-        </div>
         <div class="mb-1">
           <input
             class="form-control"
@@ -967,20 +990,6 @@
         </div>
       </div>
       <div class="col">
-        <!--The Cof here-->
-
-        <div class="mb-1">
-          <input
-            class="form-control bg-white"
-            style="height:30px;"
-            type="text"
-            value=""
-            aria-label="readonly input example"
-            formControlName="Variance3"
-            id="Variance3"
-            (change)="formatPercent_var3($event)"
-          />
-        </div>
         <div class="mb-1">
           <input
             class="form-control"
@@ -995,5 +1004,7 @@
         </div>
       </div>
     </div>
+
+   
   </form>
 </div>
