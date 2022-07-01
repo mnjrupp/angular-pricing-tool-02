@@ -127,10 +127,22 @@
           </div>
         </div>
       </div>
-
-      <div class="mb-1 p-1 bg-light text-truncate">
-        <small class="text-muted">Estimated Start Date</small>
+      <div class="row">
+        <div class="col">
+          <div class="mb-1 p-1 bg-light text-truncate">
+            <small class="text-muted">Estimated Start Date</small>
+          </div>
+        </div>
+        <div class="col">
+          <div
+            class="mb-1 p-1 bg-secondary text-end"
+            style="--bs-bg-opacity: .25;"
+          >
+            <small class="text-muted">&nbsp;{{ pricing.loanDate }}</small>
+          </div>
+        </div>
       </div>
+
       <div class="mb-1 p-1 bg-light text-truncate">
         <small class="text-muted">Date of Calculation</small>
       </div>
@@ -168,9 +180,6 @@
         <small class="text-muted">&nbsp;</small>
       </div>
 
-      <div class="mb-1 p-1 bg-secondary text-end" style="--bs-bg-opacity: .25;">
-        <small class="text-muted">&nbsp;{{ pricing.loanDate }}</small>
-      </div>
       <div class="mb-1 p-1 bg-secondary text-end" style="--bs-bg-opacity: .25;">
         <small class="text-muted">&nbsp;{{ pricing.calcDate }}</small>
       </div>
