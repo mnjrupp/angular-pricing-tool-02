@@ -263,13 +263,37 @@
           </div>
         </div>
       </div>
-      <div class="col">
-        <div
-          class="mb-1 p-1 border bg-light text-truncate"
-          style="height:30px;"
-        >
-          <small class="text-muted">Consumer Purpose - Lien position</small>
+      <div class="row">
+        <div class="col-sm">
+          <div
+            class="mb-1 p-1 border bg-light text-truncate"
+            style="height:30px;"
+          >
+            <small class="text-muted">Consumer Purpose - Lien position</small>
+          </div>
         </div>
+        <div class="col">
+          <div class="mb-1" style="height:30px;">
+            <select
+              class="form-select form-select-sm"
+              aria-label=".form-select-sm example"
+              formControlName="lienpos"
+              id="lienpos"
+            >
+              <option selected value="1">N/A</option>
+              <option value="2">Yes - 1st Lien</option>
+              <option value="3">Yes - 2nd Lien</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div>&nbsp;</div>
+        </div>
+        <div class="col">
+          <div></div>
+        </div>
+      </div>
+      <div class="col">
         <div
           class="mb-1 p-1 border bg-light text-truncate"
           style="height:30px;"
@@ -297,18 +321,6 @@
       </div>
 
       <div class="col">
-        <div class="mb-1" style="height:30px;">
-          <select
-            class="form-select form-select-sm"
-            aria-label=".form-select-sm example"
-            formControlName="lienpos"
-            id="lienpos"
-          >
-            <option selected value="1">N/A</option>
-            <option value="2">Yes - 1st Lien</option>
-            <option value="3">Yes - 2nd Lien</option>
-          </select>
-        </div>
         <div class="mb-1" style="height:30px;">
           <input
             type="text"
