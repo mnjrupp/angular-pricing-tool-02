@@ -217,10 +217,22 @@
           </div>
         </div>
       </div>
-
-      <div class="mb-1 p-1 bg-light text-truncate">
-        <small class="text-muted">Phone</small>
+      <div class="row">
+        <div class="col-sm">
+          <div class="mb-1 p-1 bg-light text-truncate">
+            <small class="text-muted">Phone</small>
+          </div>
+        </div>
+        <div class="col">
+          <div
+            class="mb-1 p-1 bg-secondary text-end"
+            style="--bs-bg-opacity: .25;"
+          >
+            <small class="text-muted">&nbsp;{{ pricing.branchPhone }}</small>
+          </div>
+        </div>
       </div>
+
       <div class="mb-1 p-1 bg-light text-truncate">
         <small class="text-muted">Office Location</small>
       </div>
@@ -244,9 +256,6 @@
         <small class="text-muted">&nbsp;</small>
       </div>
 
-      <div class="mb-1 p-1 bg-secondary text-end" style="--bs-bg-opacity: .25;">
-        <small class="text-muted">&nbsp;{{ pricing.branchPhone }}</small>
-      </div>
       <div class="mb-1 p-1 bg-secondary text-end" style="--bs-bg-opacity: .25;">
         <small class="text-muted">&nbsp;{{ pricing.branchOffice }}</small>
       </div>
