@@ -7,141 +7,172 @@
       </div>
     </div>
     <div class="row align-items-start">
-      <div class="col">
-        <div
-          class="mb-1 p-1 border bg-light text-truncate"
-          style="height:30px;"
-        >
-          <small class="text-muted">Applicant Name:</small>
-        </div>
-        <div
-          class="mb-1 p-1 border bg-light text-truncate"
-          style="height:30px;"
-        >
-          <small class="text-muted">Phone #:</small>
-        </div>
-        <div
-          class="mb-1 p-1 border bg-light text-truncate"
-          style="height:30px;"
-        >
-          <small class="text-muted">Customer Address:</small>
-        </div>
-        <div
-          class="mb-1 p-1 border bg-light text-truncate"
-          style="height:30px;"
-        >
-          <small class="text-muted">Estimated Start Date of Loan:</small>
-        </div>
-      </div>
-      <div class="col">
-        <div class="mb-1" style="height:30px;">
-          <input
-            type="text"
-            class="form-control form-control-sm"
-            formControlName="applicationName"
-            id="applicationName"
-            placeholder=""
-            (change)="updateApplicantDataName($event)"
-          />
-        </div>
-        <div class="mb-1" style="height:30px;">
-          <input
-            type="text"
-            class="form-control form-control-sm"
-            formControlName="phoneNumber"
-            id="phoneNumber"
-            placeholder=""
-            (change)="updateApplicantDataPhone($event)"
-          />
-        </div>
-        <div class="mb-1" style="height:30px;">
-          <textarea
-            class="form-control form-control-sm"
-            formControlName="address"
-            id="customeraddress"
-            rows="1"
-            (change)="updateApplicantDataAddress($event)"
-          ></textarea>
-        </div>
-        <div class="mb-1" style="height:30px;">
-          <input
-            type="text"
-            class="form-control form-control-sm"
-            formControlName="loanDate"
-            id="loanDate"
-            placeholder=""
-          />
-        </div>
-      </div>
-
-      <div class="col">
-        <div
-          class="mb-1 p-1 border bg-light text-truncate"
-          style="height:30px;"
-        >
-          <small class="text-muted">Loan Officer:</small>
-        </div>
-        <div
-          class="mb-1 p-1 border bg-light text-truncate"
-          style="height:30px;"
-        >
-          <small class="text-muted">Location:</small>
-        </div>
-        <div
-          class="mb-1 p-1 border bg-light text-truncate"
-          style="height:30px;"
-        >
-          <small class="text-muted">Credit Office Loc:</small>
-        </div>
-        <div
-          class="mb-1 p-1 border bg-light text-truncate"
-          style="height:30px;"
-        >
-          <small class="text-muted">Date of Calculation:</small>
-        </div>
-      </div>
-      <div class="col">
-        <div class="mb-1" style="height:30px;">
-          <select
-            class="form-select form-select-sm"
-            aria-label=".form-select-sm"
-            formControlName="loanOfficer"
-            id="loanOfficer"
-            #t
-            (change)="updateOfficerData(t.value)"
+      <div class="row">
+        <div class="col-sm">
+          <div
+            class="mb-1 p-1 border bg-light text-truncate"
+            style="height:30px;"
           >
-            <option [ngValue]="null" disabled>Select Loan Officer</option>
-            <option *ngFor="let officer of officers" [value]="officer.name">
-              {{ officer.name }}
-            </option>
-          </select>
+            <small class="text-muted">Applicant Name:</small>
+          </div>
         </div>
-        <div class="mb-1" style="height:30px;">
-          <input
-            type="text"
-            class="form-control form-control-sm"
-            formControlName="branchOffice"
-            id="branchOffice"
-            value="{{ officers.location }}"
-          />
+        <div class="col">
+          <div class="mb-1" style="height:30px;">
+            <input
+              type="text"
+              class="form-control form-control-sm"
+              formControlName="applicationName"
+              id="applicationName"
+              placeholder=""
+              (change)="updateApplicantDataName($event)"
+            />
+          </div>
         </div>
-        <div class="mb-1" style="height:30px;">
-          <textarea
-            class="form-control form-control-sm"
-            formControlName="branchaddress"
-            id="branchaddress"
-            rows="1"
-            value="{{ officers.Address }}"
-          ></textarea>
+        <div class="col-sm">
+          <div
+            class="mb-1 p-1 border bg-light text-truncate"
+            style="height:30px;"
+          >
+            <small class="text-muted">Loan Officer:</small>
+          </div>
         </div>
-        <div style="height:30px;">
-          <input
-            type="text"
-            class="form-control form-control-sm"
-            formControlName="calcDate"
-            id="calcDate"
-            placeholder=""
-          />
+        <div class="col">
+          <div class="mb-1" style="height:30px;">
+            <select
+              class="form-select form-select-sm"
+              aria-label=".form-select-sm"
+              formControlName="loanOfficer"
+              id="loanOfficer"
+              #t
+              (change)="updateOfficerData(t.value)"
+            >
+              <option [ngValue]="null" disabled>Select Loan Officer</option>
+              <option *ngFor="let officer of officers" [value]="officer.name">
+                {{ officer.name }}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm">
+          <div
+            class="mb-1 p-1 border bg-light text-truncate"
+            style="height:30px;"
+          >
+            <small class="text-muted">Phone #:</small>
+          </div>
+        </div>
+        <div class="col">
+          <div class="mb-1" style="height:30px;">
+            <input
+              type="text"
+              class="form-control form-control-sm"
+              formControlName="phoneNumber"
+              id="phoneNumber"
+              placeholder=""
+              (change)="updateApplicantDataPhone($event)"
+            />
+          </div>
+        </div>
+        <div class="col-sm">
+          <div
+            class="mb-1 p-1 border bg-light text-truncate"
+            style="height:30px;"
+          >
+            <small class="text-muted">Location:</small>
+          </div>
+        </div>
+        <div class="col">
+          <div class="mb-1" style="height:30px;">
+            <input
+              type="text"
+              class="form-control form-control-sm"
+              formControlName="branchOffice"
+              id="branchOffice"
+              value="{{ officers.location }}"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm">
+          <div
+            class="mb-1 p-1 border bg-light text-truncate"
+            style="height:30px;"
+          >
+            <small class="text-muted">Customer Address:</small>
+          </div>
+        </div>
+        <div class="col">
+          <div class="mb-1" style="height:30px;">
+            <textarea
+              class="form-control form-control-sm"
+              formControlName="address"
+              id="customeraddress"
+              rows="1"
+              (change)="updateApplicantDataAddress($event)"
+            ></textarea>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div
+            class="mb-1 p-1 border bg-light text-truncate"
+            style="height:30px;"
+          >
+            <small class="text-muted">Credit Office Loc:</small>
+          </div>
+        </div>
+        <div class="col">
+          <div class="mb-1" style="height:30px;">
+            <textarea
+              class="form-control form-control-sm"
+              formControlName="branchaddress"
+              id="branchaddress"
+              rows="1"
+              value="{{ officers.Address }}"
+            ></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm">
+          <div
+            class="mb-1 p-1 border bg-light text-truncate"
+            style="height:30px;"
+          >
+            <small class="text-muted">Estimated Start Date of Loan:</small>
+          </div>
+        </div>
+        <div class="col">
+          <div class="mb-1" style="height:30px;">
+            <input
+              type="text"
+              class="form-control form-control-sm"
+              formControlName="loanDate"
+              id="loanDate"
+              placeholder=""
+            />
+          </div>
+        </div>
+        <div class="col-sm">
+          <div
+            class="mb-1 p-1 border bg-light text-truncate"
+            style="height:30px;"
+          >
+            <small class="text-muted">Date of Calculation:</small>
+          </div>
+        </div>
+        <div class="col">
+          <div style="height:30px;">
+            <input
+              type="text"
+              class="form-control form-control-sm"
+              formControlName="calcDate"
+              id="calcDate"
+              placeholder=""
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -150,19 +181,89 @@
       <div class="mb-1">
         <button type="submit" class="btn btn-primary">Get Rates</button>
       </div>
+      <div class="row">
+        <div class="col-sm">
+          <div
+            class="mb-1 p-1 border bg-light text-truncate"
+            style="height:30px;"
+          >
+            <small class="text-muted">FSA Guarantee:</small>
+          </div>
+        </div>
+        <div class="col">
+          <div class="mb-1" style="height:30px">
+            <select
+              class="form-select form-select-sm"
+              aria-label=".form-select-sm example"
+              formControlName="fsaguarantee"
+              id="fsaguarantee"
+            >
+              <option selected></option>
+              <option value="1">No</option>
+              <option value="2">Yes</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div></div>
+        </div>
+        <div class="col">
+          <div></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm">
+          <div
+            class="mb-1 p-1 border bg-light text-truncate"
+            style="height:30px;"
+          >
+            <small class="text-muted">Loan type</small>
+          </div>
+        </div>
+        <div class="col">
+          <div class="mb-1" style="height:30px;">
+            <select
+              class="form-select form-select-sm"
+              aria-label=".form-select-sm example"
+              formControlName="loantype"
+              id="loantype"
+            >
+              <option selected></option>
+              <option value="1">AgFast</option>
+              <option value="2">AgTerm Loan</option>
+              <option value="3">Construction</option>
+              <option value="4">Equip & Chattel</option>
+              <option value="5">Operating</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div
+            class="mb-1 p-1 border bg-light text-truncate"
+            style="height:30px;"
+          >
+            <small class="text-muted">Collateral type</small>
+          </div>
+        </div>
+        <div class="col">
+          <div class="mb-1" style="height:30px">
+            <select
+              class="form-select form-select-sm"
+              aria-label=".form-select-sm example"
+              formControlName="locateral"
+              id="locateral"
+            >
+              <option selected></option>
+              <option value="1">Agricultural Land</option>
+              <option value="2">Chattel</option>
+              <option value="3">Homesite</option>
+              <option value="4">Land in Transition</option>
+              <option value="5">Specialized Facility/Agribusiness</option>
+            </select>
+          </div>
+        </div>
+      </div>
       <div class="col">
-        <div
-          class="mb-1 p-1 border bg-light text-truncate"
-          style="height:30px;"
-        >
-          <small class="text-muted">FSA Guarantee:</small>
-        </div>
-        <div
-          class="mb-1 p-1 border bg-light text-truncate"
-          style="height:30px;"
-        >
-          <small class="text-muted">Loan type</small>
-        </div>
         <div
           class="mb-1 p-1 border bg-light text-truncate"
           style="height:30px;"
@@ -196,33 +297,6 @@
       </div>
 
       <div class="col">
-        <div class="mb-1" style="height:30px">
-          <select
-            class="form-select form-select-sm"
-            aria-label=".form-select-sm example"
-            formControlName="fsaguarantee"
-            id="fsaguarantee"
-          >
-            <option selected></option>
-            <option value="1">No</option>
-            <option value="2">Yes</option>
-          </select>
-        </div>
-        <div class="mb-1" style="height:30px;">
-          <select
-            class="form-select form-select-sm"
-            aria-label=".form-select-sm example"
-            formControlName="loantype"
-            id="loantype"
-          >
-            <option selected></option>
-            <option value="1">AgFast</option>
-            <option value="2">AgTerm Loan</option>
-            <option value="3">Construction</option>
-            <option value="4">Equip & Chattel</option>
-            <option value="5">Operating</option>
-          </select>
-        </div>
         <div class="mb-1" style="height:30px;">
           <select
             class="form-select form-select-sm"
@@ -292,12 +366,7 @@
       <div class="col">
         <div class="mb-1" style="height:30px"></div>
         <!-- Collateral Type-->
-        <div
-          class="mb-1 p-1 border bg-light text-truncate"
-          style="height:30px;"
-        >
-          <small class="text-muted">Collateral type</small>
-        </div>
+
         <div class="mb-1 p-1" style="height:30px"></div>
         <!--Fee -->
         <div
@@ -324,21 +393,7 @@
       </div>
       <div class="col">
         <div class="mb-1" style="height:30px"></div>
-        <div class="mb-1" style="height:30px">
-          <select
-            class="form-select form-select-sm"
-            aria-label=".form-select-sm example"
-            formControlName="locateral"
-            id="locateral"
-          >
-            <option selected></option>
-            <option value="1">Agricultural Land</option>
-            <option value="2">Chattel</option>
-            <option value="3">Homesite</option>
-            <option value="4">Land in Transition</option>
-            <option value="5">Specialized Facility/Agribusiness</option>
-          </select>
-        </div>
+
         <div class="mb-1" style="height:30px"></div>
         <div class="mb-1" style="height:30px">
           <input
@@ -901,110 +956,112 @@
           </div>
         </div>
       </div>
-   
-    <div class="row">
-      <div class="col-sm">
-        <div
-          class="mb-1 p-1 border bg-light text-truncate"
-          style="height:30px;"
-        >
-          <small class="text-muted">Loan Officer Variance</small>
-        </div>
-      </div>
-      <div class="col">
-        <div class="mb-1">
-          <input
-            class="form-control bg-white"
-            style="height:30px;"
-            type="text"
-            value=""
-            aria-label="readonly input example"
-            formControlName="Variance1"
-            id="Variance1"
-            (change)="formatPercent_var1($event)"
-          />
-        </div>
-      </div>
-      <div class="col">
-        <div class="mb-1">
-          <input
-            class="form-control bg-white"
-            style="height:30px;"
-            type="text"
-            value=""
-            aria-label="readonly input example"
-            formControlName="Variance2"
-            id="Variance2"
-            (change)="formatPercent_var2($event)"
-          />
-        </div>
-      </div>
 
-      <div class="col">
-        <div class="mb-1">
-          <input
-            class="form-control bg-white"
+      <div class="row">
+        <div class="col-sm">
+          <div
+            class="mb-1 p-1 border bg-light text-truncate"
             style="height:30px;"
-            type="text"
-            value=""
-            aria-label="readonly input example"
-            formControlName="Variance3"
-            id="Variance3"
-            (change)="formatPercent_var3($event)"
-          />
+          >
+            <small class="text-muted">Loan Officer Variance</small>
+          </div>
+        </div>
+        <div class="col">
+          <div class="mb-1">
+            <input
+              class="form-control bg-white"
+              style="height:30px;"
+              type="text"
+              value=""
+              aria-label="readonly input example"
+              formControlName="Variance1"
+              id="Variance1"
+              (change)="formatPercent_var1($event)"
+            />
+          </div>
+        </div>
+        <div class="col">
+          <div class="mb-1">
+            <input
+              class="form-control bg-white"
+              style="height:30px;"
+              type="text"
+              value=""
+              aria-label="readonly input example"
+              formControlName="Variance2"
+              id="Variance2"
+              (change)="formatPercent_var2($event)"
+            />
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="mb-1">
+            <input
+              class="form-control bg-white"
+              style="height:30px;"
+              type="text"
+              value=""
+              aria-label="readonly input example"
+              formControlName="Variance3"
+              id="Variance3"
+              (change)="formatPercent_var3($event)"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm">
+          <div
+            class="mb-1 p-1 border bg-light text-truncate"
+            style="height:30px"
+          >
+            <small class="text-muted">Final Spread</small>
+          </div>
+        </div>
+        <div class="col">
+          <div class="mb-1">
+            <input
+              class="form-control"
+              style="background-color:#9bc48a;height:30px;"
+              type="text"
+              value=""
+              aria-label="readonly input example"
+              formControlName="finalSpread1"
+              id="finalSpread1"
+              readonly
+            />
+          </div>
+        </div>
+        <div class="col">
+          <div class="mb-1">
+            <input
+              class="form-control"
+              style="background-color:#9bc48a;height:30px;"
+              type="text"
+              value=""
+              aria-label="readonly input example"
+              formControlName="finalSpread2"
+              id="finalSpread2"
+              readonly
+            />
+          </div>
+        </div>
+        <div class="col">
+          <div class="mb-1">
+            <input
+              class="form-control"
+              style="background-color:#9bc48a;height:30px;"
+              type="text"
+              value=""
+              aria-label="readonly input example"
+              formControlName="finalSpread3"
+              id="finalSpread3"
+              readonly
+            />
+          </div>
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-sm">
-        <div class="mb-1 p-1 border bg-light text-truncate" style="height:30px">
-          <small class="text-muted">Final Spread</small>
-        </div>
-      </div>
-      <div class="col">
-        <div class="mb-1">
-          <input
-            class="form-control"
-            style="background-color:#9bc48a;height:30px;"
-            type="text"
-            value=""
-            aria-label="readonly input example"
-            formControlName="finalSpread1"
-            id="finalSpread1"
-            readonly
-          />
-        </div>
-      </div>
-      <div class="col">
-        <div class="mb-1">
-          <input
-            class="form-control"
-            style="background-color:#9bc48a;height:30px;"
-            type="text"
-            value=""
-            aria-label="readonly input example"
-            formControlName="finalSpread2"
-            id="finalSpread2"
-            readonly
-          />
-        </div>
-      </div>
-      <div class="col">
-        <div class="mb-1">
-          <input
-            class="form-control"
-            style="background-color:#9bc48a;height:30px;"
-            type="text"
-            value=""
-            aria-label="readonly input example"
-            formControlName="finalSpread3"
-            id="finalSpread3"
-            readonly
-          />
-        </div>
-      </div>
-    </div>
-  </div>
-   
   </form>
 </div>
