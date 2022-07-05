@@ -293,25 +293,140 @@
           <div></div>
         </div>
       </div>
+      <div class="row">
+        <div class="col-sm">
+          <div
+            class="mb-1 p-1 border bg-light text-truncate"
+            style="height:30px;"
+          >
+            <small class="text-muted">Loan Amount</small>
+          </div>
+        </div>
+        <div class="col">
+          <div class="mb-1" style="height:30px;">
+            <input
+              type="text"
+              class="form-control form-control-sm"
+              formControlName="loanAmnt"
+              id="loanAmnt"
+              (change)="formatCurrency_LoanAmnt($event)"
+            />
+          </div>
+        </div>
+        <div class="col-sm">
+          <div
+            class="mb-1 p-1 border bg-light text-truncate"
+            style="height:30px;"
+          >
+            <small class="text-muted">Fee</small>
+          </div>
+        </div>
+        <div class="col">
+          <div class="mb-1" style="height:30px">
+            <input
+              type="text"
+              class="form-control form-control-sm"
+              formControlName="feeAmnt"
+              id="feeAmnt"
+              (change)="formatCurrency_FeeAmnt($event)"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm">
+          <div
+            class="mb-1 p-1 border bg-light text-truncate"
+            style="height:30px;"
+          >
+            <small class="text-muted">Payment frequency</small>
+          </div>
+        </div>
+        <div class="col">
+          <div class="mb-1" style="height:30px;">
+            <select
+              class="form-select form-select-sm"
+              aria-label=".form-select-sm example"
+              formControlName="paymentfreq"
+              id="paymentfreq"
+              (change)="updatePayFreq($event)"
+            >
+              <option value="12" selected>Monthly</option>
+              <option value="4">Quarterly</option>
+              <option value="2">Semi-Annual</option>
+              <option value="1">Annual</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div></div>
+        </div>
+        <div class="col">
+          <div></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm">
+          <div
+            class="mb-1 p-1 border bg-light text-truncate"
+            style="height:30px;"
+          >
+            <small class="text-muted">PD</small>
+          </div>
+        </div>
+        <div class="col">
+          <div class="mb-1" style="height:30px;">
+            <select
+              class="form-select form-select-sm"
+              aria-label=".form-select-sm example"
+              formControlName="pd"
+              id="pd"
+            >
+              <option selected></option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div
+            class="mb-1 p-1 border bg-light text-truncate"
+            style="height:30px;"
+          >
+            <small class="text-muted">LGD</small>
+          </div>
+        </div>
+        <div class="col">
+          <div class="mb-1" style="height:30px">
+            <select
+              class="form-select form-select-sm"
+              aria-label=".form-select-sm example"
+              formControlName="lgd"
+              id="lgd"
+            >
+              <option selected></option>
+              <option value="1">B-Well</option>
+              <option value="2">D-Adequate</option>
+              <option value="3">E-Marginal</option>
+              <option value="4">F-Under-Secured</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm"></div>
+        <div class="col"></div>
+        <div class="col-sm"></div>
+        <div class="col"></div>
+      </div>
       <div class="col">
-        <div
-          class="mb-1 p-1 border bg-light text-truncate"
-          style="height:30px;"
-        >
-          <small class="text-muted">Loan Amount</small>
-        </div>
-        <div
-          class="mb-1 p-1 border bg-light text-truncate"
-          style="height:30px;"
-        >
-          <small class="text-muted">Payment frequency</small>
-        </div>
-        <div
-          class="mb-1 p-1 border bg-light text-truncate"
-          style="height:30px;"
-        >
-          <small class="text-muted">PD</small>
-        </div>
         <div
           class="mb-1 p-1 border bg-light text-truncate"
           style="height:30px;"
@@ -321,48 +436,6 @@
       </div>
 
       <div class="col">
-        <div class="mb-1" style="height:30px;">
-          <input
-            type="text"
-            class="form-control form-control-sm"
-            formControlName="loanAmnt"
-            id="loanAmnt"
-            (change)="formatCurrency_LoanAmnt($event)"
-          />
-        </div>
-        <div class="mb-1" style="height:30px;">
-          <select
-            class="form-select form-select-sm"
-            aria-label=".form-select-sm example"
-            formControlName="paymentfreq"
-            id="paymentfreq"
-            (change)="updatePayFreq($event)"
-          >
-            <option value="12" selected>Monthly</option>
-            <option value="4">Quarterly</option>
-            <option value="2">Semi-Annual</option>
-            <option value="1">Annual</option>
-          </select>
-        </div>
-        <div class="mb-1" style="height:30px;">
-          <select
-            class="form-select form-select-sm"
-            aria-label=".form-select-sm example"
-            formControlName="pd"
-            id="pd"
-          >
-            <option selected></option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-            <option value="11">11</option>
-            <option value="12">12</option>
-          </select>
-        </div>
         <div class="mb-1" style="height:30px;">
           <select
             class="form-select form-select-sm"
@@ -381,20 +454,10 @@
 
         <div class="mb-1 p-1" style="height:30px"></div>
         <!--Fee -->
-        <div
-          class="mb-1 p-1 border bg-light text-truncate"
-          style="height:30px;"
-        >
-          <small class="text-muted">Fee</small>
-        </div>
+
         <div class="mb-1" style="height:30px"></div>
         <!--LGD -->
-        <div
-          class="mb-1 p-1 border bg-light text-truncate"
-          style="height:30px;"
-        >
-          <small class="text-muted">LGD</small>
-        </div>
+
         <!-- Ballon Number of Years -->
         <div
           class="mb-1 p-1 border bg-light text-truncate"
@@ -407,30 +470,9 @@
         <div class="mb-1" style="height:30px"></div>
 
         <div class="mb-1" style="height:30px"></div>
-        <div class="mb-1" style="height:30px">
-          <input
-            type="text"
-            class="form-control form-control-sm"
-            formControlName="feeAmnt"
-            id="feeAmnt"
-            (change)="formatCurrency_FeeAmnt($event)"
-          />
-        </div>
+
         <div class="mb-1" style="height:30px"></div>
-        <div class="mb-1" style="height:30px">
-          <select
-            class="form-select form-select-sm"
-            aria-label=".form-select-sm example"
-            formControlName="lgd"
-            id="lgd"
-          >
-            <option selected></option>
-            <option value="1">B-Well</option>
-            <option value="2">D-Adequate</option>
-            <option value="3">E-Marginal</option>
-            <option value="4">F-Under-Secured</option>
-          </select>
-        </div>
+
         <div class="mb-1" style="height:30px">
           <select
             class="form-select form-select-sm"
