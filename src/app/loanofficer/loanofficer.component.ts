@@ -129,9 +129,18 @@ export class LoanOfficerComponent implements OnInit {
     });
   }
   buildCOF(value: PricingModel) {
-    var amortT1 = this.buildAmortTypeRateProduct(value.AmorType1,value.TransferOption1);
-    var amortT2 = this.buildAmortTypeRateProduct(value.AmorType2,value.TransferOption2);
-    var amortT3 = this.buildAmortTypeRateProduct(value.AmorType3,value.TransferOption3);
+    var amortT1 = this.buildAmortTypeRateProduct(
+      value.AmorType1,
+      value.TransferOption1
+    );
+    var amortT2 = this.buildAmortTypeRateProduct(
+      value.AmorType2,
+      value.TransferOption2
+    );
+    var amortT3 = this.buildAmortTypeRateProduct(
+      value.AmorType3,
+      value.TransferOption3
+    );
 
     this.costoffundsreqObj[0].amortizationTermMonths = value.AmorTerm1;
     this.costoffundsreqObj[0].amortizationType = amortT1.amort;
@@ -178,17 +187,16 @@ export class LoanOfficerComponent implements OnInit {
     return this.costoffundsreqObj;
   }
 
-  buildAmortTypeRateProduct(amT:string,oCat:string){
-    var amortA:any = {};
-    switch(amT){
+  buildAmortTypeRateProduct(amT: string, oCat: string) {
+    var amortA: any = {};
+    switch (amT) {
       case 'SOFR P&I':
-        amortA = {amort:'',optionCat:'',rateProd:'FCSI'}
-       break;
-       default:
-        amortA = {amort:amT,optionCat:oCat,rateProd:'Fixed'}
+        amortA = { amort: '', optionCat: '', rateProd: 'FCSI' };
+        break;
+      default:
+        amortA = { amort: amT, optionCat: oCat, rateProd: 'Fixed' };
     }
     return amortA;
-
   }
   buildPricingModel(value: CostOfFundsResponse[]) {
     var recomrate1 = this.buildRecomRate(
@@ -362,7 +370,7 @@ export class LoanOfficerComponent implements OnInit {
     loanProduct = this.loanservice.loanProductArray.filter(function (x) {
       return x.Product == loanProd;
     });
-    if (loanProduct === 'undefined' || loanProduct.length==0) {
+    if (loanProduct === 'undefined' || loanProduct.length == 0) {
       loanProduct = [{ Product: 0, value: 0.0 }];
     }
     //console.log('loanProduct ',loanProduct)
