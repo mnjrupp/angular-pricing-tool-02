@@ -43,7 +43,8 @@ export class LoanOfficerComponent implements OnInit {
     // TODO: implemet the CostOfFunds from FCBT
     var copyformValue: PricingModel;
     copyformValue = this.formValue.value;
-
+    /* Need to check for Loan Amount is populated */
+    if(this.unformatNumber(copyformValue.loanAmnt)>0){
     this.apiservice.postCostofFunds(this.buildCOF(copyformValue)).subscribe(
       (data) => {
         console.log('data returned ', data);
@@ -57,6 +58,7 @@ export class LoanOfficerComponent implements OnInit {
         this.buildPricingModel(this.costoffundsresObj);
       }
     );
+    }
   }
   ngOnInit() {
     // subscribe to Loan Data service
@@ -528,7 +530,7 @@ export class LoanOfficerComponent implements OnInit {
                                                       this.pricing.loanProd1,
                                                       this.pricing.loanDate);*/
     this.loanservice.editModel(this.pricing);
-    if(this.pricing.AmorTerm1>=this.pricing.loanProd1 ){ this.getCOF();}
+    if(this.pricing.AmorTerm1>=this.pricing.loanProd1){ this.getCOF();}
   }
   updateApplicantDataLoanProdTwo(event) {
     // console.log(event.target.value);
