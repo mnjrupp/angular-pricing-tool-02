@@ -195,6 +195,7 @@ export class LoanOfficerComponent implements OnInit {
         break;
       default:
         amortA = { amort: amT, optionCat: oCat, rateProd: 'Fixed' };
+        break;
     }
     return amortA;
   }
