@@ -556,26 +556,41 @@ export class LoanOfficerComponent implements OnInit {
     // console.log(event.target.value);
     this.pricing.loanProd2 = event.target.value;
     this.loanservice.editModel(this.pricing);
+    if (this.pricing.AmorTerm2 >= this.pricing.loanProd2) {
+      this.getCOF();
+    }
   }
   updateApplicantDataLoanProdThree(event) {
     // console.log(event.target.value);
     this.pricing.loanProd3 = event.target.value;
     this.loanservice.editModel(this.pricing);
+    if (this.pricing.AmorTerm3 >= this.pricing.loanProd3) {
+      this.getCOF();
+    }
   }
   updateApplicantDataTransOptOne(event) {
     // console.log(event.target.value);
     this.pricing.TransferOption1 = event.target.value;
     this.loanservice.editModel(this.pricing);
+    if (this.pricing.AmorTerm1 >= this.pricing.loanProd1) {
+      this.getCOF();
+    }
   }
   updateApplicantDataTransOptTwo(event) {
     // console.log(event.target.value);
     this.pricing.TransferOption2 = event.target.value;
     this.loanservice.editModel(this.pricing);
+    if (this.pricing.AmorTerm2 >= this.pricing.loanProd2) {
+      this.getCOF();
+    }
   }
   updateApplicantDataTransOptThree(event) {
     // console.log(event.target.value);
     this.pricing.TransferOption3 = event.target.value;
     this.loanservice.editModel(this.pricing);
+    if (this.pricing.AmorTerm3 >= this.pricing.loanProd3) {
+      this.getCOF();
+    }
   }
   updatePayFreq(event) {
     // console.log(event.target.value);
