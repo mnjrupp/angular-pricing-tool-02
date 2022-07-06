@@ -570,6 +570,7 @@ export class LoanOfficerComponent implements OnInit {
     this.formValue.patchValue({ loanAmnt: uy });
     this.pricing.loanAmnt = uy;
     this.loanservice.editModel(this.pricing);
+    this.getCOF();
   }
   formatCurrency_FeeAmnt(event) {
     var uy = new Intl.NumberFormat('en-US', {
