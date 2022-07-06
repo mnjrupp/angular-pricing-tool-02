@@ -493,6 +493,7 @@
                 >
                   <option selected>P&I</option>
                   <option>P+I</option>
+                  <option>SOFR P&I</option>
                 </select>
               </div>
             </div>
@@ -507,6 +508,7 @@
                 >
                   <option selected>P&I</option>
                   <option>P+I</option>
+                  <option>SOFR P&I</option>
                 </select>
               </div>
             </div>
@@ -517,10 +519,11 @@
                   aria-label=".form-select-sm example"
                   formControlName="AmorType3"
                   id="AmorType3"
-                  (click)="updateApplicantDataAmortTypeThree($event)"
+                  (change)="updateApplicantDataAmortTypeThree($event)"
                 >
                   <option selected>P&I</option>
                   <option>P+I</option>
+                  <option>SOFR P&I</option>
                 </select>
               </div>
             </div>
