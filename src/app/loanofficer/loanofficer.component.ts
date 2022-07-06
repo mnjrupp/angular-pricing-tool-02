@@ -501,26 +501,31 @@ export class LoanOfficerComponent implements OnInit {
     // console.log(event.target.value);
     this.pricing.AmorType2 = event.target.value;
     this.loanservice.editModel(this.pricing);
+    if(this.pricing.AmorTerm2>=this.pricing.loanProd2 ){ this.getCOF();}
   }
   updateApplicantDataAmortTypeThree(event) {
     //console.log(event.target.value);
     this.pricing.AmorType3 = event.target.value;
     this.loanservice.editModel(this.pricing);
+    if(this.pricing.AmorTerm3>=this.pricing.loanProd3 ){ this.getCOF();}
   }
   updateApplicantDataAmortTermOne(event) {
     // console.log(event.target.value);
     this.pricing.AmorTerm1 = event.target.value;
     this.loanservice.editModel(this.pricing);
+    if(this.pricing.AmorTerm1>=this.pricing.loanProd1 ){ this.getCOF();}
   }
   updateApplicantDataAmortTermTwo(event) {
     //console.log(event.target.value);
     this.pricing.AmorTerm2 = event.target.value;
     this.loanservice.editModel(this.pricing);
+    if(this.pricing.AmorTerm2>=this.pricing.loanProd2 ){ this.getCOF();}
   }
   updateApplicantDataAmortTermThree(event) {
     // console.log(event.target.value);
     this.pricing.AmorTerm3 = event.target.value;
     this.loanservice.editModel(this.pricing);
+    if(this.pricing.AmorTerm3>=this.pricing.loanProd3 ){ this.getCOF();}
   }
   updateApplicantDataLoanProdOne(event) {
    // console.log(event.target.value);
