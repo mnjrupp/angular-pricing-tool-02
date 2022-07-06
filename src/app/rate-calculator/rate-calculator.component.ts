@@ -37,7 +37,7 @@ export class RateCalculatorComponent implements OnInit {
   ngOnInit() {
     this.loanservice.cast.subscribe((data) => {
       this.pricing = data;
-      console.log('pricing ', this.pricing);
+      //console.log('pricing ', this.pricing);
       this.COFConv = this.pricing.COF1;
       this.SpreadConv = this.pricing.finalSpread1;
       this.LoanBalance = this.pricing.loanAmnt;
