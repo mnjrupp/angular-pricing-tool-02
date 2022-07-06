@@ -44,20 +44,20 @@ export class LoanOfficerComponent implements OnInit {
     var copyformValue: PricingModel;
     copyformValue = this.formValue.value;
     /* Need to check for Loan Amount is populated */
-    if(this.unformatNumber(copyformValue.loanAmnt)>0){
-    this.apiservice.postCostofFunds(this.buildCOF(copyformValue)).subscribe(
-      (data) => {
-        console.log('data returned ', data);
-      },
-      (error) => {
-        console.log('error returned =>', error);
-        /*console.log(
+    if (this.unformatNumber(copyformValue.loanAmnt) > 0) {
+      this.apiservice.postCostofFunds(this.buildCOF(copyformValue)).subscribe(
+        (data) => {
+          console.log('data returned ', data);
+        },
+        (error) => {
+          console.log('error returned =>', error);
+          /*console.log(
           'passing dummy data =>',
           JSON.stringify(this.costoffundsresObj)
         );*/
-        this.buildPricingModel(this.costoffundsresObj);
-      }
-    );
+          this.buildPricingModel(this.costoffundsresObj);
+        }
+      );
     }
   }
   ngOnInit() {
@@ -495,47 +495,62 @@ export class LoanOfficerComponent implements OnInit {
     //console.log(event.target.value);
     this.pricing.AmorType1 = event.target.value;
     this.loanservice.editModel(this.pricing);
-    if(this.pricing.AmorTerm1>=this.pricing.loanProd1 ){ this.getCOF();}
+    if (this.pricing.AmorTerm1 >= this.pricing.loanProd1) {
+      this.getCOF();
+    }
   }
   updateApplicantDataAmortTypeTwo(event) {
     // console.log(event.target.value);
     this.pricing.AmorType2 = event.target.value;
     this.loanservice.editModel(this.pricing);
-    if(this.pricing.AmorTerm2>=this.pricing.loanProd2 ){ this.getCOF();}
+    if (this.pricing.AmorTerm2 >= this.pricing.loanProd2) {
+      this.getCOF();
+    }
   }
   updateApplicantDataAmortTypeThree(event) {
     //console.log(event.target.value);
     this.pricing.AmorType3 = event.target.value;
     this.loanservice.editModel(this.pricing);
-    if(this.pricing.AmorTerm3>=this.pricing.loanProd3 ){ this.getCOF();}
+    if (this.pricing.AmorTerm3 >= this.pricing.loanProd3) {
+      this.getCOF();
+    }
   }
   updateApplicantDataAmortTermOne(event) {
     // console.log(event.target.value);
     this.pricing.AmorTerm1 = event.target.value;
     this.loanservice.editModel(this.pricing);
-    if(this.pricing.AmorTerm1>=this.pricing.loanProd1 ){ this.getCOF();}
+
+    if (this.pricing.AmorTerm1 >= this.pricing.loanProd1) {
+      this.getCOF();
+    }
   }
   updateApplicantDataAmortTermTwo(event) {
     //console.log(event.target.value);
     this.pricing.AmorTerm2 = event.target.value;
     this.loanservice.editModel(this.pricing);
-    if(this.pricing.AmorTerm2>=this.pricing.loanProd2 ){ this.getCOF();}
+    if (this.pricing.AmorTerm2 >= this.pricing.loanProd2) {
+      this.getCOF();
+    }
   }
   updateApplicantDataAmortTermThree(event) {
     // console.log(event.target.value);
     this.pricing.AmorTerm3 = event.target.value;
     this.loanservice.editModel(this.pricing);
-    if(this.pricing.AmorTerm3>=this.pricing.loanProd3 ){ this.getCOF();}
+    if (this.pricing.AmorTerm3 >= this.pricing.loanProd3) {
+      this.getCOF();
+    }
   }
   updateApplicantDataLoanProdOne(event) {
-   // console.log(event.target.value);
+    // console.log(event.target.value);
     this.pricing.loanProd1 = event.target.value;
     /*this.pricing.TotalInt1 = this.updateTotalInterest(this.unformatNumber(this.pricing.loanAmnt),
                                                       this.unformatNumber(this.pricing.IntRate1),
                                                       this.pricing.loanProd1,
                                                       this.pricing.loanDate);*/
     this.loanservice.editModel(this.pricing);
-    if(this.pricing.AmorTerm1>=this.pricing.loanProd1){ this.getCOF();}
+    if (this.pricing.AmorTerm1 >= this.pricing.loanProd1) {
+      this.getCOF();
+    }
   }
   updateApplicantDataLoanProdTwo(event) {
     // console.log(event.target.value);
