@@ -382,7 +382,7 @@ export class LoanOfficerComponent implements OnInit {
     if (premium.length == 0) {
       premium = [{ prodamort: 0, value: 0.0 }];
     }
-    console.log('premium ', premium);
+    //console.log('premium ', premium);
 
     var pdlgdStr = this.buildPDLGDStr(pd, lgd);
     var pdlgdfloat = this.loanservice.loanpdlgdArray.filter(
@@ -493,6 +493,7 @@ export class LoanOfficerComponent implements OnInit {
     //console.log(event.target.value);
     this.pricing.AmorType1 = event.target.value;
     this.loanservice.editModel(this.pricing);
+    if(this.pricing.AmorTerm1>=this.pricing.loanProd1 ){ this.getCOF();}
   }
   updateApplicantDataAmortTypeTwo(event) {
     // console.log(event.target.value);
@@ -527,6 +528,7 @@ export class LoanOfficerComponent implements OnInit {
                                                       this.pricing.loanProd1,
                                                       this.pricing.loanDate);*/
     this.loanservice.editModel(this.pricing);
+    if(this.pricing.AmorTerm1>=this.pricing.loanProd1 ){ this.getCOF();}
   }
   updateApplicantDataLoanProdTwo(event) {
     // console.log(event.target.value);
