@@ -1,275 +1,256 @@
-<div class="container">
+<div class="container-fluid">
   <h5 class="d-flex justify-content-left">Total Interest Comparison Chart</h5>
   <hr />
-  <!--<div class="row g-1 border">-->
-    <div class="col">
-      <div class="mb-1 p-1 bg-white text-truncate">
-        <strong> <small class="text-center">Loan Details</small></strong>
-      </div>
-      <div class="row">
-        <div class="col-sm">
-          <div class="mb-1 p-1 bg-light text-truncate">
-            <small class="text-muted">Loan Amount</small>
-          </div>
-        </div>
-        <div class="col">
-          <div
-            class="mb-1 p-1 bg-secondary text-end"
-            style="--bs-bg-opacity: .25;"
-          >
-            <small class="text-muted">&nbsp;{{ pricing.loanAmnt }}</small>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm">
-          <div class="mb-1 p-1 bg-light text-truncate">
-            <small class="text-muted">Int Rate 1</small>
-          </div>
-        </div>
-        <div class="col">
-          <div
-            class="mb-1 p-1 bg-secondary text-end"
-            style="--bs-bg-opacity: .25;"
-          >
-            <small class="text-muted">&nbsp;{{ pricing.IntRate1 }}</small>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm">
-          <div class="mb-1 p-1 bg-light text-truncate">
-            <small class="text-muted">Int Rate 2</small>
-          </div>
-        </div>
-        <div class="col">
-          <div
-            class="mb-1 p-1 bg-secondary text-end"
-            style="--bs-bg-opacity: .25;"
-          >
-            <small class="text-muted">&nbsp;{{ pricing.IntRate2 }}</small>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm">
-          <div class="mb-1 p-1 bg-light text-truncate">
-            <small class="text-muted">Int Rate 3</small>
-          </div>
-        </div>
-        <div class="col">
-          <div
-            class="mb-1 p-1 bg-secondary text-end"
-            style="--bs-bg-opacity: .25;"
-          >
-            <small class="text-muted">&nbsp;{{ pricing.IntRate3 }}</small>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm">
-          <div class="mb-1 p-1 bg-light text-truncate">
-            <small class="text-muted">Terms in Years 1</small>
-          </div>
-        </div>
-        <div class="col">
-          <div
-            class="mb-1 p-1 bg-secondary text-end"
-            style="--bs-bg-opacity: .25;"
-          >
-            <small class="text-muted">&nbsp;{{ pricing.AmorTerm1 }}</small>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm">
-          <div class="mb-1 p-1 bg-light text-truncate">
-            <small class="text-muted">Terms in Years 2</small>
-          </div>
-        </div>
-        <div class="col">
-          <div
-            class="mb-1 p-1 bg-secondary text-end"
-            style="--bs-bg-opacity: .25;"
-          >
-            <small class="text-muted">&nbsp;{{ pricing.AmorTerm2 }}</small>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm">
-          <div class="mb-1 p-1 bg-light text-truncate">
-            <small class="text-muted">Terms in Years 3</small>
-          </div>
-        </div>
-        <div class="col">
-          <div
-            class="mb-1 p-1 bg-secondary text-end"
-            style="--bs-bg-opacity: .25;"
-          >
-            <small class="text-muted">&nbsp;{{ pricing.AmorTerm3 }}</small>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-sm">
-          <div class="mb-1 p-1 bg-light text-truncate">
-            <small class="text-muted">Payment Frequency</small>
-          </div>
-        </div>
-        <div class="col">
-          <div
-            class="mb-1 p-1 bg-secondary text-end"
-            style="--bs-bg-opacity: .25;"
-          >
-            <small class="text-muted">&nbsp;{{ pricing.paymentfreq }}</small>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm">
-          <div class="mb-1 p-1 bg-light text-truncate">
-            <small class="text-muted">Estimated Start Date</small>
-          </div>
-        </div>
-        <div class="col">
-          <div
-            class="mb-1 p-1 bg-secondary text-end"
-            style="--bs-bg-opacity: .25;"
-          >
-            <small class="text-muted">&nbsp;{{ pricing.loanDate }}</small>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-sm">
-          <div class="mb-1 p-1 bg-light text-truncate">
-            <small class="text-muted">Date of Calculation</small>
-          </div>
-        </div>
-        <div class="col">
-          <div
-            class="mb-1 p-1 bg-secondary text-end"
-            style="--bs-bg-opacity: .25;"
-          >
-            <small class="text-muted">&nbsp;{{ pricing.calcDate }}</small>
-          </div>
-        </div>
-      </div>
-
-      <div class="mb-1 p-1 bg-white">
-        <small class="text-muted">&nbsp;</small>
-      </div>
-      <div class="mb-1 p-1 bg-white text-truncate">
-        <strong><small class="text-center"> Borrower Details </small></strong>
-      </div>
-      <div class="row">
-        <div class="col-sm">
-          <div class="mb-1 p-1 bg-light text-truncate">
-            <small class="text-muted">Name</small>
-          </div>
-        </div>
-        <div class="col">
-          <div class="mb-1 p-1 bg-secondary" style="--bs-bg-opacity: .25;">
-            <small class="text-muted"
-              >&nbsp;{{ pricing.applicationName }}</small
-            >
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-sm">
-          <div class="mb-1 p-1 bg-light text-truncate">
-            <small class="text-muted">Phone</small>
-          </div>
-        </div>
-        <div class="col">
-          <div
-            class="mb-1 p-1 bg-secondary text-end"
-            style="--bs-bg-opacity: .25;"
-          >
-            <small class="text-muted">&nbsp;{{ pricing.phoneNumber }}</small>
-          </div>
-        </div>
-      </div>
-
-      <div class="mb-1 p-1 bg-white">
-        <small class="text-muted">&nbsp;</small>
-      </div>
-      <div class="mb-1 p-1 bg-white text-truncate">
-        <strong><small class="text-center">Loan Officer Details</small></strong>
-      </div>
-      <div class="row">
-        <div class="col-sm">
-          <div class="mb-1 p-1 bg-light text-truncate">
-            <small class="text-muted">Name</small>
-          </div>
-        </div>
-        <div class="col">
-          <div
-            class="mb-1 p-1 bg-secondary text-end"
-            style="--bs-bg-opacity: .25;"
-          >
-            <small class="text-muted">&nbsp;{{ pricing.loanOfficer }}</small>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm">
-          <div class="mb-1 p-1 bg-light text-truncate">
-            <small class="text-muted">Phone</small>
-          </div>
-        </div>
-        <div class="col">
-          <div
-            class="mb-1 p-1 bg-secondary text-end"
-            style="--bs-bg-opacity: .25;"
-          >
-            <small class="text-muted">&nbsp;{{ pricing.branchPhone }}</small>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-sm">
-          <div class="mb-1 p-1 bg-light text-truncate">
-            <small class="text-muted">Office Location</small>
-          </div>
-        </div>
-        <div class="col">
-          <div
-            class="mb-1 p-1 bg-secondary text-end"
-            style="--bs-bg-opacity: .25;"
-          >
-            <small class="text-muted">&nbsp;{{ pricing.branchOffice }}</small>
-          </div>
-        </div>
+  <div class="row g-1">
+  <div class="col-sm col-md-4 offset-md-1">
+  <div class="mb-1 p-1 bg-white text-truncate">
+    <strong> <small class="text-center">Loan Details</small></strong>
+  </div>
+  <div class="row">
+    <div class="col-sm col-md-5">
+      <div class="mb-1 p-1 bg-light text-truncate">
+        <small class="text-muted">Loan Amount</small>
       </div>
     </div>
-   <!-- <div class="col-sm-1">
-      <div class="mb-1 p-1 bg-white" style="--bs-bg-opacity: .25;">
-        <small class="text-muted">&nbsp;</small>
+    <div class="col-sm col-md-5">
+      <div
+        class="mb-1 p-1 bg-secondary text-end"
+        style="--bs-bg-opacity: .25;"
+      >
+        <small class="text-muted">&nbsp;{{ pricing.loanAmnt }}</small>
       </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm col-md-5">
+      <div class="mb-1 p-1 bg-light text-truncate">
+        <small class="text-muted">Int Rate 1</small>
+      </div>
+    </div>
+    <div class="col-sm col-md-5">
+      <div
+        class="mb-1 p-1 bg-secondary text-end"
+        style="--bs-bg-opacity: .25;"
+      >
+        <small class="text-muted">&nbsp;{{ pricing.IntRate1 }}</small>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm col-md-5">
+      <div class="mb-1 p-1 bg-light text-truncate">
+        <small class="text-muted">Int Rate 2</small>
+      </div>
+    </div>
+    <div class="col-sm col-md-5">
+      <div
+        class="mb-1 p-1 bg-secondary text-end"
+        style="--bs-bg-opacity: .25;"
+      >
+        <small class="text-muted">&nbsp;{{ pricing.IntRate2 }}</small>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm col-md-5">
+      <div class="mb-1 p-1 bg-light text-truncate">
+        <small class="text-muted">Int Rate 3</small>
+      </div>
+    </div>
+    <div class="col-sm col-md-5">
+      <div
+        class="mb-1 p-1 bg-secondary text-end"
+        style="--bs-bg-opacity: .25;"
+      >
+        <small class="text-muted">&nbsp;{{ pricing.IntRate3 }}</small>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm col-md-5">
+      <div class="mb-1 p-1 bg-light text-truncate">
+        <small class="text-muted">Terms in Years 1</small>
+      </div>
+    </div>
+    <div class="col-sm col-md-5">
+      <div
+        class="mb-1 p-1 bg-secondary text-end"
+        style="--bs-bg-opacity: .25;"
+      >
+        <small class="text-muted">&nbsp;{{ pricing.AmorTerm1 }}</small>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm col-md-5">
+      <div class="mb-1 p-1 bg-light text-truncate">
+        <small class="text-muted">Terms in Years 2</small>
+      </div>
+    </div>
+    <div class="col-sm col-md-5">
+      <div
+        class="mb-1 p-1 bg-secondary text-end"
+        style="--bs-bg-opacity: .25;"
+      >
+        <small class="text-muted">&nbsp;{{ pricing.AmorTerm2 }}</small>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm col-md-5">
+      <div class="mb-1 p-1 bg-light text-truncate">
+        <small class="text-muted">Terms in Years 3</small>
+      </div>
+    </div>
+    <div class="col-sm col-md-5">
+      <div
+        class="mb-1 p-1 bg-secondary text-end"
+        style="--bs-bg-opacity: .25;"
+      >
+        <small class="text-muted">&nbsp;{{ pricing.AmorTerm3 }}</small>
+      </div>
+    </div>
+  </div>
 
-      <div class="mb-1 p-1 bg-white" style="--bs-bg-opacity: .25;">
-        <small class="text-muted">&nbsp;</small>
+  <div class="row">
+    <div class="col-sm col-md-5">
+      <div class="mb-1 p-1 bg-light text-truncate">
+        <small class="text-muted">Payment Frequency</small>
       </div>
-      <div class="mb-1 p-1 bg-white">
-        <small class="text-muted">&nbsp;</small>
+    </div>
+    <div class="col-sm col-md-5">
+      <div
+        class="mb-1 p-1 bg-secondary text-end"
+        style="--bs-bg-opacity: .25;"
+      >
+        <small class="text-muted">&nbsp;{{ pricing.paymentfreq }}</small>
       </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm col-md-5">
+      <div class="mb-1 p-1 bg-light text-truncate">
+        <small class="text-muted">Estimated Start Date</small>
+      </div>
+    </div>
+    <div class="col-sm col-md-5">
+      <div
+        class="mb-1 p-1 bg-secondary text-end"
+        style="--bs-bg-opacity: .25;"
+      >
+        <small class="text-muted">&nbsp;{{ pricing.loanDate }}</small>
+      </div>
+    </div>
+  </div>
 
-      <div class="mb-1 p-1 bg-white">
-        <small class="text-muted">&nbsp;</small>
+  <div class="row">
+    <div class="col-sm col-md-5">
+      <div class="mb-1 p-1 bg-light text-truncate">
+        <small class="text-muted">Date of Calculation</small>
       </div>
-      <div class="mb-1 p-1 bg-white">
-        <small class="text-muted">&nbsp;</small>
+    </div>
+    <div class="col-sm col-md-5">
+      <div
+        class="mb-1 p-1 bg-secondary text-end"
+        style="--bs-bg-opacity: .25;"
+      >
+        <small class="text-muted">&nbsp;{{ pricing.calcDate }}</small>
       </div>
-    </div>-->
+    </div>
+  </div>
+</div>
+<div class="col-md-6">
+  
+  <div class="mb-1 p-1 bg-white text-truncate">
+    <strong><small class="text-center"> Borrower Details </small></strong>
+  </div>
+  <div class="row">
+    <div class="col-sm col-md-3">
+      <div class="mb-1 p-1 bg-light text-truncate">
+        <small class="text-muted">Name</small>
+      </div>
+    </div>
+    <div class="col-sm col-md-3">
+      <div class="mb-1 p-1 bg-secondary" style="--bs-bg-opacity: .25;">
+        <small class="text-muted"
+          >&nbsp;{{ pricing.applicationName }}</small
+        >
+      </div>
+    </div>
+  </div>
 
-    <div class="col-sm">
+  <div class="row">
+    <div class="col-sm col-md-3">
+      <div class="mb-1 p-1 bg-light text-truncate">
+        <small class="text-muted">Phone</small>
+      </div>
+    </div>
+    <div class="col-sm col-md-3">
+      <div
+        class="mb-1 p-1 bg-secondary text-end"
+        style="--bs-bg-opacity: .25;"
+      >
+        <small class="text-muted">&nbsp;{{ pricing.phoneNumber }}</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="mb-1 p-1 bg-white">
+    <small class="text-muted">&nbsp;</small>
+  </div>
+  <div class="mb-1 p-1 bg-white text-truncate">
+    <strong><small class="text-center">Loan Officer Details</small></strong>
+  </div>
+  <div class="row">
+    <div class="col-sm col-md-3">
+      <div class="mb-1 p-1 bg-light text-truncate">
+        <small class="text-muted">Name</small>
+      </div>
+    </div>
+    <div class="col-sm col-md-3">
+      <div
+        class="mb-1 p-1 bg-secondary text-end"
+        style="--bs-bg-opacity: .25;"
+      >
+        <small class="text-muted">&nbsp;{{ pricing.loanOfficer }}</small>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm col-md-3">
+      <div class="mb-1 p-1 bg-light text-truncate">
+        <small class="text-muted">Phone</small>
+      </div>
+    </div>
+    <div class="col-sm col-md-3">
+      <div
+        class="mb-1 p-1 bg-secondary text-end"
+        style="--bs-bg-opacity: .25;"
+      >
+        <small class="text-muted">&nbsp;{{ pricing.branchPhone }}</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm col-md-3">
+      <div class="mb-1 p-1 bg-light text-truncate">
+        <small class="text-muted">Office Location</small>
+      </div>
+    </div>
+    <div class="col-sm col-md-3">
+      <div
+        class="mb-1 p-1 bg-secondary text-end"
+        style="--bs-bg-opacity: .25;"
+      >
+        <small class="text-muted">&nbsp;{{ pricing.branchOffice }}</small>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="row">
+    <div class="col-md-8">
       <div class="mb-1 p-1 bg-white">
         <h6 class="text-center">Chart</h6>
       </div>
@@ -277,48 +258,39 @@
         <canvas id="lineIntChart"></canvas>
       </div>
     </div>
-    <div class="col-sm">
-      <div class="mb-1 p-1 bg-white">
-        <h6 class="text-center text-truncate">Loan Summary</h6>
-      </div>
-      <div class="border p-1 bg-secondary bg-gradient text-white">
-        <h6 class="text-center text-truncate">Total Payments</h6>
-      </div>
-      <div class="mb-1 p-1 bg-light text-center">
-        <small class="text-muted"
-          >{{ pricing.AmorType1 + '  ' + ttlloanAmnt1 }}
-        </small>
-      </div>
-      <div class="mb-1 p-1 bg-light text-center">
-        <small class="text-muted"
-          >{{ pricing.AmorType2 + '  ' + ttlloanAmnt2 }}
-        </small>
-      </div>
-      <div class="mb-1 p-1 bg-light text-center">
-        <small class="text-muted"
-          >{{ pricing.AmorType3 + '  ' + ttlloanAmnt3 }}
-        </small>
-      </div>
-      <div class="mb-1 p-1 bg-white">
-        <small class="text-muted">&nbsp;</small>
-      </div>
-      <div class="border p-1 bg-secondary bg-gradient text-white">
-        <h6 class="text-center">Total Interest</h6>
-      </div>
-      <div
-        class="mb-1 p-1 text-center"
-        style="background-color:rgb(40,100,200)"
-      >
-        <small class="text-white">&nbsp;{{ ttlInterest1 }}</small>
-      </div>
-      <div class="mb-1 p-1 text-center" style="background-color:rgb(138,11,26)">
-        <small class="text-white">&nbsp;{{ ttlInterest2 }}</small>
-      </div>
-      <div class="mb-1 p-1 text-center" style="background-color:rgb(11,138,93)">
-        <small class="text-white">&nbsp;{{ ttlInterest3 }}</small>
-      </div>
+    <div class="col-md-3">
+    <div class="mb-1 p-1 bg-white">
+      <h6 class="text-center text-truncate">Loan Summary</h6>
     </div>
+    <div class="border p-1 bg-secondary bg-gradient text-white">
+      <h6 class="text-center text-truncate">Total Payments</h6>
+    </div>
+    <div class="mb-1 p-1 bg-light text-center">
+      <small class="text-muted">{{pricing.AmorType1 + "  " + ttlloanAmnt1}} </small>
+    </div>
+    <div class="mb-1 p-1 bg-light text-center">
+      <small class="text-muted">{{pricing.AmorType2 + "  " + ttlloanAmnt2}} </small>
+    </div>
+    <div class="mb-1 p-1 bg-light text-center">
+      <small class="text-muted">{{pricing.AmorType3 + "  " + ttlloanAmnt3}} </small>
+    </div>
+    <div class="mb-1 p-1 bg-white">
+      <small class="text-muted">&nbsp;</small>
+    </div>
+    <div class="border p-1 bg-secondary bg-gradient text-white">
+      <h6 class="text-center">Total Interest</h6>
+    </div>
+    <div class="mb-1 p-1 text-center" style="background-color:rgb(40,100,200)">
+      <small class="text-white">&nbsp;{{ttlInterest1}}</small>
+    </div>
+    <div class="mb-1 p-1 text-center" style="background-color:rgb(138,11,26)">
+      <small class="text-white">&nbsp;{{ttlInterest2}}</small>
+    </div>
+    <div class="mb-1 p-1 text-center" style="background-color:rgb(11,138,93)">
+      <small class="text-white">&nbsp;{{ttlInterest3}}</small>
+    </div>
+  </div>
 
-    <div class="col"></div>
-  <!--</div>-->
+  <div class="col"></div>
+</div>
 </div>
